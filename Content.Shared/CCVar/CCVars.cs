@@ -1531,5 +1531,8 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ConfigPresetDebug =
             CVarDef.Create("config.preset_debug", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> ERTEnabled =
+            CVarDef.Create("ert.enabled", true, CVar.SERVERONLY);
     }
 }

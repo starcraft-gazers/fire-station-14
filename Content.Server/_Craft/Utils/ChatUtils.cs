@@ -4,7 +4,7 @@ namespace Content.Server._Craft.Utils;
 
 public static class ChatUtils
 {
-    public static void SendMessageFromCentcom(ChatSystem chatSystem, string message, EntityUid? stationId)
+    public static void SendMessageFromCentcom(ChatSystem chatSystem, string message, EntityUid? stationId = null)
     {
         if (stationId == null)
         {
@@ -27,7 +27,7 @@ public static class ChatUtils
         );
     }
 
-    public static void SendLocMessageFromCentcom(ChatSystem chatSystem, string locCode, EntityUid? stationId)
+    public static void SendLocMessageFromCentcom(ChatSystem chatSystem, string locCode, EntityUid? stationId = null)
     {
         var message = Loc.GetString(locCode);
         if (message == null)

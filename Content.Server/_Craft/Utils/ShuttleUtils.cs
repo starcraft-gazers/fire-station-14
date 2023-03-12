@@ -13,31 +13,56 @@ public static class ShuttleUtils
 {
     public static (MapId, EntityUid) CreateShuttleOnNewMap(IMapManager mapManager, MapLoaderSystem mapSystem, IEntityManager entityManager, string shuttlePath)
     {
+        return CreateShuttleOnNewMap(mapManager, mapSystem, entityManager, shuttlePath, 0, 0);
+    }
+
+    public static (MapId, EntityUid) CreateShuttleOnNewMap(IMapManager mapManager, MapLoaderSystem mapSystem, IEntityManager entityManager, string shuttlePath, int xOffset = 0, int yOffset = 0)
+    {
         MapId mapId = MapId.Nullspace;
         EntityUid shuttleUid = EntityUid.Invalid;
 
         mapId = mapManager.CreateMap();
-        if (mapId == MapId.Nullspace)
-        {
-            return (mapId, shuttleUid);
-        }
-
-        mapManager.SetMapPaused(mapId, false);
-
-        if (!mapSystem.TryLoad(mapId, shuttlePath, out var gridList, null) || gridList == null)
+        if (mapId == MapId.Nullspace || mapSystem.TryLoad(mapId, shuttlePath, out var gridList, GetMapLoadOptions(xOffset, yOffset)) || gridList == null)
         {
             return (mapId, shuttleUid);
         }
 
         shuttleUid = gridList[0];
-
-        if (!entityManager.HasComponent<ShuttleComponent>(shuttleUid))
-        {
-            entityManager.AddComponent<ShuttleComponent>(shuttleUid);
-        }
+        entityManager.EnsureComponent<ShuttleComponent>(shuttleUid);
+        mapManager.SetMapPaused(mapId, false);
 
         return (mapId, shuttleUid);
     }
+
+    private static MapLoadOptions? GetMapLoadOptions(int xOffset, int yOffset)
+    {
+        return new MapLoadOptions()
+        {
+            Offset = new Vector2(500f + 100, 0f)
+        };
+    }
+
+    public static EntityUid CreateShuttleOnExistedMap(MapId mapId, IMapManager mapManager, MapLoaderSystem mapSystem, IEntityManager entityManager, string shuttlePath)
+    {
+        return CreateShuttleOnExistedMap(mapId, mapManager, mapSystem, entityManager, shuttlePath, 0, 0);
+    }
+
+    public static EntityUid CreateShuttleOnExistedMap(MapId mapId, IMapManager mapManager, MapLoaderSystem mapSystem, IEntityManager entityManager, string shuttlePath, int xOffset, int yOffset)
+    {
+        EntityUid shuttleUid = EntityUid.Invalid;
+
+        if (mapId == MapId.Nullspace || !mapSystem.TryLoad(mapId, shuttlePath, out var gridList, GetMapLoadOptions(xOffset, yOffset)) || gridList == null)
+        {
+            return shuttleUid;
+        }
+
+        shuttleUid = gridList[0];
+        entityManager.EnsureComponent<ShuttleComponent>(shuttleUid);
+        mapManager.SetMapPaused(mapId, false);
+
+        return shuttleUid;
+    }
+
 
     public static EntityUid GetTargetStation(GameTicker ticker, IMapManager mapManager, IEntityManager entityManager)
     {
