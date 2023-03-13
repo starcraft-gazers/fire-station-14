@@ -1,5 +1,6 @@
 using Content.Server.Database;
 using Content.Server.GameTicking;
+using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
 using Content.Server.Spawners.Components;
 using Content.Shared.Doors;
@@ -16,7 +17,7 @@ namespace Content.Server.SCP
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly GameTicker _ticker = default!;
 
-        private Dictionary<string,List<EntityUid>> _containmentDoors = new();
+        private Dictionary<string, List<EntityUid>> _containmentDoors = new();
         // TODO: Заменить этот ужас на прототип
         private static string[] _friendlyScps = {
             "MobSCPSoap"
@@ -24,6 +25,8 @@ namespace Content.Server.SCP
         private static string[] _hostileScps = {
             "MobSCP173"
         };
+
+        public bool IsSCPBreakoutActive { get; private set; }
 
         public override void Initialize()
         {
@@ -38,6 +41,7 @@ namespace Content.Server.SCP
 
         private void OnPlayersSpawning(RulePlayerSpawningEvent ev)
         {
+            IsSCPBreakoutActive = true;
             var everyone = new List<IPlayerSession>(ev.PlayerPool);
 
             var safePrefList = new List<IPlayerSession>();
@@ -66,9 +70,14 @@ namespace Content.Server.SCP
                 }
             }
             // TODO: Не спавнить СЦП вообще если игроков недостаточно
-#if !DEBUG
-            if ((safeSCPList.Count == 0 && hostSCPList.Count == 0) || everyone.Count < 5) return;
-#endif
+            if ((safeSCPList.Count == 0 && hostSCPList.Count == 0) || everyone.Count < 15)
+            {
+                foreach (var uid in hostSCPList)
+                    Del(uid);
+                IsSCPBreakoutActive = false;
+                return;
+            }
+
             foreach (var player in everyone)
             {
                 if (!ev.Profiles.ContainsKey(player.UserId))

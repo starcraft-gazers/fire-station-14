@@ -31,8 +31,11 @@ namespace Content.Server.SCP
 
         private EntityUid _targetStation = EntityUid.Invalid;
         private float _endAfter = 60;
+
         public override void Added()
         {
+            if (!_scpSys.IsSCPBreakoutActive) { ForceEndSelf(); return; };
+
             var targetmap = GameTicker.DefaultMap;
             foreach (var grid in _mapManager.GetAllMapGrids(targetmap))
             {
@@ -108,6 +111,7 @@ namespace Content.Server.SCP
         }
         public override void Ended()
         {
+            if (!RuleStarted) return;
             base.Ended();
 
             foreach (var apcEnt in _eventedApcs)
