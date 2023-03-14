@@ -181,7 +181,9 @@ namespace Content.Server.SCP.ConcreteSlab
             var curtime = _gameTiming.CurTime;
             _actionSys.SetEnabled(component.BlindAction, true);
             _actionSys.AddAction(uid, component.BlindAction, uid);
-            component.BlindAction.Cooldown = (curtime, curtime + component.BlindAction.UseDelay.GetValueOrDefault());
+            var oldcd = component.BlindAction.Cooldown.GetValueOrDefault();
+            if (oldcd.End < curtime + component.BlindAction.UseDelay.GetValueOrDefault() / 3)
+                component.BlindAction.Cooldown = (curtime, curtime + component.BlindAction.UseDelay.GetValueOrDefault() / 3);
 
             if (TryComp<InputMoverComponent>(uid, out var input)) input.CanMove = false;
             _physics.SetFixedRotation(uid, true);
