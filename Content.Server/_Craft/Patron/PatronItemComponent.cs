@@ -17,6 +17,6 @@ namespace Content.Server.Patron
         public bool Enabled = true;
 
         [DataField("patronOwner")]
-        public IPlayerSession Patron = default!;
+        public Guid Patron = default!;
     }
 }

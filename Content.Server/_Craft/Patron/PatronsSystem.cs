@@ -82,7 +82,8 @@ namespace Content.Server.Patron
             if (mind is null || mind.Session is null)
                 return false;
             session = mind.Session;
-            return session == comp.Patron;
+            var guid = session.UserId.UserId;
+            return guid == comp.Patron;
         }
 
         private async Task GivePatronItems(IPlayerSession ply, EntityUid ent)
@@ -104,7 +105,6 @@ namespace Content.Server.Patron
 
             var items = await _dbMan.GetPatronItemsAsync(guid);
             var coords = Transform(ent).MapPosition;
-
             foreach (var item in items)
             {
                 if (!_protoMan.HasIndex<EntityPrototype>(item))
@@ -112,7 +112,7 @@ namespace Content.Server.Patron
                 var itemEnt = Spawn(item, coords);
                 EnsureComp<ItemComponent>(itemEnt);
                 var patcomp = EnsureComp<PatronItemComponent>(itemEnt);
-                patcomp.Patron = ply;
+                patcomp.Patron = guid;
                 _storeSys.Insert(trgInv, itemEnt, playSound: false);
             }
         }
