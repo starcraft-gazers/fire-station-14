@@ -6,4 +6,4 @@
 [submodule "FireStation"]
 	path = FireStation
 	url = git@github.com:starcraft-gazers/our-little-secrets.git
- 	branch = master
+    branch = master
