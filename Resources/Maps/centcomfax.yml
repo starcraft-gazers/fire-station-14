@@ -1,0 +1,3271 @@
+meta:
+  format: 3
+  name: DemoStation
+  author: Space-Wizards
+  postmapinit: true
+tilemap:
+  0: Space
+  1: FloorArcadeBlue
+  2: FloorArcadeBlue2
+  3: FloorArcadeRed
+  4: FloorAsteroidCoarseSand0
+  5: FloorAsteroidCoarseSandDug
+  6: FloorAsteroidIronsand1
+  7: FloorAsteroidIronsand2
+  8: FloorAsteroidIronsand3
+  9: FloorAsteroidIronsand4
+  10: FloorAsteroidSand
+  11: FloorAsteroidTile
+  12: FloorBar
+  13: FloorBasalt
+  14: FloorBlue
+  15: FloorBlueCircuit
+  16: FloorBoxing
+  17: FloorCarpetClown
+  18: FloorCarpetOffice
+  19: FloorCave
+  20: FloorCaveDrought
+  21: FloorClown
+  22: FloorDark
+  23: FloorDarkDiagonal
+  24: FloorDarkDiagonalMini
+  25: FloorDarkHerringbone
+  26: FloorDarkMini
+  27: FloorDarkMono
+  28: FloorDarkOffset
+  29: FloorDarkPavement
+  30: FloorDarkPavementVertical
+  31: FloorDarkPlastic
+  32: FloorDesert
+  33: FloorDirt
+  34: FloorEighties
+  35: FloorElevatorShaft
+  36: FloorFlesh
+  37: FloorFreezer
+  38: FloorGlass
+  39: FloorGold
+  40: FloorGrass
+  41: FloorGrassDark
+  42: FloorGrassJungle
+  43: FloorGrassLight
+  44: FloorGreenCircuit
+  45: FloorGym
+  46: FloorHydro
+  47: FloorKitchen
+  48: FloorLaundry
+  49: FloorLino
+  50: FloorLowDesert
+  51: FloorMetalDiamond
+  52: FloorMime
+  53: FloorMono
+  54: FloorPlanetDirt
+  55: FloorPlanetGrass
+  56: FloorPlastic
+  57: FloorRGlass
+  58: FloorReinforced
+  59: FloorRockVault
+  60: FloorShowroom
+  61: FloorShuttleBlue
+  62: FloorShuttleOrange
+  63: FloorShuttlePurple
+  64: FloorShuttleRed
+  65: FloorShuttleWhite
+  66: FloorSilver
+  67: FloorSnow
+  68: FloorSteel
+  69: FloorSteelDiagonal
+  70: FloorSteelDiagonalMini
+  71: FloorSteelDirty
+  72: FloorSteelHerringbone
+  73: FloorSteelMini
+  74: FloorSteelMono
+  75: FloorSteelOffset
+  76: FloorSteelPavement
+  77: FloorSteelPavementVertical
+  78: FloorTechMaint
+  79: FloorTechMaint2
+  80: FloorTechMaint3
+  81: FloorWhite
+  82: FloorWhiteDiagonal
+  83: FloorWhiteDiagonalMini
+  84: FloorWhiteHerringbone
+  85: FloorWhiteMini
+  86: FloorWhiteMono
+  87: FloorWhiteOffset
+  88: FloorWhitePavement
+  89: FloorWhitePavementVertical
+  90: FloorWhitePlastic
+  91: FloorWood
+  92: FloorWoodTile
+  93: Lattice
+  94: Plating
+entities:
+- uid: 0
+  components:
+  - type: MetaData
+  - type: Transform
+  - index: 203
+    type: Map
+  - type: PhysicsMap
+  - type: Broadphase
+  - type: OccluderTree
+- uid: 1
+  components:
+  - type: MetaData
+  - pos: -1.0711075,1.3237141
+    parent: 0
+    type: Transform
+  - chunks:
+      0,0:
+        ind: 0,0
+        tiles: OQAAAFEAAABRAAAAUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADkAAABRAAAAUQAAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5AAAAUQAAAFEAAABRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOQAAAFEAAABRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADkAAABRAAAAUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5AAAAUQAAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOQAAAFEAAABRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFEAAABRAAAAUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAAAAUQAAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+      0,-1:
+        ind: 0,-1
+        tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOQAAAFEAAABRAAAAUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADkAAABRAAAAUQAAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5AAAAUQAAAFEAAAJRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOQAAADkAAAA5AAAAOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+      -1,-1:
+        ind: -1,-1
+        tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFEAAABRAAAAUQAAAFEAAABRAAAAUQAAAFEAAABRAAAAUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAAAAUQAAAFEAAAA5AAAAUQAAAFEAAABRAAAAUQAAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUQAAAFEAAABRAAAAOQAAAFEAAABRAAAAUQAAAFEAAABRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFEAAAA5AAAAOQAAADkAAAA5AAAAOQAAADkAAAA5AAAAOQAAAA==
+      -1,0:
+        ind: -1,0
+        tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFEAAABRAAAAUQAAADkAAABRAAAAUQAAAFEAAABRAAAAUQAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAAAAUQAAAFEAAAA5AAAAUQAAAFEAAABRAAAAUQAAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUQAAAFEAAABRAAAAUQAAAFEAAABRAAAAUQAAAFEAAABRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAAAAUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUQAAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFEAAABRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRAAAAUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUQAAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFEAAABRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+    type: MapGrid
+  - type: Broadphase
+  - angularDamping: 0.05
+    linearDamping: 0.05
+    fixedRotation: False
+    bodyType: Dynamic
+    type: Physics
+  - fixtures: []
+    type: Fixtures
+  - type: OccluderTree
+  - type: Shuttle
+  - nextUpdate: 54.4840313
+    type: GridPathfinding
+  - gravityShakeSound: !type:SoundPathSpecifier
+      path: /Audio/Effects/alert.ogg
+    type: Gravity
+  - chunkCollection:
+      version: 2
+      nodes: []
+    type: DecalGrid
+  - version: 2
+    data:
+      tiles:
+        0,0:
+          0: 12663
+          5: 20104
+        0,-1:
+          0: 30576
+          5: 34959
+        -1,-1:
+          0: 56784
+          5: 8751
+        -1,0:
+          0: 32989
+          5: 20258
+        -2,-1:
+          0: 52416
+          1: 272
+          5: 12847
+        -2,0:
+          0: 12
+          2: 192
+          3: 17
+          5: 3874
+        -2,-2:
+          4: 32768
+        0,1:
+          0: 12595
+          2: 512
+          5: 17476
+        -1,1:
+          0: 34952
+          5: 17476
+        0,2:
+          5: 7
+        -3,-1:
+          5: 34952
+        -3,0:
+          5: 2184
+        -1,2:
+          5: 12
+      uniqueMixes:
+      - volume: 2500
+        temperature: 293.15
+        moles:
+        - 21.824879
+        - 82.10312
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      - volume: 2500
+        temperature: 293.1499
+        moles:
+        - 121.73812
+        - 81.7169
+        - 3.044826E-06
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      - volume: 2500
+        temperature: 293.15
+        moles:
+        - 21.213781
+        - 79.80423
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      - volume: 2500
+        temperature: 293.1499
+        moles:
+        - 21.71001
+        - 181.6785
+        - 2.3635844E-06
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      - volume: 2500
+        immutable: True
+        moles:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      - volume: 2500
+        temperature: 293.15
+        moles:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      chunkSize: 4
+    type: GridAtmosphere
+  - type: GasTileOverlay
+  - type: RadiationGridResistance
+  - nextShake: 0
+    shakeTimes: 10
+    type: GravityShake
+- uid: 2
+  type: WallReinforced
+  components:
+  - pos: -2.5,2.5
+    parent: 1
+    type: Transform
+- uid: 3
+  type: WallReinforced
+  components:
+  - pos: -1.5,2.5
+    parent: 1
+    type: Transform
+- uid: 4
+  type: WallReinforced
+  components:
+  - pos: -0.5,2.5
+    parent: 1
+    type: Transform
+- uid: 5
+  type: WallReinforced
+  components:
+  - pos: 1.5,2.5
+    parent: 1
+    type: Transform
+- uid: 6
+  type: WallReinforced
+  components:
+  - pos: 2.5,2.5
+    parent: 1
+    type: Transform
+- uid: 7
+  type: WallReinforced
+  components:
+  - pos: 3.5,2.5
+    parent: 1
+    type: Transform
+- uid: 8
+  type: WallReinforced
+  components:
+  - pos: 3.5,1.5
+    parent: 1
+    type: Transform
+- uid: 9
+  type: WallReinforced
+  components:
+  - pos: 3.5,0.5
+    parent: 1
+    type: Transform
+- uid: 10
+  type: WallReinforced
+  components:
+  - pos: 3.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 11
+  type: WallReinforced
+  components:
+  - pos: 3.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 12
+  type: WallReinforced
+  components:
+  - pos: 3.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 13
+  type: WallReinforced
+  components:
+  - pos: 2.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 14
+  type: WallReinforced
+  components:
+  - pos: 1.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 15
+  type: WallReinforced
+  components:
+  - pos: -0.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 16
+  type: WallReinforced
+  components:
+  - pos: -1.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 17
+  type: WallReinforced
+  components:
+  - pos: -2.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 18
+  type: WallReinforced
+  components:
+  - pos: -2.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 19
+  type: TableCounterMetal
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -0.5,7.5
+    parent: 1
+    type: Transform
+- uid: 20
+  type: WallReinforced
+  components:
+  - pos: -2.5,1.5
+    parent: 1
+    type: Transform
+- uid: 21
+  type: TableCounterMetal
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 1.5,7.5
+    parent: 1
+    type: Transform
+- uid: 22
+  type: HighSecDoor
+  components:
+  - pos: -2.5,-0.5
+    parent: 1
+    type: Transform
+  - containers:
+      board: !type:Container
+        ents:
+        - 23
+    type: ContainerContainer
+- uid: 23
+  type: DoorElectronics
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 22
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 24
+  type: ReinforcedWindow
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -1.5,5.5
+    parent: 1
+    type: Transform
+- uid: 25
+  type: ReinforcedWindow
+  components:
+  - pos: 3.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 26
+  type: ReinforcedWindow
+  components:
+  - pos: 0.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 27
+  type: TableWood
+  components:
+  - pos: -0.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 28
+  type: TableWood
+  components:
+  - pos: 0.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 29
+  type: TableWood
+  components:
+  - pos: 1.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 30
+  type: RubberStampCentcom
+  components:
+  - pos: 1.3986619,4.195385
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 31
+  type: Pen
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 1.6008513,4.582098
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 32
+  type: Pen
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 1.5989249,5.1893845
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 33
+  type: Pen
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 1.614033,4.8968306
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 34
+  type: WaterTankFull
+  components:
+  - pos: -0.5,6.5
+    parent: 1
+    type: Transform
+- uid: 35
+  type: hydroponicsTray
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: 2.5,1.5
+    parent: 1
+    type: Transform
+  - containers:
+      machine_board: !type:Container
+        ents:
+        - 36
+      machine_parts: !type:Container
+        ents:
+        - 37
+        - 38
+        - 39
+        - 40
+        - 41
+        - 55
+        - 80
+    type: ContainerContainer
+- uid: 36
+  type: HydroponicsTrayMachineCircuitboard
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 35
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 37
+  type: MatterBinStockPart
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 35
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 38
+  type: MatterBinStockPart
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 35
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 39
+  type: ScanningModuleStockPart
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 35
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 40
+  type: CapacitorStockPart
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 35
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 41
+  type: SheetGlass1
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 35
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 42
+  type: VendingMachineCola
+  components:
+  - flags: SessionSpecific
+    type: MetaData
+  - pos: 2.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 43
+  type: VendingMachineDonut
+  components:
+  - flags: SessionSpecific
+    type: MetaData
+  - pos: 1.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 44
+  type: ChairWood
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 0.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 45
+  type: FaxMachineCentcom
+  components:
+  - pos: 0.5,-0.5
+    parent: 1
+    type: Transform
+  - address: 1062b9a8
+    transmitFrequency: 2640
+    receiveFrequency: 2640
+    type: DeviceNetwork
+- uid: 46
+  type: SubstationWallBasic
+  components:
+  - pos: -0.5,2.5
+    parent: 1
+    type: Transform
+  - loadingNetworkDemand: 1639.694
+    currentReceiving: 1642.5065
+    currentSupply: 1639.694
+    type: PowerNetworkBattery
+- uid: 47
+  type: GeneratorWallmountBasic
+  components:
+  - pos: 1.5,2.5
+    parent: 1
+    type: Transform
+  - supplyRampPosition: 821.25323
+    type: PowerSupplier
+- uid: 48
+  type: APCHyperCapacity
+  components:
+  - pos: -1.5,2.5
+    parent: 1
+    type: Transform
+  - loadingNetworkDemand: 1640
+    currentReceiving: 1639.694
+    currentSupply: 1640
+    supplyRampPosition: 0.30603027
+    type: PowerNetworkBattery
+- uid: 49
+  type: CableHV
+  components:
+  - pos: 1.5,2.5
+    parent: 1
+    type: Transform
+- uid: 50
+  type: CableHV
+  components:
+  - pos: 0.5,2.5
+    parent: 1
+    type: Transform
+- uid: 51
+  type: CableHV
+  components:
+  - pos: -0.5,2.5
+    parent: 1
+    type: Transform
+- uid: 52
+  type: CableApcExtension
+  components:
+  - pos: -0.5,2.5
+    parent: 1
+    type: Transform
+- uid: 53
+  type: CableApcExtension
+  components:
+  - pos: -1.5,2.5
+    parent: 1
+    type: Transform
+- uid: 54
+  type: CableApcExtension
+  components:
+  - pos: -1.5,2.5
+    parent: 1
+    type: Transform
+- uid: 55
+  type: Beaker
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 35
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 56
+  type: CableApcExtension
+  components:
+  - pos: -2.5,2.5
+    parent: 1
+    type: Transform
+- uid: 57
+  type: CableApcExtension
+  components:
+  - pos: -2.5,1.5
+    parent: 1
+    type: Transform
+- uid: 58
+  type: CableApcExtension
+  components:
+  - pos: -2.5,0.5
+    parent: 1
+    type: Transform
+- uid: 59
+  type: CableApcExtension
+  components:
+  - pos: -2.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 60
+  type: CableApcExtension
+  components:
+  - pos: -2.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 61
+  type: CableApcExtension
+  components:
+  - pos: -2.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 62
+  type: CableApcExtension
+  components:
+  - pos: -2.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 63
+  type: CableApcExtension
+  components:
+  - pos: -1.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 64
+  type: CableApcExtension
+  components:
+  - pos: -0.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 65
+  type: CableMV
+  components:
+  - pos: -0.5,2.5
+    parent: 1
+    type: Transform
+- uid: 66
+  type: CableMV
+  components:
+  - pos: -1.5,2.5
+    parent: 1
+    type: Transform
+- uid: 67
+  type: LampGold
+  components:
+  - rot: 12.566370614359172 rad
+    pos: -0.49681878,-0.16563904
+    parent: 1
+    type: Transform
+  - toggleAction:
+      icon:
+        sprite: Objects/Tools/flashlight.rsi
+        state: flashlight
+      iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
+      name: action-name-toggle-light
+      description: action-description-toggle-light
+      keywords: []
+      event: !type:ToggleActionEvent {}
+    type: HandheldLight
+  - containers:
+      cell_slot: !type:ContainerSlot
+        ent: 126
+    type: ContainerContainer
+- uid: 68
+  type: AlwaysPoweredWallLight
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -1.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 69
+  type: AlwaysPoweredWallLight
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -1.5,1.5
+    parent: 1
+    type: Transform
+- uid: 70
+  type: AlwaysPoweredWallLight
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 2.5,1.5
+    parent: 1
+    type: Transform
+- uid: 71
+  type: AlwaysPoweredWallLight
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 2.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 72
+  type: CableApcExtension
+  components:
+  - pos: -2.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 73
+  type: CableApcExtension
+  components:
+  - pos: -1.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 74
+  type: CableApcExtension
+  components:
+  - pos: 0.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 75
+  type: CableApcExtension
+  components:
+  - pos: -0.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 76
+  type: CableApcExtension
+  components:
+  - pos: 1.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 77
+  type: CableApcExtension
+  components:
+  - pos: 2.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 78
+  type: CableApcExtension
+  components:
+  - pos: -2.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 79
+  type: CableApcExtension
+  components:
+  - pos: -2.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 80
+  type: Beaker
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 35
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 81
+  type: hydroponicsTray
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: 1.5,1.5
+    parent: 1
+    type: Transform
+  - containers:
+      machine_board: !type:Container
+        ents:
+        - 82
+      machine_parts: !type:Container
+        ents:
+        - 83
+        - 84
+        - 85
+        - 86
+        - 87
+        - 88
+        - 89
+    type: ContainerContainer
+- uid: 82
+  type: HydroponicsTrayMachineCircuitboard
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 81
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 83
+  type: MatterBinStockPart
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 81
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 84
+  type: MatterBinStockPart
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 81
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 85
+  type: ScanningModuleStockPart
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 81
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 86
+  type: CapacitorStockPart
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 81
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 87
+  type: SheetGlass1
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 81
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 88
+  type: Beaker
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 81
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 89
+  type: Beaker
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 81
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 90
+  type: VendingMachineNutri
+  components:
+  - flags: SessionSpecific
+    type: MetaData
+  - pos: -1.5,1.5
+    parent: 1
+    type: Transform
+- uid: 91
+  type: PaperBin10
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -0.5,3.5
+    parent: 1
+    type: Transform
+  - items:
+    - 92
+    - 93
+    - 94
+    - 95
+    - 96
+    - 97
+    - 98
+    - 99
+    - 100
+    - 101
+    type: Bin
+  - containers:
+      bin-container: !type:Container
+        ents:
+        - 92
+        - 93
+        - 94
+        - 95
+        - 96
+        - 97
+        - 98
+        - 99
+        - 100
+        - 101
+    type: ContainerContainer
+- uid: 92
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 93
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 94
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 95
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 96
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 97
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 98
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 99
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 100
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 101
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 91
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 102
+  type: Pen
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 1.5445607,5.5027866
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 103
+  type: PaperBin10
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -0.5,5.5
+    parent: 1
+    type: Transform
+  - items:
+    - 104
+    - 105
+    - 106
+    - 107
+    - 108
+    - 109
+    - 110
+    - 111
+    - 112
+    - 113
+    type: Bin
+  - containers:
+      bin-container: !type:Container
+        ents:
+        - 104
+        - 105
+        - 106
+        - 107
+        - 108
+        - 109
+        - 110
+        - 111
+        - 112
+        - 113
+    type: ContainerContainer
+- uid: 104
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 105
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 106
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 107
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 108
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 109
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 110
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 111
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 112
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 113
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 103
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 114
+  type: PaperBin10
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -0.5,4.5
+    parent: 1
+    type: Transform
+  - items:
+    - 115
+    - 116
+    - 117
+    - 118
+    - 119
+    - 120
+    - 121
+    - 122
+    - 123
+    - 124
+    type: Bin
+  - containers:
+      bin-container: !type:Container
+        ents:
+        - 115
+        - 116
+        - 117
+        - 118
+        - 119
+        - 120
+        - 121
+        - 122
+        - 123
+        - 124
+    type: ContainerContainer
+- uid: 115
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 116
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 117
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 118
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 119
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 120
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 121
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 122
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 123
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 124
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 114
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 125
+  type: GeneratorWallmountBasic
+  components:
+  - pos: 2.5,2.5
+    parent: 1
+    type: Transform
+  - supplyRampPosition: 821.25323
+    type: PowerSupplier
+- uid: 126
+  type: PowerCellSmall
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 67
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 127
+  type: WallReinforced
+  components:
+  - pos: -5.5,2.5
+    parent: 1
+    type: Transform
+- uid: 128
+  type: WallReinforced
+  components:
+  - pos: -3.5,2.5
+    parent: 1
+    type: Transform
+- uid: 129
+  type: CableApcExtension
+  components:
+  - pos: 1.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 130
+  type: WallReinforced
+  components:
+  - pos: -4.5,2.5
+    parent: 1
+    type: Transform
+- uid: 131
+  type: WallReinforced
+  components:
+  - pos: -6.5,2.5
+    parent: 1
+    type: Transform
+- uid: 132
+  type: WallReinforced
+  components:
+  - pos: -7.5,2.5
+    parent: 1
+    type: Transform
+- uid: 133
+  type: WallReinforced
+  components:
+  - pos: -8.5,2.5
+    parent: 1
+    type: Transform
+- uid: 134
+  type: WallReinforced
+  components:
+  - pos: -8.5,1.5
+    parent: 1
+    type: Transform
+- uid: 135
+  type: WallReinforced
+  components:
+  - pos: -8.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 136
+  type: WallReinforced
+  components:
+  - pos: -8.5,0.5
+    parent: 1
+    type: Transform
+- uid: 137
+  type: WallReinforced
+  components:
+  - pos: -8.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 138
+  type: WallReinforced
+  components:
+  - pos: -8.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 139
+  type: WallReinforced
+  components:
+  - pos: -8.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 140
+  type: WallReinforced
+  components:
+  - pos: -7.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 141
+  type: WallReinforced
+  components:
+  - pos: -5.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 142
+  type: WallReinforced
+  components:
+  - pos: -4.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 143
+  type: WallReinforced
+  components:
+  - pos: -3.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 144
+  type: PoweredSmallLight
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -7.5,1.5
+    parent: 1
+    type: Transform
+  - color: '#FFD1A3FF'
+    type: PointLight
+  - containers:
+      light_bulb: !type:ContainerSlot
+        ent: 145
+    type: ContainerContainer
+  - powerLoad: 60
+    type: ApcPowerReceiver
+  - address: 45087020
+    receiveFrequency: 1173
+    type: DeviceNetwork
+- uid: 145
+  type: LightBulb
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 144
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 146
+  type: WallReinforced
+  components:
+  - pos: -6.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 147
+  type: WallReinforced
+  components:
+  - pos: -6.5,1.5
+    parent: 1
+    type: Transform
+- uid: 148
+  type: WallReinforced
+  components:
+  - pos: -6.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 149
+  type: WallReinforced
+  components:
+  - pos: -7.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 150
+  type: WallReinforced
+  components:
+  - pos: -6.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 151
+  type: GasMinerNitrogen
+  components:
+  - pos: -7.5,1.5
+    parent: 1
+    type: Transform
+- uid: 152
+  type: GasMinerOxygen
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -7.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 153
+  type: HighSecDoor
+  components:
+  - pos: -6.5,-1.5
+    parent: 1
+    type: Transform
+  - containers:
+      board: !type:Container
+        ents:
+        - 154
+    type: ContainerContainer
+- uid: 154
+  type: DoorElectronics
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 153
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 155
+  type: HighSecDoor
+  components:
+  - pos: -6.5,0.5
+    parent: 1
+    type: Transform
+  - containers:
+      board: !type:Container
+        ents:
+        - 156
+    type: ContainerContainer
+- uid: 156
+  type: DoorElectronics
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 155
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 157
+  type: CableApcExtension
+  components:
+  - pos: -2.5,2.5
+    parent: 1
+    type: Transform
+- uid: 158
+  type: CableApcExtension
+  components:
+  - pos: -3.5,2.5
+    parent: 1
+    type: Transform
+- uid: 159
+  type: CableApcExtension
+  components:
+  - pos: -4.5,2.5
+    parent: 1
+    type: Transform
+- uid: 160
+  type: CableApcExtension
+  components:
+  - pos: -5.5,2.5
+    parent: 1
+    type: Transform
+- uid: 161
+  type: CableApcExtension
+  components:
+  - pos: -6.5,2.5
+    parent: 1
+    type: Transform
+- uid: 162
+  type: CableApcExtension
+  components:
+  - pos: -7.5,2.5
+    parent: 1
+    type: Transform
+- uid: 163
+  type: CableApcExtension
+  components:
+  - pos: -8.5,2.5
+    parent: 1
+    type: Transform
+- uid: 164
+  type: CableApcExtension
+  components:
+  - pos: -8.5,1.5
+    parent: 1
+    type: Transform
+- uid: 165
+  type: CableApcExtension
+  components:
+  - pos: -8.5,0.5
+    parent: 1
+    type: Transform
+- uid: 166
+  type: CableApcExtension
+  components:
+  - pos: -8.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 167
+  type: CableApcExtension
+  components:
+  - pos: -8.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 168
+  type: CableApcExtension
+  components:
+  - pos: -8.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 169
+  type: CableApcExtension
+  components:
+  - pos: -8.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 170
+  type: CableApcExtension
+  components:
+  - pos: -7.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 171
+  type: GravityGeneratorMini
+  components:
+  - pos: -3.5,1.5
+    parent: 1
+    type: Transform
+- uid: 172
+  type: PoweredSmallLight
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -7.5,-2.5
+    parent: 1
+    type: Transform
+  - color: '#FFD1A3FF'
+    type: PointLight
+  - containers:
+      light_bulb: !type:ContainerSlot
+        ent: 173
+    type: ContainerContainer
+  - powerLoad: 60
+    type: ApcPowerReceiver
+  - address: 6e4458c5
+    receiveFrequency: 1173
+    type: DeviceNetwork
+- uid: 173
+  type: LightBulb
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 172
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 174
+  type: AlwaysPoweredLightSodium
+  components:
+  - pos: -5.5,1.5
+    parent: 1
+    type: Transform
+- uid: 175
+  type: AlwaysPoweredLightSodium
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -5.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 176
+  type: ERTLeaderPDA
+  components:
+  - pos: 1.4634185,-0.18485403
+    parent: 1
+    type: Transform
+  - containers:
+      PDA-id: !type:ContainerSlot
+        ent: 177
+      PDA-pen: !type:ContainerSlot
+        ent: 178
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+        ents:
+        - 179
+    type: ContainerContainer
+  - ringtone:
+    - E
+    - C
+    - D
+    - D
+    type: Ringer
+  - address: Конс-74397745
+    receiveFrequency: 2202
+    type: DeviceNetwork
+  - installedCartridges:
+    - 179
+    type: CartridgeLoader
+  - canCollide: False
+    type: Physics
+  - fibers: []
+    fingerprints:
+    - EDC3D09BD857930F34B9121CC5F4B598
+    type: Forensics
+- uid: 177
+  type: ERTLeaderIDCard
+  components:
+  - flags: InContainer
+    name: ID карта  (Central Commander)
+    type: MetaData
+  - parent: 176
+    type: Transform
+  - tags:
+    - EmergencyShuttleRepealAll
+    - Captain
+    - HeadOfPersonnel
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - HeadOfSecurity
+    - ResearchDirector
+    - Command
+    - Security
+    - Armory
+    - Brig
+    - Engineering
+    - Medical
+    - Quartermaster
+    - Salvage
+    - Cargo
+    - Research
+    - Service
+    - Maintenance
+    - External
+    - Janitor
+    - Theatre
+    - Bar
+    - Chemistry
+    - Kitchen
+    - Chapel
+    - Hydroponics
+    - Atmospherics
+    type: Access
+  - canCollide: False
+    type: Physics
+- uid: 178
+  type: Pen
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 176
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 179
+  type: NotekeeperCartridge
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 176
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 180
+  type: GasPassiveVent
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -7.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 181
+  type: GasPassiveVent
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -7.5,0.5
+    parent: 1
+    type: Transform
+- uid: 182
+  type: GasPressurePump
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -6.5,-1.5
+    parent: 1
+    type: Transform
+  - targetPressure: 4500
+    type: GasPressurePump
+- uid: 183
+  type: GasPipeStraight
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -5.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 184
+  type: GasMixer
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -4.5,-0.5
+    parent: 1
+    type: Transform
+  - inletTwoConcentration: 0.22000003
+    inletOneConcentration: 0.78
+    type: GasMixer
+- uid: 185
+  type: GasPressurePump
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -6.5,0.5
+    parent: 1
+    type: Transform
+  - targetPressure: 4500
+    type: GasPressurePump
+- uid: 186
+  type: GasPipeBend
+  components:
+  - pos: -5.5,0.5
+    parent: 1
+    type: Transform
+- uid: 187
+  type: GasPipeBend
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -4.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 188
+  type: GasPipeBend
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -5.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 189
+  type: GasVentScrubber
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -1.5,-2.5
+    parent: 1
+    type: Transform
+  - address: Скр-1f4a6c1
+    transmitFrequency: 1621
+    receiveFrequency: 1621
+    type: DeviceNetwork
+- uid: 190
+  type: GasVentPump
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -1.5,-1.5
+    parent: 1
+    type: Transform
+  - address: Вент-6a286b2f
+    transmitFrequency: 1621
+    receiveFrequency: 1621
+    type: DeviceNetwork
+- uid: 191
+  type: GasPipeBend
+  components:
+  - pos: -3.5,-0.5
+    parent: 1
+    type: Transform
+- uid: 192
+  type: GasPipeBend
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -3.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 193
+  type: GasPipeStraight
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -2.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 194
+  type: GasPressurePump
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -3.5,-2.5
+    parent: 1
+    type: Transform
+  - targetPressure: 4500
+    type: GasPressurePump
+- uid: 195
+  type: GasPipeBend
+  components:
+  - rot: 1.5707963267948966 rad
+    pos: -4.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 196
+  type: GasPassiveVent
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -4.5,-4.5
+    parent: 1
+    type: Transform
+- uid: 197
+  type: GasPipeStraight
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -4.5,-3.5
+    parent: 1
+    type: Transform
+- uid: 198
+  type: WardrobeEngineeringFilled
+  components:
+  - pos: -4.5,1.5
+    parent: 1
+    type: Transform
+  - containers:
+      entity_storage: !type:Container
+        ents:
+        - 199
+        - 201
+        - 202
+        - 203
+        - 204
+        - 205
+    type: ContainerContainer
+- uid: 199
+  type: ClothingHeadHatHardhatYellow
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 198
+    type: Transform
+  - containers:
+      cell_slot: !type:ContainerSlot
+        ent: 200
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 200
+  type: PowerCellMedium
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 199
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 201
+  type: ClothingUniformJumpsuitEngineering
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 198
+    type: Transform
+  - mode: SensorVitals
+    type: SuitSensor
+  - address: 1db48ba2
+    transmitFrequency: 1262
+    type: DeviceNetwork
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 202
+  type: ClothingBackpackEngineering
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 198
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 203
+  type: ClothingShoesBootsWork
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 198
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 204
+  type: ClothingOuterVestHazard
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 198
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 205
+  type: ClothingUniformJumpskirtEngineering
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 198
+    type: Transform
+  - mode: SensorVitals
+    type: SuitSensor
+  - address: 1b85087d
+    transmitFrequency: 1262
+    type: DeviceNetwork
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 206
+  type: CrateMaterialSteel
+  components:
+  - pos: -5.5,1.5
+    parent: 1
+    type: Transform
+  - containers:
+      entity_storage: !type:Container
+        ents:
+        - 207
+        - 208
+        - 209
+      paper_label: !type:ContainerSlot {}
+    type: ContainerContainer
+- uid: 207
+  type: SheetSteel
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 206
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 208
+  type: SheetSteel
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 206
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 209
+  type: SheetSteel
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 206
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 210
+  type: ERTLeaderPDA
+  components:
+  - pos: 1.4824634,-0.45742607
+    parent: 1
+    type: Transform
+  - containers:
+      PDA-id: !type:ContainerSlot
+        ent: 211
+      PDA-pen: !type:ContainerSlot
+        ent: 212
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+        ents:
+        - 213
+    type: ContainerContainer
+  - ringtone:
+    - A
+    - C
+    - A
+    - C
+    type: Ringer
+  - address: Конс-a3693d9
+    receiveFrequency: 2202
+    type: DeviceNetwork
+  - installedCartridges:
+    - 213
+    type: CartridgeLoader
+  - canCollide: False
+    type: Physics
+  - fibers: []
+    fingerprints:
+    - EDC3D09BD857930F34B9121CC5F4B598
+    type: Forensics
+- uid: 211
+  type: ERTLeaderIDCard
+  components:
+  - flags: InContainer
+    name: ID карта  (Central Commander)
+    type: MetaData
+  - parent: 210
+    type: Transform
+  - tags:
+    - EmergencyShuttleRepealAll
+    - Captain
+    - HeadOfPersonnel
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - HeadOfSecurity
+    - ResearchDirector
+    - Command
+    - Security
+    - Armory
+    - Brig
+    - Engineering
+    - Medical
+    - Quartermaster
+    - Salvage
+    - Cargo
+    - Research
+    - Service
+    - Maintenance
+    - External
+    - Janitor
+    - Theatre
+    - Bar
+    - Chemistry
+    - Kitchen
+    - Chapel
+    - Hydroponics
+    - Atmospherics
+    type: Access
+  - canCollide: False
+    type: Physics
+- uid: 212
+  type: Pen
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 210
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 213
+  type: NotekeeperCartridge
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 210
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 214
+  type: TableCounterMetal
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 0.5,7.5
+    parent: 1
+    type: Transform
+- uid: 215
+  type: CableApcExtension
+  components:
+  - pos: 2.5,-2.5
+    parent: 1
+    type: Transform
+- uid: 216
+  type: CableHV
+  components:
+  - pos: 2.5,2.5
+    parent: 1
+    type: Transform
+- uid: 217
+  type: CableHV
+  components:
+  - pos: 1.5,2.5
+    parent: 1
+    type: Transform
+- uid: 218
+  type: ReinforcedWindow
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 2.5,6.5
+    parent: 1
+    type: Transform
+- uid: 219
+  type: ReinforcedWindow
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 2.5,5.5
+    parent: 1
+    type: Transform
+- uid: 220
+  type: ReinforcedWindow
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -1.5,6.5
+    parent: 1
+    type: Transform
+- uid: 221
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -1.5,3.5
+    parent: 1
+    type: Transform
+- uid: 222
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -1.5,8.5
+    parent: 1
+    type: Transform
+- uid: 223
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 2.5,8.5
+    parent: 1
+    type: Transform
+- uid: 224
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 1.5,8.5
+    parent: 1
+    type: Transform
+- uid: 225
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 2.5,7.5
+    parent: 1
+    type: Transform
+- uid: 226
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 2.5,3.5
+    parent: 1
+    type: Transform
+- uid: 227
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 2.5,4.5
+    parent: 1
+    type: Transform
+- uid: 228
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -1.5,4.5
+    parent: 1
+    type: Transform
+- uid: 229
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -1.5,7.5
+    parent: 1
+    type: Transform
+- uid: 230
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -0.5,8.5
+    parent: 1
+    type: Transform
+- uid: 231
+  type: WallReinforced
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: 0.5,8.5
+    parent: 1
+    type: Transform
+- uid: 232
+  type: ReinforcedWindow
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -2.5,-1.5
+    parent: 1
+    type: Transform
+- uid: 233
+  type: ReinforcedWindow
+  components:
+  - rot: -1.5707963267948966 rad
+    pos: -2.5,0.5
+    parent: 1
+    type: Transform
+- uid: 234
+  type: TableCounterMetal
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 1.5,3.5
+    parent: 1
+    type: Transform
+- uid: 235
+  type: TableCounterMetal
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 1.5,4.5
+    parent: 1
+    type: Transform
+- uid: 236
+  type: TableCounterMetal
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -0.5,4.5
+    parent: 1
+    type: Transform
+- uid: 237
+  type: TableCounterMetal
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -0.5,3.5
+    parent: 1
+    type: Transform
+- uid: 238
+  type: ClothingBackpackDuffelSyndicateCostumeCentcom
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -0.33031285,7.462595
+    parent: 1
+    type: Transform
+  - containers:
+      storagebase: !type:Container
+        ents:
+        - 239
+        - 240
+        - 241
+        - 242
+        - 243
+        - 244
+        - 247
+        - 248
+        - 249
+        - 250
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+- uid: 239
+  type: ClothingHeadHatCaptain
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 240
+  type: ClothingEyesGlassesSunglasses
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 241
+  type: ClothingUniformJumpsuitCentcomOfficial
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - mode: SensorVitals
+    type: SuitSensor
+  - address: 15435d3a
+    transmitFrequency: 1262
+    type: DeviceNetwork
+  - canCollide: False
+    type: Physics
+- uid: 242
+  type: ClothingShoesBootsJack
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 243
+  type: ClothingHandsGlovesColorGray
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 244
+  type: ClothingHeadsetService
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - containers:
+      key_slots: !type:Container
+        ents:
+        - 245
+        - 246
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+  - channels:
+    - Service
+    - Common
+    type: ActiveRadio
+- uid: 245
+  type: EncryptionKeyService
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 244
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 246
+  type: EncryptionKeyCommon
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 244
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 247
+  type: ClothingOuterVestKevlar
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 248
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 249
+  type: Pen
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 250
+  type: CentcomPDA
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 238
+    type: Transform
+  - containers:
+      PDA-id: !type:ContainerSlot
+        ent: 251
+      PDA-pen: !type:ContainerSlot
+        ent: 252
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+        ents:
+        - 253
+    type: ContainerContainer
+  - ringtone:
+    - G
+    - G
+    - D
+    - E
+    type: Ringer
+  - address: Конс-7b0cda02
+    receiveFrequency: 2202
+    type: DeviceNetwork
+  - installedCartridges:
+    - 253
+    type: CartridgeLoader
+  - canCollide: False
+    type: Physics
+- uid: 251
+  type: CentcomIDCardSyndie
+  components:
+  - flags: InContainer
+    name: ID карта  (Central Commander)
+    type: MetaData
+  - parent: 250
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 252
+  type: Pen
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 250
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 253
+  type: NotekeeperCartridge
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 250
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 254
+  type: ClothingBackpackDuffelSyndicateCostumeCentcom
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 0.5281295,7.4896727
+    parent: 1
+    type: Transform
+  - containers:
+      storagebase: !type:Container
+        ents:
+        - 255
+        - 256
+        - 257
+        - 258
+        - 259
+        - 260
+        - 263
+        - 264
+        - 265
+        - 266
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+- uid: 255
+  type: ClothingHeadHatCaptain
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 256
+  type: ClothingEyesGlassesSunglasses
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 257
+  type: ClothingUniformJumpsuitCentcomOfficial
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - mode: SensorVitals
+    type: SuitSensor
+  - address: 2b773c97
+    transmitFrequency: 1262
+    type: DeviceNetwork
+  - canCollide: False
+    type: Physics
+- uid: 258
+  type: ClothingShoesBootsJack
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 259
+  type: ClothingHandsGlovesColorGray
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 260
+  type: ClothingHeadsetService
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - containers:
+      key_slots: !type:Container
+        ents:
+        - 261
+        - 262
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+  - channels:
+    - Service
+    - Common
+    type: ActiveRadio
+- uid: 261
+  type: EncryptionKeyService
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 260
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 262
+  type: EncryptionKeyCommon
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 260
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 263
+  type: ClothingOuterVestKevlar
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 264
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 265
+  type: Pen
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 266
+  type: CentcomPDA
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 254
+    type: Transform
+  - containers:
+      PDA-id: !type:ContainerSlot
+        ent: 267
+      PDA-pen: !type:ContainerSlot
+        ent: 268
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+        ents:
+        - 269
+    type: ContainerContainer
+  - ringtone:
+    - C
+    - D
+    - D
+    - A
+    type: Ringer
+  - address: Конс-6e6ee1a6
+    receiveFrequency: 2202
+    type: DeviceNetwork
+  - installedCartridges:
+    - 269
+    type: CartridgeLoader
+  - canCollide: False
+    type: Physics
+- uid: 267
+  type: CentcomIDCardSyndie
+  components:
+  - flags: InContainer
+    name: ID карта  (Central Commander)
+    type: MetaData
+  - parent: 266
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 268
+  type: Pen
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 266
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 269
+  type: NotekeeperCartridge
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 266
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 270
+  type: ClothingBackpackDuffelSyndicateCostumeCentcom
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 1.3992262,7.44831
+    parent: 1
+    type: Transform
+  - containers:
+      storagebase: !type:Container
+        ents:
+        - 271
+        - 272
+        - 273
+        - 274
+        - 275
+        - 276
+        - 279
+        - 280
+        - 281
+        - 282
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+- uid: 271
+  type: ClothingHeadHatCaptain
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 272
+  type: ClothingEyesGlassesSunglasses
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 273
+  type: ClothingUniformJumpsuitCentcomOfficial
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - mode: SensorVitals
+    type: SuitSensor
+  - address: 333d80d4
+    transmitFrequency: 1262
+    type: DeviceNetwork
+  - canCollide: False
+    type: Physics
+- uid: 274
+  type: ClothingShoesBootsJack
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 275
+  type: ClothingHandsGlovesColorGray
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 276
+  type: ClothingHeadsetService
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - containers:
+      key_slots: !type:Container
+        ents:
+        - 277
+        - 278
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+  - channels:
+    - Service
+    - Common
+    type: ActiveRadio
+- uid: 277
+  type: EncryptionKeyService
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 276
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 278
+  type: EncryptionKeyCommon
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 276
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 279
+  type: ClothingOuterVestKevlar
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 280
+  type: Paper
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 281
+  type: Pen
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 282
+  type: CentcomPDA
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 270
+    type: Transform
+  - containers:
+      PDA-id: !type:ContainerSlot
+        ent: 283
+      PDA-pen: !type:ContainerSlot
+        ent: 284
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+        ents:
+        - 285
+    type: ContainerContainer
+  - ringtone:
+    - C
+    - D
+    - E
+    - D
+    type: Ringer
+  - address: Конс-69883191
+    receiveFrequency: 2202
+    type: DeviceNetwork
+  - installedCartridges:
+    - 285
+    type: CartridgeLoader
+  - canCollide: False
+    type: Physics
+- uid: 283
+  type: CentcomIDCardSyndie
+  components:
+  - flags: InContainer
+    name: ID карта  (Central Commander)
+    type: MetaData
+  - parent: 282
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 284
+  type: Pen
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 282
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 285
+  type: NotekeeperCartridge
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 282
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 286
+  type: TableCounterMetal
+  components:
+  - rot: 3.141592653589793 rad
+    pos: 1.5,5.5
+    parent: 1
+    type: Transform
+- uid: 287
+  type: TableCounterMetal
+  components:
+  - rot: 3.141592653589793 rad
+    pos: -0.5,5.5
+    parent: 1
+    type: Transform
+- uid: 288
+  type: LockerAtmosphericsFilled
+  components:
+  - pos: 1.5,6.5
+    parent: 1
+    type: Transform
+  - containers:
+      entity_storage: !type:Container
+        ents:
+        - 289
+        - 291
+        - 292
+        - 293
+        - 294
+        - 295
+        - 297
+        - 298
+        - 304
+    type: ContainerContainer
+- uid: 289
+  type: ClothingOuterHardsuitAtmos
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 288
+    type: Transform
+  - clothingUid: 290
+    type: ToggleableClothing
+  - containers:
+      toggleable-clothing: !type:ContainerSlot
+        ent: 290
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 290
+  type: ClothingHeadHelmetHardsuitAtmos
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 289
+    type: Transform
+  - AttachedUid: 289
+    type: AttachedClothing
+- uid: 291
+  type: ClothingMaskGasAtmos
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 288
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 292
+  type: YellowOxygenTankFilled
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 288
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 293
+  type: NitrogenTankFilled
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 288
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 294
+  type: ClothingOuterSuitAtmosFire
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 288
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 295
+  type: ClothingHeadHelmetAtmosFire
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 288
+    type: Transform
+  - containers:
+      cell_slot: !type:ContainerSlot
+        ent: 296
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 296
+  type: PowerCellMedium
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 295
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 297
+  type: GasAnalyzer
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 288
+    type: Transform
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 298
+  type: MedkitOxygenFilled
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 288
+    type: Transform
+  - containers:
+      storagebase: !type:Container
+        ents:
+        - 299
+        - 300
+        - 301
+        - 302
+        - 303
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 299
+  type: EmergencyMedipen
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 298
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 300
+  type: PillDexalin
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 298
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 301
+  type: PillDexalin
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 298
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 302
+  type: PillDexalin
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 298
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 303
+  type: SyringeInaprovaline
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 298
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 304
+  type: HolofanProjector
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 288
+    type: Transform
+  - containers:
+      cell_slot: !type:ContainerSlot
+        ent: 305
+    type: ContainerContainer
+  - canCollide: False
+    type: Physics
+  - type: InsideEntityStorage
+- uid: 305
+  type: PowerCellMedium
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 304
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 306
+  type: RubberStampCentcom
+  components:
+  - pos: 1.3986619,3.8569746
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 307
+  type: RubberStampCentcom
+  components:
+  - pos: 1.3986619,3.4559097
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 308
+  type: RubberStampCentcom
+  components:
+  - pos: 1.7266572,4.209749
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 309
+  type: RubberStampCentcom
+  components:
+  - pos: 1.723017,3.8465834
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 310
+  type: RubberStampCentcom
+  components:
+  - pos: 1.7270501,3.4880896
+    parent: 1
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 311
+  type: PoweredlightSodium
+  components:
+  - pos: 0.5,7.5
+    parent: 1
+    type: Transform
+  - softness: 0.5
+    energy: 4
+    color: '#FFAF38FF'
+    type: PointLight
+  - containers:
+      light_bulb: !type:ContainerSlot
+        ent: 312
+    type: ContainerContainer
+  - powerLoad: 100
+    type: ApcPowerReceiver
+  - address: 26604705
+    receiveFrequency: 1173
+    type: DeviceNetwork
+- uid: 312
+  type: SodiumLightTube
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 311
+    type: Transform
+  - canCollide: False
+    type: Physics
+- uid: 313
+  type: CableApcExtension
+  components:
+  - pos: -1.5,3.5
+    parent: 1
+    type: Transform
+- uid: 314
+  type: CableApcExtension
+  components:
+  - pos: -1.5,4.5
+    parent: 1
+    type: Transform
+- uid: 315
+  type: CableApcExtension
+  components:
+  - pos: -1.5,5.5
+    parent: 1
+    type: Transform
+- uid: 316
+  type: CableApcExtension
+  components:
+  - pos: -1.5,6.5
+    parent: 1
+    type: Transform
+- uid: 317
+  type: CableApcExtension
+  components:
+  - pos: -1.5,7.5
+    parent: 1
+    type: Transform
+- uid: 318
+  type: CableApcExtension
+  components:
+  - pos: -1.5,8.5
+    parent: 1
+    type: Transform
+- uid: 319
+  type: CableApcExtension
+  components:
+  - pos: -0.5,8.5
+    parent: 1
+    type: Transform
+- uid: 320
+  type: HighSecDoor
+  components:
+  - pos: 0.5,2.5
+    parent: 1
+    type: Transform
+  - containers:
+      board: !type:Container
+        ents:
+        - 321
+    type: ContainerContainer
+- uid: 321
+  type: DoorElectronics
+  components:
+  - flags: InContainer
+    type: MetaData
+  - parent: 320
+    type: Transform
+  - canCollide: False
+    type: Physics
+...
