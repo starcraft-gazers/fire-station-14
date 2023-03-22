@@ -1,8 +1,8 @@
 meta:
   format: 3
-  name: DemoStation
-  author: Space-Wizards
-  postmapinit: true
+  name: MapWithCentcomFax
+  author: darkeneez
+  postmapinit: false
 tilemap:
   0: Space
   1: FloorArcadeBlue
@@ -104,7 +104,7 @@ entities:
   components:
   - type: MetaData
   - type: Transform
-  - index: 203
+  - index: 24
     type: Map
   - type: PhysicsMap
   - type: Broadphase
@@ -153,48 +153,63 @@ entities:
       tiles:
         0,0:
           0: 12663
-          5: 20104
+          1: 20104
         0,-1:
           0: 30576
-          5: 34959
+          1: 34959
         -1,-1:
           0: 56784
-          5: 8751
+          1: 8751
         -1,0:
           0: 32989
-          5: 20258
+          1: 20258
         -2,-1:
           0: 52416
-          1: 272
-          5: 12847
+          2: 272
+          1: 12847
         -2,0:
           0: 12
-          2: 192
-          3: 17
-          5: 3874
+          3: 192
+          4: 17
+          1: 3874
         -2,-2:
-          4: 32768
+          5: 32768
         0,1:
           0: 12595
-          2: 512
-          5: 17476
+          3: 512
+          1: 17476
         -1,1:
           0: 34952
-          5: 17476
+          1: 17476
         0,2:
-          5: 7
+          1: 7
         -3,-1:
-          5: 34952
+          1: 34952
         -3,0:
-          5: 2184
+          1: 2184
         -1,2:
-          5: 12
+          1: 12
       uniqueMixes:
       - volume: 2500
         temperature: 293.15
         moles:
         - 21.824879
         - 82.10312
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      - volume: 2500
+        temperature: 293.15
+        moles:
+        - 0
+        - 0
         - 0
         - 0
         - 0
@@ -223,8 +238,8 @@ entities:
       - volume: 2500
         temperature: 293.15
         moles:
-        - 21.213781
-        - 79.80423
+        - 20.619795
+        - 77.56971
         - 0
         - 0
         - 0
@@ -252,21 +267,6 @@ entities:
         - 0
       - volume: 2500
         immutable: True
-        moles:
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-      - volume: 2500
-        temperature: 293.15
         moles:
         - 0
         - 0

@@ -12,8 +12,7 @@
 *.userprefs
 
 # FireStation
-Resources/Prototypes/FireStation
-Resources/Prototypes/FireStationServer
+Resources/**/FireStation/
 
 # Build results
 [Dd]ebug/
