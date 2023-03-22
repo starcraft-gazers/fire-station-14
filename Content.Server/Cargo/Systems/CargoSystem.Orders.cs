@@ -18,7 +18,7 @@ using Content.Server.Paper;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Players;
-using Content.Server._Craft.StationGoals;
+using Content.Server._Craft.Bridges;
 
 namespace Content.Server.Cargo.Systems
 {
@@ -41,7 +41,7 @@ namespace Content.Server.Cargo.Systems
         [Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
         [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly StationGoalPaperSystem _stationGoalSystem = default!;
+        [Dependency] private readonly CargoBridge _cargoBridge = default!;
 
         private void InitializeConsole()
         {
@@ -230,7 +230,7 @@ namespace Content.Server.Cargo.Systems
                 orderDatabase.Capacity,
                 bankAccount.Balance,
                 orderDatabase.Orders,
-                _stationGoalSystem.advancedPrototypes
+                _cargoBridge.GetAdvancedPrototypes()
             );
 
             _uiSystem.GetUiOrNull(component.Owner, CargoConsoleUiKey.Orders)?.SetState(state);
