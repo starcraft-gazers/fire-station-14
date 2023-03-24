@@ -14,6 +14,7 @@
       availableJobs:
         CargoTechnician: [ 3, 3 ]
         Passenger: [ -1, -1 ]
+        Reporter: [ 3, 3 ]
         Bartender: [ 2, 2 ]
         Botanist: [ 3, 3 ]
         Chef: [ 2, 2 ]
