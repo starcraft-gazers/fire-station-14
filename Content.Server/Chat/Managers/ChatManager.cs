@@ -250,6 +250,7 @@ namespace Content.Server.Chat.Managers
 
         // flood protect
         private Dictionary<IPlayerSession, long> LastSaysTable = new Dictionary<IPlayerSession, long>();
+        private Dictionary<NetUserId, bool> WhiteListedPlayers = new Dictionary<NetUserId, bool>();
 
         private void SendFloodAlert(IPlayerSession player)
         {
@@ -265,9 +266,17 @@ namespace Content.Server.Chat.Managers
         ///
         public bool IsFlooding(IPlayerSession player)
         {
-            var value = _playTimeTracking.GetOverallPlaytime(player);
-            if (value.Hours >= 30)
+            //Осознанно используем HashMap, ибо вставка и получение O(1)
+            if(WhiteListedPlayers.ContainsKey(player.UserId))
                 return false;
+
+            var values = _playTimeTracking.GetTrackerTimes(player);
+            var moreThan30 = values.Where(timeSpan => timeSpan.Value.TotalHours >= 30);
+            if (moreThan30.Count() > 0)
+            {
+                WhiteListedPlayers[player.UserId] = true;
+                return false;
+            }
 
             if (!LastSaysTable.ContainsKey(player))
             {
