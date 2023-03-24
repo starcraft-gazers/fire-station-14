@@ -76,7 +76,7 @@ namespace Content.Server.StationEvents.Events
             if (!HasComp<StationDataComponent>(_trgStation) ||
                 !_shuttle.IsValid() ||
                 !HasComp<ShuttleComponent>(_shuttle)) return;
-            _shuttleSystem.TryFTLDock(Comp<ShuttleComponent>(_shuttle), _station.GetLargestGrid(Comp<StationDataComponent>(_trgStation)).GetValueOrDefault());
+            _shuttleSystem.TryFTLDock(_shuttle, Comp<ShuttleComponent>(_shuttle), _station.GetLargestGrid(Comp<StationDataComponent>(_trgStation)).GetValueOrDefault());
             _audioSystem.PlayGlobal("/Audio/Effects/Shuttle/shuttle_impact3.ogg", Filter.BroadcastMap(_targetmap), false);
             _mapManager.SetMapPaused(_shuttlemap, true);
         }

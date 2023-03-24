@@ -27,6 +27,7 @@ namespace Content.Server.Administration.Commands
             var plyMgr = IoCManager.Resolve<IPlayerManager>();
             var locator = IoCManager.Resolve<IPlayerLocator>();
             var dbMan = IoCManager.Resolve<IServerDbManager>();
+            var entityManager = IoCManager.Resolve<IEntityManager>();
 
             string target;
             string reason;
@@ -114,7 +115,7 @@ namespace Content.Server.Administration.Commands
                 targetPlayer.ConnectedClient.Disconnect(message);
             }
             var admin = shell.Player;
-            RaiseLocalEvent(new BanEvent(target, expires, reason, admin is null ? null : admin.Name));
+            entityManager.EventBus.RaiseEvent(EventSource.Local, new BanEvent(target, expires, reason, admin is null ? null : admin.Name));
         }
 
         public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
