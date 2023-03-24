@@ -113,6 +113,7 @@ public sealed class SecretObjectResearch : IStationGoalScript
             {
                 var shuttleComponent = entityManager.EnsureComponent<ShuttleComponent>(ShuttleUid);
                 shuttleSystem.TryFTLDock(
+                    shuttleUid: ShuttleUid,
                     component: shuttleComponent,
                     targetUid: target
                 );
@@ -147,6 +148,7 @@ public sealed class SecretObjectResearch : IStationGoalScript
             {
                 var shuttleComponent = entityManager.EnsureComponent<ShuttleComponent>(ShuttleUid);
                 shuttleSystem.FTLTravel(
+                    shuttleUid: ShuttleUid,
                     component: shuttleComponent,
                     target: mapManager.GetMapEntityId(MapId),
                     startupTime: 30,
