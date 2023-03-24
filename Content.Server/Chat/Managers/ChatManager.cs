@@ -5,6 +5,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Mind.Components;
 using Content.Server.MoMMI;
+using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration;
@@ -43,7 +44,7 @@ namespace Content.Server.Chat.Managers
         [Dependency] private readonly IConfigurationManager _configurationManager = default!;
         [Dependency] private readonly INetConfigurationManager _netConfigManager = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
-
+        [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
         /// <summary>
         /// The maximum length a player-sent message can be sent
         /// </summary>
@@ -264,6 +265,9 @@ namespace Content.Server.Chat.Managers
         ///
         public bool IsFlooding(IPlayerSession player)
         {
+            var value = _playTimeTracking.GetOverallPlaytime(player);
+            if (value.Hours >= 30)
+                return false;
 
             if (!LastSaysTable.ContainsKey(player))
             {
