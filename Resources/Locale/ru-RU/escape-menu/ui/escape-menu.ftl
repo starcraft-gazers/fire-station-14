@@ -1,6 +1,6 @@
 ### EscapeMenu.xaml
 
-ui-escape-title = Меню
+ui-escape-title = Esc Меню
 ui-escape-options = Настройки
 ui-escape-rules = Правила
 ui-escape-guidebook = Руководство
