@@ -95,6 +95,17 @@
     - BasicStationEventScheduler
 
 - type: gamePreset
+  id: SyndicateWar
+  alias:
+    - syndicateWar
+  name: syndicatewar-title
+  description: syndicatewar-description
+  showInVote: false
+  rules:
+    - SyndicateWar
+    - BasicStationEventScheduler
+
+- type: gamePreset
   id: Zombie
   alias:
     - zombie
