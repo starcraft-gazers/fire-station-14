@@ -39,11 +39,11 @@ namespace Content.Server.SCP
         {
             base.Started();
 
-            // if (!_scpSys.IsSCPBreakoutActive)
-            // {
-            //     ForceEndSelf();
-            //     return;
-            // }
+            if (!_scpSys.IsSCPBreakoutActive)
+            {
+                ForceEndSelf();
+                return;
+            }
 
             var targetmap = GameTicker.DefaultMap;
 
