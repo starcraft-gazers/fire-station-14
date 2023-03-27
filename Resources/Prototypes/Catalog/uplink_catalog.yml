@@ -128,7 +128,7 @@
   description: uplink-c4-desc
   productEntity: C4
   cost:
-    Telecrystal: 4
+    Telecrystal: 8
   categories:
   - UplinkExplosives
 
