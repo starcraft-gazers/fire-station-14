@@ -102,7 +102,7 @@ def build(skip_build: bool) -> None:
         ], check=True)
 
         if os.path.exists(p("FireStation", "Content.FireStationClient")):
-            print(Fore.BLUE + f"FireStation founded. \n\n\n\n\n\n\n\n\n\n\n Building FireStation project for {platform.rid}..." + Style.RESET_ALL)
+            print(Fore.BLUE + f"FireStation founded. \n\n\n\n\n\n\n\n\n\n\n Building FireStationClient Project" + Style.RESET_ALL)
             subprocess.run([
                 "dotnet",
                 "build",
