@@ -127,6 +127,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Content.FireStationServer",
 		{B38DBBD0-04C2-4D1A-84E2-B3446F6ADF2A} = {B38DBBD0-04C2-4D1A-84E2-B3446F6ADF2A}
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Content.FireStationClient", "FireStation\Content.FireStationClient\Content.FireStationClient.csproj", "{2E793D47-8648-4EAE-9788-6ABF0BAF3984}"
+    	ProjectSection(ProjectDependencies) = postProject
+		{A2E5F175-78AF-4DDD-8F97-E2D2552372ED} = {A2E5F175-78AF-4DDD-8F97-E2D2552372ED}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -414,6 +419,14 @@ Global
 		{C26B36E2-E0F0-4778-AD79-2E609990E547}.DebugOpt|Any CPU.Build.0 = Debug|Any CPU
 		{C26B36E2-E0F0-4778-AD79-2E609990E547}.Tools|Any CPU.ActiveCfg = Release|Any CPU
 		{C26B36E2-E0F0-4778-AD79-2E609990E547}.Tools|Any CPU.Build.0 = Release|Any CPU
+		{2E793D47-8648-4EAE-9788-6ABF0BAF3984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E793D47-8648-4EAE-9788-6ABF0BAF3984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E793D47-8648-4EAE-9788-6ABF0BAF3984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E793D47-8648-4EAE-9788-6ABF0BAF3984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E793D47-8648-4EAE-9788-6ABF0BAF3984}.DebugOpt|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E793D47-8648-4EAE-9788-6ABF0BAF3984}.DebugOpt|Any CPU.Build.0 = Debug|Any CPU
+		{2E793D47-8648-4EAE-9788-6ABF0BAF3984}.Tools|Any CPU.ActiveCfg = Release|Any CPU
+		{2E793D47-8648-4EAE-9788-6ABF0BAF3984}.Tools|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

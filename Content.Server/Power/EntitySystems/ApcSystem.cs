@@ -20,7 +20,8 @@ using Robust.Shared.Timing;
 namespace Content.Server.Power.EntitySystems
 {
     [UsedImplicitly]
-    internal sealed class ApcSystem : EntitySystem
+    //public is hotfix, sorry :)
+    public sealed class ApcSystem : EntitySystem
     {
         [Dependency] private readonly AccessReaderSystem _accessReader = default!;
         [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
