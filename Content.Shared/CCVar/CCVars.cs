@@ -1564,5 +1564,11 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<bool> ERTEnabled =
             CVarDef.Create("ert.enabled", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> UseAntagManager =
+            CVarDef.Create("antag.use_antag_manager", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> MinTimeToPlayAntag =
+            CVarDef.Create("antag.min_time_to_play_antag", 1200, CVar.SERVERONLY);
     }
 }

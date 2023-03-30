@@ -36,6 +36,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly UplinkSystem _uplink = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly IAntagManager _antagManager = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -139,7 +140,8 @@ public sealed class TraitorRuleSystem : GameRuleSystem
         var numTraitors = MathHelper.Clamp(_startCandidates.Count / _playersPerTraitor, 1, _maxTraitors);
         var codewordCount = _cfg.GetCVar(CCVars.TraitorCodewordCount);
 
-        var traitorPool = FindPotentialTraitors(_startCandidates);
+        var filteredCandidates = _antagManager.GetPreferedAntags(_startCandidates, numTraitors);
+        var traitorPool = FindPotentialTraitors(filteredCandidates);
         var selectedTraitors = PickTraitors(numTraitors, traitorPool);
 
         foreach (var traitor in selectedTraitors)

@@ -24,11 +24,11 @@
     !type:NukeopsRuleConfiguration
     id: Nukeops
 
-- type: gameRule
-  id: SyndicateWar
-  config:
-    !type:SyndicateWarRuleConfiguration
-    id: SyndicateWar
+# - type: gameRule
+#   id: SyndicateWar
+#   config:
+#     !type:SyndicateWarRuleConfiguration
+#     id: SyndicateWar
 
 - type: gameRule
   id: Pirates
