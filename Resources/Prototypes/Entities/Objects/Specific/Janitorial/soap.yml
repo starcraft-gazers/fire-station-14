@@ -107,7 +107,7 @@
   name: ninja soap
   id: SoapNinja
   parent: Soap
-  description: The most important soap in the entire universe, as without it we would all cease to exist. Smells of honor.
+  description: Самое важное мыло во всей вселенной, без него мы бы все перестали существовать. Запах чести.
   components:
   - type: Item
     heldPrefix: ninja
