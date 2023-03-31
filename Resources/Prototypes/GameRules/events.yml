@@ -80,8 +80,8 @@
     id: SpaceNinjaSpawn
     weight: 10
     endAfter: 1
-    earliestStart: 60
-    minimumPlayers: 15
+    earliestStart: 30
+    minimumPlayers: 70
     objectives:
     - DownloadObjective
     - DoorjackObjective
