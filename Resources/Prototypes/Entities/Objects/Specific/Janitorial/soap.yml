@@ -102,3 +102,18 @@
   - type: StepTrigger
   - type: Item
     heldPrefix: omega
+
+- type: entity
+  name: ninja soap
+  id: SoapNinja
+  parent: Soap
+  description: Самое важное мыло во всей вселенной, без него мы бы все перестали существовать. Запах чести.
+  components:
+  - type: Item
+    heldPrefix: ninja
+  # despawn to prevent ninja killing server
+  - type: TimedDespawn
+    lifetime: 60
+  # no holding ninja hostage and forcing him to make infinite money for cargo
+  - type: StaticPrice
+    price: 0

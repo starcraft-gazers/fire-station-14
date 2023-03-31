@@ -70,4 +70,20 @@
       - sprite: Structures/Wallmounts/signs.rsi
         state: radiation
 
-
+- type: entity
+  id: SpawnPointGhostSpaceNinja
+  name: ghost role spawn point
+  suffix: space ninja
+  parent: MarkerBase
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanSpaceNinja
+    name: Космический ниндзя
+    description: Используйте скрытность и обман, чтобы саботировать станцию.
+    rules: Вы элитный наемник клана пауков. Вы обязаны следовать своим целям.
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Weapons/Melee/energykatana.rsi
+      state: icon
