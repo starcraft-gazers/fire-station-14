@@ -73,6 +73,8 @@
     pocket2: HandheldGPSBasic
     belt: EnergyKatana
     suitstorage: YellowOxygenTankFilled
+  inhand:
+    right hand: JetpackBlackFilled
   innerclothingskirt: ClothingUniformJumpskirtColorBlack
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
