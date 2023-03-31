@@ -56,6 +56,7 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
                 }
             }
         }
+
         public void TransferForensics(EntityUid spawned, DestructibleSystem system, EntityUid owner)
         {
             if (!DoTransferForensics ||

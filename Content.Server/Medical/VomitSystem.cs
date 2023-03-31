@@ -53,6 +53,10 @@ namespace Content.Server.Medical
             if (TryComp<DnaComponent>(uid, out var dna))
                 forensics.DNAs.Add(dna.DNA);
 
+            var forensics = EnsureComp<ForensicsComponent>(puddle);
+            if (TryComp<DnaComponent>(uid, out var dna))
+                forensics.DNAs.Add(dna.DNA);
+
             var puddleComp = Comp<PuddleComponent>(puddle);
 
             SoundSystem.Play("/Audio/Effects/Fluids/splat.ogg", Filter.Pvs(uid), uid, AudioHelpers.WithVariation(0.2f).WithVolume(-4f));
