@@ -1583,10 +1583,16 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> ERTEnabled =
             CVarDef.Create("ert.enabled", true, CVar.SERVERONLY);
 
-        public static readonly CVarDef<bool> UseAntagManager =
-            CVarDef.Create("antag.use_antag_manager", true, CVar.SERVERONLY);
+        public static readonly CVarDef<bool> IsAntagsBlockedByTime =
+            CVarDef.Create("antag.is_antags_blocked_by_time", true, CVar.SERVERONLY);
 
         public static readonly CVarDef<int> MinTimeToPlayAntag =
-            CVarDef.Create("antag.min_time_to_play_antag", 1200, CVar.SERVERONLY);
+            CVarDef.Create("antag.min_time_to_play_antag", 1800, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> IsGhostRolesBlockedByTime =
+            CVarDef.Create("antag.is_ghost_roles_blocked_by_time", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> MinTimeToPlayGhostRole =
+            CVarDef.Create("antag.min_time_to_play_ghost_role", 1800, CVar.SERVERONLY);
     }
 }
