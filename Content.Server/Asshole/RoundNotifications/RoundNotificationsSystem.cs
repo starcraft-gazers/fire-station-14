@@ -22,6 +22,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
 
     private string _webhookUrl = String.Empty;
     private string _roleId = String.Empty;
+    private string _prefix = String.Empty;
     private bool _roundStartOnly;
 
     /// <inheritdoc/>
@@ -33,6 +34,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
 
         _config.OnValueChanged(CCVars.DiscordRoundWebhook, value => _webhookUrl = value, true);
         _config.OnValueChanged(CCVars.DiscordRoundRoleId, value => _roleId = value, true);
+        _config.OnValueChanged(CCVars.DiscordRoundPrefix, value => _prefix= value, true);
         _config.OnValueChanged(CCVars.DiscordRoundStartOnly, value => _roundStartOnly = value, true);
 
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("notifications");
@@ -70,7 +72,8 @@ public sealed class RoundNotificationsSystem : EntitySystem
 
         var map = _gameMapManager.GetSelectedMap();
         var mapName = map?.MapName ?? Loc.GetString("discord-round-unknown-map");
-        var text = Loc.GetString("discord-round-start",
+        var text = Loc.GetString("discord-round-start", 
+            ("prefix", _prefix),
             ("id", e.RoundId),
             ("map", mapName));
         var payload = new WebhookPayload() { Content = text };
@@ -84,6 +87,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
             return;
 
         var text = Loc.GetString("discord-round-end",
+            ("prefix", _prefix),
             ("id", e.RoundId),
             ("hours", e.RoundDuration.Hours),
             ("minutes", e.RoundDuration.Minutes),
