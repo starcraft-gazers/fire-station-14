@@ -62,6 +62,7 @@
   - type: GhostRoleMobSpawner
     prototype: MobHumanNukeOp
     rules: You are a syndicate operative tasked with the destruction of the station. As an antagonist, do whatever is required to complete this task.
+    blockedByAntagManager: true
   - type: NukeOperativeSpawner
   - type: Sprite
     sprite: Markers/jobs.rsi
@@ -70,4 +71,21 @@
       - sprite: Structures/Wallmounts/signs.rsi
         state: radiation
 
-
+- type: entity
+  id: SpawnPointGhostSpaceNinja
+  name: ghost role spawn point
+  suffix: space ninja
+  parent: MarkerBase
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanSpaceNinja
+    name: Космический ниндзя
+    description: Используйте скрытность и обман, чтобы саботировать станцию.
+    rules: Вы элитный наемник клана пауков. Вы обязаны следовать своим целям.
+    blockedByAntagManager: true
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Weapons/Melee/energykatana.rsi
+      state: icon

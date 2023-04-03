@@ -1132,16 +1132,22 @@ namespace Content.Shared.CCVar
             CVarDef.Create("shuttle.emergency_authorize_time", 10f, CVar.SERVERONLY);
 
         /// <summary>
-        /// How long after the console is authorized for the shuttle to early launch.
+        /// The minimum time for the emergency shuttle to arrive at centcomm.
         /// </summary>
-        public static readonly CVarDef<float> EmergencyShuttleTransitTime =
-            CVarDef.Create("shuttle.emergency_transit_time", 60f, CVar.SERVERONLY);
+        public static readonly CVarDef<float> EmergencyShuttleMinTransitTime =
+            CVarDef.Create("shuttle.emergency_transit_time_min", 60f, CVar.SERVERONLY);
+
+        /// <summary>
+        /// The maximum time for the emergency shuttle to arrive at centcomm.
+        /// </summary>
+        public static readonly CVarDef<float> EmergencyShuttleMaxTransitTime =
+            CVarDef.Create("shuttle.emergency_transit_time_max", 180f, CVar.SERVERONLY);
 
         /// <summary>
         /// Whether the emergency shuttle is enabled or should the round just end.
         /// </summary>
         public static readonly CVarDef<bool> EmergencyShuttleEnabled =
-            CVarDef.Create("shuttle.emergency_enabled", true, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.emergency", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     The percentage of time passed from the initial call to when the shuttle can no longer be recalled.
@@ -1323,6 +1329,18 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ICNameCase =
             CVarDef.Create("ic.name_case", true, CVar.SERVER | CVar.REPLICATED);
+
+        /// <summary>
+        /// Whether or not players' characters are randomly generated rather than using their selected characters in the creator.
+        /// </summary>
+        public static readonly CVarDef<bool> ICRandomCharacters =
+            CVarDef.Create("ic.random_characters", false, CVar.SERVER);
+
+        /// <summary>
+        /// A weighted random prototype used to determine the species selected for random characters.
+        /// </summary>
+        public static readonly CVarDef<string> ICRandomSpeciesWeights =
+            CVarDef.Create("ic.random_species_weights", "SpeciesWeights", CVar.SERVER);
 
         /*
          * Salvage
@@ -1565,10 +1583,16 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> ERTEnabled =
             CVarDef.Create("ert.enabled", true, CVar.SERVERONLY);
 
-        public static readonly CVarDef<bool> UseAntagManager =
-            CVarDef.Create("antag.use_antag_manager", true, CVar.SERVERONLY);
+        public static readonly CVarDef<bool> IsAntagsBlockedByTime =
+            CVarDef.Create("antag.is_antags_blocked_by_time", true, CVar.SERVERONLY);
 
         public static readonly CVarDef<int> MinTimeToPlayAntag =
-            CVarDef.Create("antag.min_time_to_play_antag", 1200, CVar.SERVERONLY);
+            CVarDef.Create("antag.min_time_to_play_antag", 1800, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> IsGhostRolesBlockedByTime =
+            CVarDef.Create("antag.is_ghost_roles_blocked_by_time", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> MinTimeToPlayGhostRole =
+            CVarDef.Create("antag.min_time_to_play_ghost_role", 1800, CVar.SERVERONLY);
     }
 }

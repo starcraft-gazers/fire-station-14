@@ -214,6 +214,12 @@ namespace Content.Server.Forensics
             {
                 text.AppendLine(fiber);
             }
+            text.AppendLine();
+            text.AppendLine(Loc.GetString("forensic-scanner-interface-dnas"));
+            foreach (var dna in component.DNAs)
+            {
+                text.AppendLine(dna);
+            }
 
             text.AppendLine();
             text.AppendLine(Loc.GetString("forensic-scanner-interface-dnas"));
