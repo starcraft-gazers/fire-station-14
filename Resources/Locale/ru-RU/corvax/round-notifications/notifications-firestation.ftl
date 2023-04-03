@@ -3,5 +3,10 @@ discord-round-start = Раунд #{ $id } на карте "{ $map }" начал�
 discord-round-end = Раунд #{ $id } закончился. Он длился { $hours } ч., { $minutes } мин., и { $seconds } сек.
 discord-round-unknown-map = Неизвестна
 
-discord-ban-msg-admin = Игрок { $username } был забанен администратором { $admin } { $expires } по причине: { $reason }
-discord-ban-msg = Игрок { $username } был забанен { $expires } по причине: { $reason }
+discord-ban-msg-admin = Нарушитель: { $username }
+    Администратор: { $admin }
+    Срок: { $expires }
+    Причина: { $reason }
+discord-ban-msg = Нарушитель: { $username }
+    Срок: { $expires }
+    Причина: { $reason }
