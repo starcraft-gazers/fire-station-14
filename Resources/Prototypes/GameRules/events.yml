@@ -81,7 +81,7 @@
     weight: 10
     endAfter: 1
     earliestStart: 30
-    minimumPlayers: 50
+    minimumPlayers: 40
     maxOccurrences: 1
     objectives:
     - DownloadObjective
