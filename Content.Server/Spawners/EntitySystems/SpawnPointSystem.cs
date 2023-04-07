@@ -31,10 +31,9 @@ public sealed class SpawnPointSystem : EntitySystem
         foreach (var spawnPoint in points)
         {
             var xform = Transform(spawnPoint.Owner);
-            var isOnStation = _stationSystem.GetOwningStation(spawnPoint.Owner, xform) != args.Station;
-            var isOnSCPStation = _scpStationPointSystem.IsSpawnPointAtSCPStation(spawnPoint.Owner);
+            var isOnSCPStation = _scpStationPointSystem.IsSpawnPointAtSCPStation(spawnPoint.Owner, xform);
 
-            if (args.Station != null && (!isOnStation && !isOnSCPStation))
+            if (args.Station != null && _stationSystem.GetOwningStation(spawnPoint.Owner, xform) != args.Station && !isOnSCPStation)
                 continue;
 
             if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
