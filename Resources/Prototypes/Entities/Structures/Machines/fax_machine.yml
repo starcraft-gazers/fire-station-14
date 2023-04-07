@@ -106,3 +106,12 @@
       name: "Captain's Office"
       receiveNukeCodes: true
       receiveStationGoal: true
+
+- type: entity
+  parent: FaxMachineBase
+  id: FaxMachineSCP
+  name: факс отдела SCP
+  components:
+    - type: FaxMachine
+      name: "Отдел SCP"
+      receiveSCPGoal: true

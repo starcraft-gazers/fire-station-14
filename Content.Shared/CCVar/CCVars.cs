@@ -1596,5 +1596,8 @@ namespace Content.Shared.CCVar
             CVarDef.Create("antag.min_time_to_play_ghost_role", 1800, CVar.SERVERONLY);
         public static readonly CVarDef<string> DiscordRoundPrefix =
             CVarDef.Create("discord.round_prefix", string.Empty, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> MinPlayersForSCP =
+            CVarDef.Create("scp.min_players_for_scp", 35, CVar.SERVERONLY);
     }
 }

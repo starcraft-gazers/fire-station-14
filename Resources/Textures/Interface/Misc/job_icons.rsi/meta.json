@@ -144,6 +144,12 @@
         },
         {
             "name": "BrigMedic"
+        },
+        {
+            "name": "SCPScientist"
+        },
+        {
+            "name": "SCPSecurity"
         }
     ]
 }

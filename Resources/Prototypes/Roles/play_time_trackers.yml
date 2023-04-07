@@ -135,3 +135,9 @@
 
 - type: playTimeTracker
   id: JobBrigMedic
+
+- type: playTimeTracker
+  id: JobSCPScientist
+
+- type: playTimeTracker
+  id: JobSCPSecurity

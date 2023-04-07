@@ -120,6 +120,9 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("stationGoal");
+            _prototypeManager.RegisterIgnore("CentralCommandFaxPrototype");
+            _prototypeManager.RegisterIgnore("SCPStationPrototype");
+            _prototypeManager.RegisterIgnore("ERTShuttle");
             _prototypeManager.RegisterIgnore("flavor");
 
             _componentFactory.GenerateNetIds();

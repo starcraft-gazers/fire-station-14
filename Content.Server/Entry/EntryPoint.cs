@@ -33,6 +33,7 @@ using Robust.Shared.Utility;
 using Content.Server.Station.Systems;
 using Content.Shared.Localizations;
 using Content.Server.Roles;
+using Content.Server.Spawners.EntitySystems;
 
 namespace Content.Server.Entry
 {
@@ -122,6 +123,7 @@ namespace Content.Server.Entry
             IoCManager.Resolve<IChatSanitizationManager>().Initialize();
             IoCManager.Resolve<IChatManager>().Initialize();
             IoCManager.Resolve<IAntagManager>().Initialize();
+            IoCManager.Resolve<ISCPStationPointSystem>().Initialize();
             var configManager = IoCManager.Resolve<IConfigurationManager>();
             var resourceManager = IoCManager.Resolve<IResourceManager>();
             var dest = configManager.GetCVar(CCVars.DestinationFile);
