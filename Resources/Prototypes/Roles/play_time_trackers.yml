@@ -141,3 +141,9 @@
 
 - type: playTimeTracker
   id: JobSCPSecurity
+
+- type: playTimeTracker
+  id: JobSCPHead
+
+- type: playTimeTracker
+  id: JobSCPDClass

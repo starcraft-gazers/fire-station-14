@@ -73,6 +73,7 @@
     - Security
     - Service
     - Supply
+    - SCP
     defaultChannel: Command
   - type: Sprite
     layers:
