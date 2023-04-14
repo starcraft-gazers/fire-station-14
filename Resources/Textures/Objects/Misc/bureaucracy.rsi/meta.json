@@ -109,6 +109,9 @@
       "name": "paper_stamp-cent"
     },
     {
+      "name": "paper_stamp-scp"
+    },
+    {
       "name": "paper_stamp-chaplain"
     },
     {
@@ -292,6 +295,9 @@
     },
     {
       "name": "stamp-warden"
+    },
+    {
+      "name": "stamp-scp"
     },
     {
       "name": "clipboard-equipped-BELT",

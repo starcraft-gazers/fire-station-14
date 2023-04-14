@@ -557,3 +557,15 @@
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     state: stamp-ce
+
+- type: entity
+  name: Печать главы отдела SCP
+  parent: RubberStampMime
+  id: RubberStampSCP
+  components:
+  - type: Stamp
+    stampedName: SCP
+    stampState: "paper_stamp-scp"
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: stamp-scp

@@ -70,6 +70,8 @@ namespace Content.Shared.Access.Components
             "Security",
             "Service",
             "Theatre",
+            "SCP",
+            "SCPCommand"
         };
 
         [Serializable, NetSerializable]
