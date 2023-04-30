@@ -114,7 +114,8 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         }
 
         var numTraitors = MathHelper.Clamp(component.StartCandidates.Count / PlayersPerTraitor, 1, MaxTraitors);
-        var traitorPool = FindPotentialTraitors(component.StartCandidates, component);
+        var filteredCandidates = _antagManager.GetPreferedAntags(component.StartCandidates, numTraitors);
+        var traitorPool = FindPotentialTraitors(filteredCandidates, component);
         var selectedTraitors = PickTraitors(numTraitors, traitorPool);
 
         foreach (var traitor in selectedTraitors)

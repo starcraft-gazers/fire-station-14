@@ -9,7 +9,7 @@ using Content.Server.Mind.Components;
 using Content.Server.NPC.Systems;
 using Content.Server.Nuke;
 using Content.Server.Preferences.Managers;
-// using Content.Server.Roles;
+using Content.Server.Roles;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
@@ -53,7 +53,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
-    // [Dependency] private readonly IAntagManager _antagManager = default!;
+    [Dependency] private readonly IAntagManager _antagManager = default!;
 
     public override void Initialize()
     {
@@ -437,6 +437,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             }
 
             var numNukies = MathHelper.Clamp(ev.PlayerPool.Count / playersPerOperative, 1, maxOperatives);
+            prefList = _antagManager.GetPreferedAntags(prefList, numNukies);
 
             for (var i = 0; i < numNukies; i++)
             {

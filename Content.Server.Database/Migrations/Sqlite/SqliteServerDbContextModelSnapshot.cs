@@ -415,6 +415,48 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("job", (string)null);
                 });
 
+             modelBuilder.Entity("Content.Server.Database.PatronItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("patron_item_id");
+
+                    b.Property<string>("ItemClass")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("item_class");
+
+                    b.Property<Guid>("PatronId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("patron_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_patron_item");
+
+                    b.HasIndex("PatronId", "ItemClass")
+                        .IsUnique();
+
+                    b.ToTable("patron_item", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.Patronlist", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("UserId")
+                        .HasName("PK_patronlist");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("patronlist", (string)null);
+                });
+
+
             modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
                 {
                     b.Property<int>("Id")

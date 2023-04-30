@@ -8,9 +8,9 @@ namespace Content.Server.Database.Migrations.Postgres
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropIndex(
-                name: "IX_trait_profile_id",
-                table: "trait");
+            // migrationBuilder.DropIndex(
+            //     name: "IX_trait_profile_id",
+            //     table: "trait");
 
             migrationBuilder.CreateIndex(
                 name: "IX_trait_profile_id_trait_name",
@@ -25,10 +25,10 @@ namespace Content.Server.Database.Migrations.Postgres
                 name: "IX_trait_profile_id_trait_name",
                 table: "trait");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_trait_profile_id",
-                table: "trait",
-                column: "profile_id");
+            // migrationBuilder.CreateIndex(
+            //     name: "IX_trait_profile_id",
+            //     table: "trait",
+            //     column: "profile_id");
         }
     }
 }
