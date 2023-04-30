@@ -269,8 +269,6 @@ public sealed class DoorSystem : SharedDoorSystem
             {
                 SetState(uid, DoorState.Emagging, door);
                 PlaySound(uid, door.SparkSound, AudioParams.Default.WithVolume(8), args.UserUid, false);
-                var emagged = new DoorEmaggedEvent(args.UserUid);
-                RaiseLocalEvent(uid, ref emagged);
                 args.Handled = true;
             }
         }
@@ -304,4 +302,3 @@ public sealed class DoorSystem : SharedDoorSystem
         }
     }
 }
-
