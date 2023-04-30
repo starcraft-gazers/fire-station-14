@@ -16,12 +16,17 @@
     attributes:
       gender: female
       proper: true
+  - type: CanEscapeInventory
+  - type: Puller
+    needsHands: false
   - type: Tag
     tags:
       - DoorBumpOpener
   - type: Access
     tags:
     - Chapel
+  - type: Item
+    size: 5
   - type: Mind
     showExamineInfo: true
   - type: Alerts

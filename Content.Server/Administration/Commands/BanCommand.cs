@@ -2,8 +2,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using Content.Server.Construction.Completions;
 using Content.Server.Database;
+using Content.Server.StationEvents;
 using Content.Shared.Administration;
+using Content.Shared.GameTicking;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
@@ -24,6 +27,7 @@ namespace Content.Server.Administration.Commands
             var plyMgr = IoCManager.Resolve<IPlayerManager>();
             var locator = IoCManager.Resolve<IPlayerLocator>();
             var dbMan = IoCManager.Resolve<IServerDbManager>();
+            var entityManager = IoCManager.Resolve<IEntityManager>();
 
             string target;
             string reason;
@@ -110,6 +114,8 @@ namespace Content.Server.Administration.Commands
                 var message = banDef.FormatBanMessage(_cfg, LocalizationManager);
                 targetPlayer.ConnectedClient.Disconnect(message);
             }
+            var admin = shell.Player;
+            entityManager.EventBus.RaiseEvent(EventSource.Local, new BanEvent(target, expires, reason, admin is null ? null : admin.Name));
         }
 
         public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)

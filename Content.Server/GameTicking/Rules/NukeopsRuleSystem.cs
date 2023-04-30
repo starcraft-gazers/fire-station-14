@@ -32,6 +32,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server.Roles;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -53,6 +54,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
     [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
+    [Dependency] private readonly IAntagManager _antagManager = default!;
 
 
     private enum WinType
@@ -112,7 +114,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
             }
         }
     }
-    private List<WinCondition> _winConditions = new ();
+    private List<WinCondition> _winConditions = new();
 
     private MapId? _nukiePlanet;
 
@@ -129,7 +131,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
     /// <summary>
     ///     Cached starting gear prototypes.
     /// </summary>
-    private readonly Dictionary<string, StartingGearPrototype> _startingGearPrototypes = new ();
+    private readonly Dictionary<string, StartingGearPrototype> _startingGearPrototypes = new();
 
     /// <summary>
     ///     Cached operator name prototypes.
@@ -184,7 +186,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
 
     private void OnNukeExploded(NukeExplodedEvent ev)
     {
-    	if (!RuleAdded)
+        if (!RuleAdded)
             return;
 
         if (ev.OwningStation != null)
@@ -458,7 +460,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
 
     private void OnMobStateChanged(EntityUid uid, NukeOperativeComponent component, MobStateChangedEvent ev)
     {
-        if(ev.NewMobState == MobState.Dead)
+        if (ev.NewMobState == MobState.Dead)
             CheckRoundShouldEnd();
     }
 
@@ -502,6 +504,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
         }
 
         var numNukies = MathHelper.Clamp(ev.PlayerPool.Count / playersPerOperative, 1, maxOperatives);
+        prefList = _antagManager.GetPreferedAntags(prefList, numNukies);
 
         for (var i = 0; i < numNukies; i++)
         {
@@ -560,7 +563,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
 
         SpawnOperatives(numNukies, operatives, false);
 
-        foreach(var session in operatives)
+        foreach (var session in operatives)
         {
             ev.PlayerPool.Remove(session);
             GameTicker.PlayerJoinGame(session);
@@ -663,7 +666,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
         _nukieOutpost = outpostGrids[0];
 
         // Listen I just don't want it to overlap.
-        if (!_map.TryLoad(mapId, shuttlePath.ToString(), out var grids, new MapLoadOptions {Offset = Vector2.One*1000f}) || !grids.Any())
+        if (!_map.TryLoad(mapId, shuttlePath.ToString(), out var grids, new MapLoadOptions { Offset = Vector2.One * 1000f }) || !grids.Any())
         {
             Logger.ErrorS("nukies", $"Error loading grid {shuttlePath} for nukies!");
             return false;
@@ -767,7 +770,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem
         }
 
         // TODO: This should spawn the nukies in regardless and transfer if possible; rest should go to shot roles.
-        for(var i = 0; i < spawnCount; i++)
+        for (var i = 0; i < spawnCount; i++)
         {
             var spawnDetails = GetOperativeSpawnDetails(i);
             var nukeOpsAntag = _prototypeManager.Index<AntagPrototype>(spawnDetails.Role);

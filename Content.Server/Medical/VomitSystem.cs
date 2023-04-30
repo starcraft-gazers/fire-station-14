@@ -52,7 +52,6 @@ namespace Content.Server.Medical
                 _stun.TrySlowdown(uid, TimeSpan.FromSeconds(solutionSize), true, 0.5f, 0.5f, status);
 
             var puddle = EntityManager.SpawnEntity("PuddleVomit", Transform(uid).Coordinates);
-
             var forensics = EnsureComp<ForensicsComponent>(puddle);
             if (TryComp<DnaComponent>(uid, out var dna))
                 forensics.DNAs.Add(dna.DNA);

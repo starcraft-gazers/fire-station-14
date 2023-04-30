@@ -219,6 +219,13 @@ namespace Content.Server.Forensics
                 text.AppendLine(dna);
             }
 
+            text.AppendLine();
+            text.AppendLine(Loc.GetString("forensic-scanner-interface-dnas"));
+            foreach (var dna in component.DNAs)
+            {
+                text.AppendLine(dna);
+            }
+
             _paperSystem.SetContent(printed, text.ToString());
             _audioSystem.PlayPvs(component.SoundPrint, uid,
                 AudioParams.Default

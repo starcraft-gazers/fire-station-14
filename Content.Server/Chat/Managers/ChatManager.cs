@@ -1,9 +1,11 @@
 using System.Linq;
+using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Mind.Components;
 using Content.Server.MoMMI;
+using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
 using Content.Server.Station.Systems;
 using Content.Shared.Administration;
@@ -42,7 +44,7 @@ namespace Content.Server.Chat.Managers
         [Dependency] private readonly IConfigurationManager _configurationManager = default!;
         [Dependency] private readonly INetConfigurationManager _netConfigManager = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
-
+        [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
         /// <summary>
         /// The maximum length a player-sent message can be sent
         /// </summary>
@@ -161,6 +163,11 @@ namespace Content.Server.Chat.Managers
                 return;
             }
 
+            if (IsFlooding(player))
+            return;
+
+            UpdateLastSay(player, DateTimeOffset.Now.ToUnixTimeSeconds());
+
             switch (type)
             {
                 case OOCChatType.OOC:
@@ -241,9 +248,62 @@ namespace Content.Server.Chat.Managers
 
         #region Utility
 
-        public void ChatMessageToOne(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat, INetChannel client, Color? colorOverride = null, bool recordReplay = false, string? audioPath = null, float audioVolume = 0)
+        // flood protect
+        private Dictionary<IPlayerSession, long> LastSaysTable = new Dictionary<IPlayerSession, long>();
+        private Dictionary<NetUserId, bool> WhiteListedPlayers = new Dictionary<NetUserId, bool>();
+
+        private void SendFloodAlert(IPlayerSession player)
         {
-            var msg = new ChatMessage(channel, message, wrappedMessage, source, hideChat, colorOverride, audioPath, audioVolume);
+            var message = Loc.GetString("chat-manager-flood-message",
+                ("delay", 3 - (DateTimeOffset.Now.ToUnixTimeSeconds() - LastSaysTable[player])));
+
+            ChatMessageToOne(ChatChannel.Local, "", message, EntityUid.Invalid, false, player.ConnectedClient);
+        }
+
+        /// <summary>
+        ///     Returns true if the given player is flooding.
+        /// </summary>
+        ///
+        public bool IsFlooding(IPlayerSession player)
+        {
+            //Осознанно используем HashMap, ибо вставка и получение O(1)
+            if(WhiteListedPlayers.ContainsKey(player.UserId))
+                return false;
+
+            var values = _playTimeTracking.GetTrackerTimes(player);
+            var moreThan30 = values.Where(timeSpan => timeSpan.Value.TotalHours >= 30);
+            if (moreThan30.Count() > 0)
+            {
+                WhiteListedPlayers[player.UserId] = true;
+                return false;
+            }
+
+            if (!LastSaysTable.ContainsKey(player))
+            {
+                LastSaysTable[player] = 0;
+            }
+
+            bool result = LastSaysTable[player] + 3 > DateTimeOffset.Now.ToUnixTimeSeconds();
+
+            if (result)
+                SendFloodAlert(player);
+
+            return result;
+        }
+
+        public void UpdateLastSay(IPlayerSession player, long time)
+        {
+            if(!LastSaysTable.ContainsKey(player))
+            {
+                LastSaysTable[player] = 0;
+            }
+
+            LastSaysTable[player] = time;
+        }
+
+        public void ChatMessageToOne(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat, INetChannel client, Color? colorOverride = null, bool recordReplay = false, string? audioPath = null, float audioVolume = 0, string? entityName = null, Color? entityColor = null)
+        {
+            var msg = new ChatMessage(channel, message, wrappedMessage, source, hideChat, colorOverride, audioPath, audioVolume, entityName, entityColor);
             _netManager.ServerSendMessage(new MsgChatMessage() { Message = msg }, client);
 
             if (recordReplay)

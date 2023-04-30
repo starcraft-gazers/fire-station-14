@@ -472,10 +472,10 @@
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-approved
-    stampState: "paper_stamp-iaa"
+    stampState: "paper_stamp-approve" # Corvax-Resprite: Use correct state
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
-    state: stamp-iaa
+    state: stamp-approve # Corvax-Resprite
 
 - type: entity
   name: head of personnel's rubber stamp
@@ -572,3 +572,15 @@
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     state: stamp-ce
+
+- type: entity
+  name: Печать главы отдела SCP
+  parent: RubberStampMime
+  id: RubberStampSCP
+  components:
+  - type: Stamp
+    stampedName: SCP
+    stampState: "paper_stamp-scp"
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: stamp-scp

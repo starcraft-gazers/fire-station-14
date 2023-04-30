@@ -135,3 +135,15 @@
 
 - type: playTimeTracker
   id: JobZookeeper
+
+- type: playTimeTracker
+  id: JobSCPScientist
+
+- type: playTimeTracker
+  id: JobSCPSecurity
+
+- type: playTimeTracker
+  id: JobSCPHead
+
+- type: playTimeTracker
+  id: JobSCPDClass

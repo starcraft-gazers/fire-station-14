@@ -481,6 +481,49 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("play_time", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.PatronItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("patron_item_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ItemClass")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("item_class");
+
+                    b.Property<Guid>("PatronId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("patron_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_patron_item");
+
+                    b.HasIndex("PatronId", "ItemClass")
+                        .IsUnique();
+
+                    b.ToTable("patron_item", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.Patronlist", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("UserId")
+                        .HasName("PK_patronlist");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("patronlist", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Player", b =>
                 {
                     b.Property<int>("Id")
@@ -1185,6 +1228,18 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.PatronItem", b =>
+                {
+                    b.HasOne("Content.Server.Database.Patronlist", "Patron")
+                        .WithMany("Items")
+                        .HasForeignKey("PatronId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_patron_item_patronlist_patron_id");
+
+                    b.Navigation("Patron");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Profile", b =>
                 {
                     b.HasOne("Content.Server.Database.Preference", "Preference")
@@ -1305,6 +1360,11 @@ namespace Content.Server.Database.Migrations.Postgres
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
                     b.Navigation("BanHits");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.Patronlist", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Player", b =>

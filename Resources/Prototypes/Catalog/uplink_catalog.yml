@@ -103,7 +103,7 @@
   description: uplink-mini-bomb-desc
   productEntity: SyndieMiniBomb
   cost:
-    Telecrystal: 6
+    Telecrystal: 9
   categories:
     - UplinkExplosives
 
@@ -113,7 +113,7 @@
   description: uplink-penguin-grenade-desc
   productEntity: MobGrenadePenguin
   cost:
-    Telecrystal: 5
+    Telecrystal: 7
   categories:
     - UplinkExplosives
   conditions:
@@ -128,7 +128,7 @@
   description: uplink-c4-desc
   productEntity: C4
   cost:
-    Telecrystal: 4
+    Telecrystal: 8
   categories:
   - UplinkExplosives
 

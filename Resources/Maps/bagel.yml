@@ -6254,6 +6254,11 @@ entities:
           3468: 40.191223,-44.621067
       - node:
           cleanable: True
+          color: '#B02E26FF'
+          id: beepsky
+        decals:
+          2693: -51.97618,-34.20235
+      - node:
           color: '#FFFFFFFF'
           id: guy
         decals:

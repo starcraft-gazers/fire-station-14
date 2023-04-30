@@ -289,6 +289,30 @@ namespace Content.Shared.CCVar
          * Discord
          */
 
+         // <summary>
+         /// URL of the discord webhook which will relay all bans messages
+         // </summary>
+         public static readonly CVarDef<string> DiscordBanWebhook =
+            CVarDef.Create("discord.bans_webhook", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        /// URL of the Discord webhook which will relay all round messages.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordRoundWebhook =
+            CVarDef.Create("discord.round_webhook", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Discord ID of role which will be pinged on new round start message.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordRoundRoleId =
+            CVarDef.Create("discord.round_roleid", string.Empty, CVar.SERVERONLY);
+
+        /// <summary>
+        /// Send notifications only about a new round begins.
+        /// </summary>
+        public static readonly CVarDef<bool> DiscordRoundStartOnly =
+            CVarDef.Create("discord.round_start_only", false, CVar.SERVERONLY);
+
         /// <summary>
         /// URL of the Discord webhook which will relay all ahelp messages.
         /// </summary>
@@ -1563,5 +1587,25 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ConfigPresetDebug =
             CVarDef.Create("config.preset_debug", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> ERTEnabled =
+            CVarDef.Create("ert.enabled", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> IsAntagsBlockedByTime =
+            CVarDef.Create("antag.is_antags_blocked_by_time", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> MinTimeToPlayAntag =
+            CVarDef.Create("antag.min_time_to_play_antag", 1800, CVar.SERVERONLY);
+
+        public static readonly CVarDef<bool> IsGhostRolesBlockedByTime =
+            CVarDef.Create("antag.is_ghost_roles_blocked_by_time", true, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> MinTimeToPlayGhostRole =
+            CVarDef.Create("antag.min_time_to_play_ghost_role", 1800, CVar.SERVERONLY);
+        public static readonly CVarDef<string> DiscordRoundPrefix =
+            CVarDef.Create("discord.round_prefix", string.Empty, CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> MinPlayersForSCP =
+            CVarDef.Create("scp.min_players_for_scp", 35, CVar.SERVERONLY);
     }
 }

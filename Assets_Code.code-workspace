@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "Content.Client"
+		},
+		{
+			"path": "Content.Server"
+		},
+		{
+			"path": "Content.Shared"
+		},
+		{
+			"path": "RobustToolbox"
+		},
+		{
+			"path": "Content.Server.Database"
+		},
+		{
+			"path": "Content.Shared.Database"
+		}
+	]
+}

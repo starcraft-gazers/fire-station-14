@@ -25,7 +25,6 @@ namespace Content.Server.Forensics
         /// </summary>
         [ViewVariables(VVAccess.ReadOnly)]
         public List<string> DNAs = new();
-
         /// <summary>
         /// What is the name of the entity that was scanned last?
         /// </summary>

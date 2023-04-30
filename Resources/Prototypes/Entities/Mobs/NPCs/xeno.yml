@@ -124,6 +124,8 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
+  - type: GhostTakeoverAvailable
+    name: Ксено Преторианец
   - type: MobState
     allowedStates:
       - Alive
@@ -131,12 +133,12 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      75: Dead
+      500: Dead
   - type: Stamina
-    excess: 300
+    excess: 500
   - type: SlowOnDamage
     speedModifierThresholds:
-      250: 0.7
+      350: 0.7
   - type: Fixtures
     fixtures:
     - shape:
@@ -160,6 +162,8 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
+  - type: GhostTakeoverAvailable
+    name: Ксено Дрон
   - type: MobState
     allowedStates:
       - Alive
@@ -193,6 +197,7 @@
   parent: MobXeno
   id: MobXenoQueen
   components:
+  - type: XenoQueen
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/Xenos/queen.rsi
@@ -200,6 +205,9 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
+  - type: GhostTakeoverAvailable
+    name: Ксено Королева
+    description: Вы Королева ксеносов, остовайтесь в живых, порождайте рой и убейте весь экипаж!
   - type: MobState
     allowedStates:
       - Alive
@@ -244,6 +252,8 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
+  - type: GhostTakeoverAvailable
+    name: Ксено Опустошитель
   - type: MobState
     allowedStates:
       - Alive
@@ -288,6 +298,8 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
+  - type: GhostTakeoverAvailable
+    name: Ксено Бегун
   - type: MobState
     allowedStates:
       - Alive
@@ -339,6 +351,8 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: running
+  - type: GhostTakeoverAvailable
+    name: Ксено Плевальщик
   - type: MobState
     allowedStates:
       - Alive
@@ -445,3 +459,50 @@
         Base: dead_small_purple_snake
   - type: SolutionTransfer
     maxTransferAmount: 1
+
+# = = = = = = = = = =
+
+- type: entity
+  name: Спавнер Ксено-Королевы
+  id: SpawnMobXenoQueen
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Mobs/Aliens/Xenos/queen.rsi
+        state: running
+  - type: ConditionalSpawner
+    prototypes:
+      - MobXenoQueen
+
+- type: entity
+  name: Спавнер Ксено Особый
+  id: SpawnMobXenoSpecial
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Mobs/Aliens/Xenos/praetorian.rsi
+        state: running
+  - type: ConditionalSpawner
+    prototypes:
+      - MobXenoRavager
+      - MobXenoPraetorian
+
+- type: entity
+  name: Спавнер Ксено Обычный
+  id: SpawnMobXenoGeneric
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Mobs/Aliens/Xenos/drone.rsi
+        state: running
+  - type: ConditionalSpawner
+    prototypes:
+      - MobXenoDrone
+      - MobXenoRunner
+      - MobXenoSpitter

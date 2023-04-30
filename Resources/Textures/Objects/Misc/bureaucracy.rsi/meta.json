@@ -109,6 +109,9 @@
       "name": "paper_stamp-cent"
     },
     {
+      "name": "paper_stamp-scp"
+    },
+    {
       "name": "paper_stamp-chaplain"
     },
     {
@@ -119,6 +122,9 @@
     },
     {
       "name": "paper_stamp-deny"
+    },
+    {
+      "name": "paper_stamp-approve"
     },
     {
       "name": "paper_stamp-hop"
@@ -219,7 +225,7 @@
     {
       "name": "pen_hop"
     },
-    {
+	{
       "name": "overpriced_pen"
     },
     {
@@ -264,6 +270,9 @@
       "name": "stamp-deny"
     },
     {
+      "name": "stamp-approve"
+    },
+    {
       "name": "stamp-hop"
     },
     {
@@ -289,6 +298,9 @@
     },
     {
       "name": "stamp-warden"
+    },
+    {
+      "name": "stamp-scp"
     },
     {
       "name": "clipboard-equipped-BELT",

@@ -38,6 +38,7 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { ":>", "chatsan-grins" },
         { ":<", "chatsan-pouts" },
         { "xD", "chatsan-laughs" },
+        { "хд", "chatsan-laughs" },
         { ";-;", "chatsan-cries" },
         { ";_;", "chatsan-cries" },
         { "qwq", "chatsan-cries" },
@@ -50,25 +51,40 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
         { ":b", "chatsan-stick-out-tongue" },
         { "0-0", "chatsan-wide-eyed" },
         { "o-o", "chatsan-wide-eyed" },
+        { "о-о", "chatsan-wide-eyed" }, // cyrillic о
         { "o.o", "chatsan-wide-eyed" },
+        { "о.о", "chatsan-wide-eyed" }, // cyrillic о
         { "._.", "chatsan-surprised" },
         { ".-.", "chatsan-confused" },
         { "-_-", "chatsan-unimpressed" },
         { "o/", "chatsan-waves" },
+        { "о/", "chatsan-waves" }, // cyrillic о
         { "^^/", "chatsan-waves" },
         { ":/", "chatsan-uncertain" },
         { ":\\", "chatsan-uncertain" },
         { "lmao", "chatsan-laughs" },
         { "lmao.", "chatsan-laughs" },
+        { "лмао", "chatsan-laughs" },
+        { "лмао.", "chatsan-laughs" },
         { "lol", "chatsan-laughs" },
         { "lol.", "chatsan-laughs" },
+        { "лол", "chatsan-laughs" },
+        { "лол.", "chatsan-laughs" },
         { "lel", "chatsan-laughs" },
         { "lel.", "chatsan-laughs" },
+        { "лел", "chatsan-laughs" },
+        { "лел.", "chatsan-laughs" },
         { "kek", "chatsan-laughs" },
         { "kek.", "chatsan-laughs" },
+        { "кек", "chatsan-laughs" },
+        { "кек.", "chatsan-laughs" },
         { "o7", "chatsan-salutes" },
+        { "о7", "chatsan-salutes" }, // cyrillic о
         { ";_;7", "chatsan-tearfully-salutes"},
-        { "idk", "chatsan-shrugs" }
+        { "idk", "chatsan-shrugs" },
+        { "idk.", "chatsan-shrugs" },
+        { "хз", "chatsan-shrugs" },
+        { "хз.", "chatsan-shrugs" }
     };
 
     private bool _doSanitize;

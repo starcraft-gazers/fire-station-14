@@ -140,7 +140,22 @@
             "name": "SecurityCadet"
         },
         {
+            "name": "IAA"
+        },
+        {
             "name": "Zookeeper"
+        },
+        {
+            "name": "BrigMedic"
+        },
+        {
+            "name": "SCPScientist"
+        },
+        {
+            "name": "SCPSecurity"
+        },
+        {
+            "name": "SCPDClass"
         }
     ]
 }

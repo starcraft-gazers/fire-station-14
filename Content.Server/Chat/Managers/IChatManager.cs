@@ -1,5 +1,6 @@
 using Content.Server.Mind.Components;
 using Content.Shared.Chat;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Robust.Server.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -27,7 +28,7 @@ namespace Content.Server.Chat.Managers
         void SendAdminAlert(EntityUid player, string message, MindComponent? mindComponent = null);
 
         void ChatMessageToOne(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat,
-            INetChannel client, Color? colorOverride = null, bool recordReplay = false, string? audioPath = null, float audioVolume = 0);
+            INetChannel client, Color? colorOverride = null, bool recordReplay = false, string? audioPath = null, float audioVolume = 0, string? entityName = null, Color? entityColor = default);
 
         void ChatMessageToMany(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat, bool recordReplay,
             IEnumerable<INetChannel> clients, Color? colorOverride = null, string? audioPath = null, float audioVolume = 0);
@@ -37,5 +38,8 @@ namespace Content.Server.Chat.Managers
         void ChatMessageToAll(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat, bool recordReplay, Color? colorOverride = null, string? audioPath = null, float audioVolume = 0);
 
         bool MessageCharacterLimit(IPlayerSession player, string message);
+
+        void UpdateLastSay(IPlayerSession player, long time);
+        bool IsFlooding(IPlayerSession player);
     }
 }

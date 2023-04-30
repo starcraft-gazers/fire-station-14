@@ -57,6 +57,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperRange = 2; // how far whisper goes in world units
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
+    public Color DefaultEntityColor = new Color(145, 241, 50);
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled = false;
@@ -127,6 +128,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public void TrySendInGameICMessage(EntityUid source, string message, InGameICChatType desiredType, bool hideChat, bool hideGlobalGhostChat = false,
         IConsoleShell? shell = null, IPlayerSession? player = null, string? nameOverride = null, bool checkRadioPrefix = true)
     {
+
         if (HasComp<GhostComponent>(source))
         {
             // Ghosts can only send dead chat messages, so we'll forward it to InGame OOC.
@@ -138,6 +140,14 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (player?.AttachedEntity is { Valid: true } entity && source != entity)
         {
             return;
+        }
+
+        if(player != null)
+        {
+            if (_chatManager.IsFlooding(player))
+            return;
+
+            _chatManager.UpdateLastSay(player, DateTimeOffset.Now.ToUnixTimeSeconds());
         }
 
         if (!CanSendInGame(message, shell, player))
@@ -210,6 +220,9 @@ public sealed partial class ChatSystem : SharedChatSystem
             (HasComp<GhostComponent>(source) || _mobStateSystem.IsDead(source)))
             sendType = InGameOOCChatType.Dead;
 
+        if (_chatManager.IsFlooding(player))
+            return;
+
         switch (sendType)
         {
             case InGameOOCChatType.Dead:
@@ -219,6 +232,8 @@ public sealed partial class ChatSystem : SharedChatSystem
                 SendLOOC(source, player, message, hideChat);
                 break;
         }
+
+        _chatManager.UpdateLastSay(player, DateTimeOffset.Now.ToUnixTimeSeconds());
     }
 
     #region Announcements
@@ -303,10 +318,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         name = FormattedMessage.EscapeText(name);
-        var wrappedMessage = Loc.GetString("chat-manager-entity-say-wrap-message",
-            ("entityName", name), ("message", FormattedMessage.EscapeText(message)));
+        var wrappedMessage = FormattedMessage.EscapeText(message);
 
-        SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, hideChat, hideGlobalGhostChat);
+        SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, hideChat, hideGlobalGhostChat, name);
 
         var ev = new EntitySpokeEvent(source, message, null, null);
         RaiseLocalEvent(source, ev, true);
@@ -443,6 +457,8 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         SendInVoiceRange(ChatChannel.LOOC, message, wrappedMessage, source, hideChat, false);
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"LOOC from {player:Player}: {message}");
+
+        _chatManager.UpdateLastSay(player, DateTimeOffset.Now.ToUnixTimeSeconds());
     }
 
     private void SendDeadChat(EntityUid source, IPlayerSession player, string message, bool hideChat)
@@ -469,6 +485,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         _chatManager.ChatMessageToMany(ChatChannel.Dead, message, wrappedMessage, source, hideChat, false, clients.ToList());
 
+        _chatManager.UpdateLastSay(player, DateTimeOffset.Now.ToUnixTimeSeconds());
     }
     #endregion
 
@@ -477,12 +494,12 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <summary>
     ///     Sends a chat message to the given players in range of the source entity.
     /// </summary>
-    private void SendInVoiceRange(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat, bool hideGlobalGhostChat)
+    private void SendInVoiceRange(ChatChannel channel, string message, string wrappedMessage, EntityUid source, bool hideChat, bool hideGlobalGhostChat, string? entityName = null)
     {
         foreach (var (session, data) in GetRecipients(source, VoiceRange))
         {
             var entHideChat = data.HideChatOverride ?? (hideChat || hideGlobalGhostChat && data.Observer && data.Range < 0);
-            _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.ConnectedClient);
+            _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.ConnectedClient, entityName: entityName, entityColor: DefaultEntityColor);
         }
 
         _replay.QueueReplayMessage(new ChatMessage(channel, message, wrappedMessage, source, hideChat));
@@ -580,7 +597,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         foreach (var player in _playerManager.Sessions)
         {
-            if (player.AttachedEntity is not {Valid: true} playerEntity)
+            if (player.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
 
             var transformEntity = xforms.GetComponent(playerEntity);
