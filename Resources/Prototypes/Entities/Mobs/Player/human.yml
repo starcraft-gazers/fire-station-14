@@ -5,7 +5,6 @@
   id: MobHuman
   components:
   - type: CombatMode
-    disarm: null
   - type: InteractionPopup
     successChance: 1
     interactSuccessString: hugging-success-generic
@@ -59,25 +58,22 @@
     - type: NukeOperative
     - type: RandomHumanoidAppearance
 
-# Space Ninja
 - type: entity
   noSpawn: true
-  name: Space Ninja
   parent: MobHuman
-  id: MobHumanSpaceNinja
+  id: MobHumanLoneNuclearOperative
+  name: Lone Operative
   components:
-  - type: Loadout
-    prototype: SpaceNinjaGear
-    prototypes: [SpaceNinjaGear]
-  - type: Faction
-    factions:
-    - Syndicate
-  - type: Ninja
-  - type: RandomMetadata
-    nameSegments:
-    - names_ninja_title
-    - names_ninja
-  - type: Tag
-    tags:
-    # fight with honor!
-    - GunsDisabled
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NukeOperative
+    - type: Loadout
+      prototype: SyndicateOperativeGearFull
+      prototypes: [SyndicateOperativeGearFull]
+    - type: RandomMetadata
+      nameSegments:
+      - SyndicateNamesPrefix
+      - SyndicateNamesNormal
+    - type: Faction
+      factions:
+      - Syndicate

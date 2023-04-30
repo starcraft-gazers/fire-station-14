@@ -9,27 +9,13 @@
 
 - type: entity
   noSpawn: true
-  parent: ClothingBackpackSatchel
-  id: ClothingBackpackSatchelTools
+  parent: ClothingBackpackSatchelClown
+  id: ClothingBackpackSatchelClownFilled
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
-      - id: Crowbar
-      - id: Wrench
-      - id: Screwdriver
-      - id: Wirecutter
-      - id: Welder
-      - id: Multitool
-
-#- type: entity
-#  noSpawn: true
-#  parent: ClothingBackpackSatchelClown
-#  id: ClothingBackpackSatchelClownFilled
-#  components:
-#  - type: StorageFill
-#    contents:
-#      - id: BoxHug
+      - id: BoxHug
+      - id: RubberStampClown
 
 - type: entity
   noSpawn: true
@@ -39,6 +25,16 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalSecurity
+      - id: Flash
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelBrigmedic
+  id: ClothingBackpackSatchelBrigmedicFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalBrigmedic
       - id: Flash
 
 - type: entity
@@ -101,7 +97,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
+      - id: BoxSurvivalMedical
       - id: Flash
       #- id: TelescopicBaton
 
@@ -123,7 +119,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
+      - id: BoxSurvivalSecurity
       - id: Flash
 
 - type: entity
@@ -160,7 +156,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
+      - id: BoxSurvivalMedical
 
 - type: entity
   noSpawn: true
