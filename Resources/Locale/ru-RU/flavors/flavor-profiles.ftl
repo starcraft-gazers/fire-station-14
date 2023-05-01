@@ -99,6 +99,7 @@ flavor-complex-raisins = как сушеный виноград
 flavor-complex-orange = как апельсины
 flavor-complex-watermelon = как арбуз
 flavor-complex-garlic = как чеснок
+flavor-complex-grape = как виноград
 
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
 
@@ -170,6 +171,7 @@ flavor-complex-atomic-cola = как накопление бутылочных к
 flavor-complex-cuba-libre = как крепкая кола
 flavor-complex-gin-tonic = как крепкая газировка с лимоном и лаймом
 flavor-complex-screwdriver = как крепкий апельсиновый сок
+flavor-complex-cogchamp = как латунь
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 
