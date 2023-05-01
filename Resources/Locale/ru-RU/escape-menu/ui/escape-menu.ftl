@@ -7,3 +7,4 @@ ui-escape-guidebook = Руководство
 ui-escape-wiki = Wiki (от FireTeam)
 ui-escape-disconnect = Отключиться
 ui-escape-quit = Выйти
+ui-escape-discord = Discord
