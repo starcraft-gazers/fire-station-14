@@ -17,7 +17,8 @@ namespace Content.Server.Database.Migrations.Postgres
         //         table: "trait",
         //         columns: new[] { "profile_id", "trait_name" },
         //         unique: true);
-        // }
+        //
+        }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
