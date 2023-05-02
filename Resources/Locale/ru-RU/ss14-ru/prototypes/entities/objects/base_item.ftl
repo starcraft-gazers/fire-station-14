@@ -1,6 +1,8 @@
 ent-BaseItem = предмет
     .desc = { "" }
-    .suffix = { "" }
 ent-BaseStorageItem = предмет хранения
     .desc = { ent-BaseItem.desc }
-    .suffix = { "" }
+ent-PowerCellSlotSmallItem = a
+    .desc = { "" }
+ent-PowerCellSlotMediumItem = a
+    .desc = { "" }

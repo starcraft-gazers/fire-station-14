@@ -65,6 +65,9 @@
   id: JobHeadOfSecurity
 
 - type: playTimeTracker
+  id: JobBrigmedic
+
+- type: playTimeTracker
   id: JobJanitor
 
 - type: playTimeTracker
@@ -132,18 +135,3 @@
 
 - type: playTimeTracker
   id: JobZookeeper
-
-- type: playTimeTracker
-  id: JobBrigMedic
-
-- type: playTimeTracker
-  id: JobSCPScientist
-
-- type: playTimeTracker
-  id: JobSCPSecurity
-
-- type: playTimeTracker
-  id: JobSCPHead
-
-- type: playTimeTracker
-  id: JobSCPDClass

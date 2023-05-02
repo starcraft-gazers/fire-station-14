@@ -1,6 +1,5 @@
 ent-OreBase = { ent-BaseItem }
     .desc = Кусок неочищенной руды.
-    .suffix = { "" }
 ent-GoldOre = золотоносная руда
     .suffix = Полный
     .desc = { ent-OreBase.desc }
@@ -37,3 +36,9 @@ ent-UraniumOre = урановая руда
 ent-UraniumOre1 = { ent-UraniumOre }
     .suffix = Один
     .desc = { ent-UraniumOre.desc }
+ent-BananiumOre = бананиумовая руда
+    .suffix = Полный
+    .desc = { ent-OreBase.desc }
+ent-BananiumOre1 = { ent-BananiumOre }
+    .suffix = Один
+    .desc = { ent-BananiumOre.desc }

@@ -44,8 +44,7 @@ entities:
   components:
   - type: MetaData
   - type: Transform
-  - index: 20
-    type: Map
+  - type: Map
   - type: PhysicsMap
   - type: Broadphase
   - type: OccluderTree
@@ -10436,6 +10435,7 @@ entities:
   - type: RadiationGridResistance
   - id: Barratry
     type: BecomesStation
+  - type: SpreaderGrid
 - uid: 2
   type: WallReinforced
   components:
@@ -22002,7 +22002,7 @@ entities:
     parent: 1
     type: Transform
 - uid: 1671
-  type: HighPowerMicroLaserStockPart
+  type: NanoManipulatorStockPart
   components:
   - pos: 14.5277,-7.4270515
     parent: 1
@@ -35484,7 +35484,7 @@ entities:
   - bodyType: Static
     type: Physics
 - uid: 3552
-  type: TableWood
+  type: Rack
   components:
   - pos: -37.5,-11.5
     parent: 1
@@ -36428,7 +36428,7 @@ entities:
     parent: 1
     type: Transform
 - uid: 3678
-  type: Rack
+  type: MaterialReclaimer
   components:
   - pos: -38.5,-13.5
     parent: 1
@@ -36440,9 +36440,9 @@ entities:
     parent: 1
     type: Transform
 - uid: 3680
-  type: HandheldGPSBasic
+  type: SpawnMobShiva
   components:
-  - pos: -38.62984,-13.485714
+  - pos: -60.5,65.5
     parent: 1
     type: Transform
 - uid: 3681
@@ -36503,7 +36503,7 @@ entities:
 - uid: 3688
   type: HandheldGPSBasic
   components:
-  - pos: -38.301716,-13.485714
+  - pos: -37.364372,-11.484457
     parent: 1
     type: Transform
 - uid: 3689
@@ -45546,6 +45546,192 @@ entities:
   type: SpawnPointBrigMedic
   components:
   - pos: -63.5,54.5
+    parent: 1
+    type: Transform
+  - fixtures:
+    - shape: !type:PolygonShape
+        radius: 0.01
+        vertices:
+        - 0.49,-0.49
+        - 0.49,0.49
+        - -0.49,0.49
+        - -0.49,-0.49
+      mask:
+      - Impassable
+      - MidImpassable
+      - HighImpassable
+      - LowImpassable
+      - InteractImpassable
+      layer:
+      - MidImpassable
+      - HighImpassable
+      - BulletImpassable
+      - InteractImpassable
+      - Opaque
+      density: 100
+      hard: True
+      restitution: 0
+      friction: 0.4
+      id: null
+    - shape: !type:PhysShapeCircle
+        radius: 0.2
+        position: 0,-0.5
+      mask: []
+      layer: []
+      density: 1
+      hard: False
+      restitution: 0
+      friction: 0.4
+      id: docking
+    type: Fixtures
+- uid: 4985
+  type: BrigTimer
+  components:
+  - pos: -56.5,52.5
+    parent: 1
+    type: Transform
+  - outputs:
+      Start:
+      - port: Close
+        uid: 7871
+      Timer:
+      - port: AutoClose
+        uid: 7871
+      - port: Open
+        uid: 7871
+    type: SignalTransmitter
+- uid: 4986
+  type: BrigTimer
+  components:
+  - pos: -53.5,52.5
+    parent: 1
+    type: Transform
+  - outputs:
+      Start:
+      - port: Close
+        uid: 7872
+      Timer:
+      - port: AutoClose
+        uid: 7872
+      - port: Open
+        uid: 7872
+    type: SignalTransmitter
+- uid: 4987
+  type: BrigTimer
+  components:
+  - pos: -50.5,52.5
+    parent: 1
+    type: Transform
+  - outputs:
+      Start:
+      - port: Close
+        uid: 7873
+      Timer:
+      - port: AutoClose
+        uid: 7873
+      - port: Open
+        uid: 7873
+    type: SignalTransmitter
+- uid: 4988
+  type: DeskBell
+  components:
+  - pos: -47.244946,56.398804
+    parent: 1
+    type: Transform
+- uid: 4989
+  type: DeskBell
+  components:
+  - pos: -45.550537,43.981125
+    parent: 1
+    type: Transform
+- uid: 4990
+  type: DeskBell
+  components:
+  - pos: -39.378662,43.49675
+    parent: 1
+    type: Transform
+- uid: 4991
+  type: DeskBell
+  components:
+  - pos: -36.738037,41.679382
+    parent: 1
+    type: Transform
+- uid: 4992
+  type: DeskBell
+  components:
+  - pos: -33.70732,38.156784
+    parent: 1
+    type: Transform
+- uid: 4993
+  type: DeskBell
+  components:
+  - pos: -24.25037,9.298397
+    parent: 1
+    type: Transform
+- uid: 4994
+  type: DeskBell
+  components:
+  - pos: -36.891582,2.4105499
+    parent: 1
+    type: Transform
+- uid: 4995
+  type: DeskBell
+  components:
+  - pos: -7.7214417,3.4652395
+    parent: 1
+    type: Transform
+- uid: 4996
+  type: DeskBell
+  components:
+  - pos: -14.7659235,9.704989
+    parent: 1
+    type: Transform
+- uid: 4997
+  type: DeskBell
+  components:
+  - pos: -10.2346735,11.798739
+    parent: 1
+    type: Transform
+- uid: 4998
+  type: DeskBell
+  components:
+  - pos: -0.23595914,28.693384
+    parent: 1
+    type: Transform
+- uid: 4999
+  type: DeskBell
+  components:
+  - pos: -1.0953342,32.52913
+    parent: 1
+    type: Transform
+- uid: 5000
+  type: DeskBell
+  components:
+  - pos: -19.786932,36.45546
+    parent: 1
+    type: Transform
+- uid: 5001
+  type: DeskBell
+  components:
+  - pos: -54.116062,17.501276
+    parent: 1
+    type: Transform
+- uid: 5002
+  type: DeskBell
+  components:
+  - pos: -50.21205,7.5052824
+    parent: 1
+    type: Transform
+- uid: 5003
+  type: DeskBell
+  components:
+  - pos: -0.74886024,7.6462955
+    parent: 1
+    type: Transform
+- uid: 5004
+  type: HandheldGPSBasic
+  components:
+  - pos: -37.692497,-11.468832
     parent: 1
     type: Transform
 - uid: 5026
@@ -56577,41 +56763,15 @@ entities:
   - pos: -14.534092,66.507454
     parent: 1
     type: Transform
-  - baseSprintSpeed: 4.5
+  - baseSprintSpeed: 2.5
     baseWalkSpeed: 2.5
     type: MovementSpeedModifier
-  - fixtures:
-    - shape: !type:PhysShapeCircle
-        radius: 0.35
-        position: 0,0
-      mask:
-      - Impassable
-      - LowImpassable
-      layer:
-      - BulletImpassable
-      - Opaque
-      density: 100
-      hard: True
-      restitution: 0
-      friction: 0.4
-      id: null
-    type: Fixtures
-  - rules: >-
-      You don't remember any of your previous life unless an administrator tells you otherwise.
-
-      You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-
-      You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-    description: Alas poor Yorick...
-    name: captain's skull
-    type: GhostTakeoverAvailable
+  - type: GhostTakeoverAvailable
   - type: Mind
   - type: InputMover
   - type: MobMover
   - type: MovementAlwaysTouching
-  - type: MovementIgnoreGravity
-  - baseResistTime: 0.5
-    type: CanEscapeInventory
+  - type: CanEscapeInventory
 - uid: 6646
   type: TableWood
   components:
@@ -65145,6 +65305,18 @@ entities:
     pos: -57.5,52.5
     parent: 1
     type: Transform
+  - inputs:
+      Open:
+      - port: Timer
+        uid: 4985
+      Close:
+      - port: Start
+        uid: 4985
+      Toggle: []
+      AutoClose:
+      - port: Timer
+        uid: 4985
+    type: SignalReceiver
 - uid: 7872
   type: WindoorSecurityLocked
   components:
@@ -65152,6 +65324,18 @@ entities:
     pos: -54.5,52.5
     parent: 1
     type: Transform
+  - inputs:
+      Open:
+      - port: Timer
+        uid: 4986
+      Close:
+      - port: Start
+        uid: 4986
+      Toggle: []
+      AutoClose:
+      - port: Timer
+        uid: 4986
+    type: SignalReceiver
 - uid: 7873
   type: WindoorSecurityLocked
   components:
@@ -65159,6 +65343,18 @@ entities:
     pos: -51.5,52.5
     parent: 1
     type: Transform
+  - inputs:
+      Open:
+      - port: Timer
+        uid: 4987
+      Close:
+      - port: Start
+        uid: 4987
+      Toggle: []
+      AutoClose:
+      - port: Timer
+        uid: 4987
+    type: SignalReceiver
 - uid: 7874
   type: WindoorArmoryLocked
   components:
@@ -75512,12 +75708,6 @@ entities:
   components:
   - rot: 1.5707963267948966 rad
     pos: -76.5,50.5
-    parent: 1
-    type: Transform
-- uid: 9263
-  type: KvassTankFull
-  components:
-  - pos: -77.5,51.5
     parent: 1
     type: Transform
 - uid: 9264
@@ -97298,22 +97488,16 @@ entities:
   - pos: -31.488277,-3.1049178
     parent: 1
     type: Transform
-- uid: 12033
-  type: Lamp
-  components:
-  - pos: -37.5201,-11.214624
-    parent: 1
-    type: Transform
 - uid: 12034
   type: FireExtinguisher
   components:
-  - pos: -37.3685,-10.479783
+  - pos: -37.286247,-10.203207
     parent: 1
     type: Transform
 - uid: 12035
   type: FireExtinguisher
   components:
-  - pos: -37.64975,-10.542283
+  - pos: -37.661247,-10.218832
     parent: 1
     type: Transform
 - uid: 12036
@@ -107515,7 +107699,6 @@ entities:
     - 8003
     - 8002
     - 8001
-    - invalid
     - 11119
     - 11122
     - 11270
@@ -107544,7 +107727,6 @@ entities:
     - 8003
     - 8002
     - 8001
-    - invalid
     - 8573
     - 8574
     type: DeviceList
@@ -107662,7 +107844,6 @@ entities:
     parent: 1
     type: Transform
   - devices:
-    - invalid
     - 5216
     - 5217
     - 5218
@@ -107675,7 +107856,6 @@ entities:
     parent: 1
     type: Transform
   - devices:
-    - invalid
     - 5216
     - 5217
     - 5218
@@ -107761,7 +107941,6 @@ entities:
     - 3724
     - 3717
     - 3716
-    - invalid
     - 3726
     - 12016
     - 12018
@@ -107818,7 +107997,6 @@ entities:
     - 3724
     - 3717
     - 3716
-    - invalid
     - 3726
     type: DeviceList
 - uid: 13060
@@ -108083,7 +108261,6 @@ entities:
     - 5238
     - 5239
     - 9818
-    - invalid
     type: DeviceList
 - uid: 13073
   type: AirAlarm
@@ -108097,7 +108274,6 @@ entities:
     - 5238
     - 5239
     - 9818
-    - invalid
     - 12259
     - 12255
     - 12256
@@ -108151,7 +108327,6 @@ entities:
     - 5238
     - 5239
     - 9818
-    - invalid
     - 12259
     - 12255
     - 12256
@@ -108183,7 +108358,6 @@ entities:
     - 5238
     - 5239
     - 9818
-    - invalid
     - 12259
     - 12255
     - 12256
@@ -108209,7 +108383,6 @@ entities:
   - devices:
     - 6496
     - 6497
-    - invalid
     - 9808
     - 6498
     - 6499
@@ -108240,7 +108413,6 @@ entities:
   - devices:
     - 6496
     - 6497
-    - invalid
     - 9808
     - 6498
     - 6499
@@ -108373,7 +108545,6 @@ entities:
     - 3177
     - 3176
     - 3175
-    - invalid
     - 12506
     - 12507
     - 12508
@@ -108503,7 +108674,6 @@ entities:
   - devices:
     - 1755
     - 1754
-    - invalid
     type: DeviceList
 - uid: 13105
   type: AirAlarm
@@ -108523,7 +108693,6 @@ entities:
     - 12717
     - 1755
     - 1754
-    - invalid
     type: DeviceList
 - uid: 13106
   type: DisposalTrunk
@@ -112516,19 +112685,19 @@ entities:
     parent: 1
     type: Transform
 - uid: 13663
-  type: MicroLaserStockPart
+  type: MicroManipulatorStockPart
   components:
   - pos: -16.101051,-14.435623
     parent: 1
     type: Transform
 - uid: 13664
-  type: MicroLaserStockPart
+  type: MicroManipulatorStockPart
   components:
   - pos: -15.913552,-14.341873
     parent: 1
     type: Transform
 - uid: 13665
-  type: MicroLaserStockPart
+  type: MicroManipulatorStockPart
   components:
   - pos: -15.757302,-14.435623
     parent: 1
@@ -117978,6 +118147,62 @@ entities:
     pos: -73.5,55.5
     parent: 1
     type: Transform
+  - fixtures:
+    - shape: !type:PolygonShape
+        radius: 0.01
+        vertices:
+        - -0.55,-0.55
+        - 0.55,-0.55
+        - 0.55,0.55
+        - -0.55,0.55
+      mask: []
+      layer:
+      - Impassable
+      - MidImpassable
+      - LowImpassable
+      density: 1
+      hard: False
+      restitution: 0
+      friction: 0.4
+      id: conveyor
+    - shape: !type:PolygonShape
+        radius: 0.01
+        vertices:
+        - 0.15,-0.15
+        - 0.15,0.15
+        - -0.15,0.15
+        - -0.15,-0.15
+      mask: []
+      layer:
+      - MidImpassable
+      - HighImpassable
+      - LowImpassable
+      - BulletImpassable
+      - InteractImpassable
+      - Opaque
+      density: 1
+      hard: False
+      restitution: 0
+      friction: 0.4
+      id: brrt
+    - shape: !type:PolygonShape
+        radius: 0.01
+        vertices:
+        - 0.49,-0.49
+        - 0.49,0.49
+        - -0.49,0.49
+        - -0.49,-0.49
+      mask:
+      - Impassable
+      layer:
+      - BulletImpassable
+      - Opaque
+      density: 1
+      hard: True
+      restitution: 0
+      friction: 0.4
+      id: collision
+    type: Fixtures
   - inputs:
       Reverse:
       - port: Right
@@ -124287,7 +124512,7 @@ entities:
     type: Physics
   - type: InsideEntityStorage
 - uid: 15088
-  type: MicroLaserStockPart
+  type: MicroManipulatorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -124297,7 +124522,7 @@ entities:
     type: Physics
   - type: InsideEntityStorage
 - uid: 15089
-  type: ScanningModuleStockPart
+  type: CapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -124307,7 +124532,7 @@ entities:
     type: Physics
   - type: InsideEntityStorage
 - uid: 15090
-  type: ScanningModuleStockPart
+  type: CapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -124317,7 +124542,7 @@ entities:
     type: Physics
   - type: InsideEntityStorage
 - uid: 15091
-  type: ScanningModuleStockPart
+  type: CapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -124367,7 +124592,7 @@ entities:
     type: Physics
   - type: InsideEntityStorage
 - uid: 15096
-  type: ScanningModuleStockPart
+  type: CapacitorStockPart
   components:
   - flags: InContainer
     type: MetaData
@@ -124505,7 +124730,7 @@ entities:
   - enabled: True
     type: AmbientSound
 - uid: 15114
-  type: AdvancedScanningModuleStockPart
+  type: AdvancedCapacitorStockPart
   components:
   - pos: 14.793325,-7.4583015
     parent: 1
@@ -124517,7 +124742,7 @@ entities:
     parent: 1
     type: Transform
 - uid: 15116
-  type: HighPowerMicroLaserStockPart
+  type: NanoManipulatorStockPart
   components:
   - pos: 14.2777,-7.5208015
     parent: 1

@@ -9,6 +9,7 @@ petting-success-bird = Вы гладите { $target } по { POSS-ADJ($target) 
 petting-success-cat = Вы гладите { $target } по { POSS-ADJ($target) } маленькой пушистой голове.
 petting-success-corrupted-corgi = В порыве самонадеянности, вы гладите { $target } по { POSS-ADJ($target) } маленькой проклятой голове.
 petting-success-crab = Вы гладите { $target } по { POSS-ADJ($target) } маленькой гладкой голове.
+petting-success-dehydrated-carp = Вы гладите { $target } по { POSS-ADJ($target) } маленькой сухой голове. Похоже, вы теперь нравитесь { CAPITALIZE(OBJECT($target)) }!
 petting-success-dog = Вы гладите { $target } по { POSS-ADJ($target) } мягкой пушистой голове.
 petting-success-frog = Вы гладите { $target } по { POSS-ADJ($target) } маленькой скользкой голове.
 petting-success-goat = Вы гладите { $target } по { POSS-ADJ($target) } рогатой пушистой голове.
@@ -22,10 +23,12 @@ petting-success-tarantula = Вы гладите { $target } по { POSS-ADJ($tar
 petting-success-holo = Вы гладите { $target } по { POSS-ADJ($target) } металлической шипастой голове.
 petting-success-dragon = Уворачиваясь от клыков, когтей, и пламени, вы гладите { $target } по { POSS-ADJ($target) } огромной чешуйчатой голове.
 petting-success-hamster = Вы гладите { $target } по { POSS-ADJ($target) } маленькой пушистой голове.
+petting-success-bear = Вы нерешительно гладите { $target } по { POSS-ADJ($target) } таинственной голове.
 petting-failure-generic = Вы тянетесь погладить { $target }, но { $target } настороженно уклоняется от вас.
 petting-failure-bat = Вы тянетесь погладить { $target }, но { $target } очень трудно поймать!
 petting-failure-corrupted-corgi = Вы тянетесь погладить { $target }, но решаете, что лучше не надо.
 petting-failure-crab = Вы тянетесь погладить { $target }, но { $target } щёлкает клешнями в вашу сторону!
+petting-failure-dehydrated-carp = Вы гладите { $target } по { POSS-ADJ($target) } маленькой сухой голове.
 petting-failure-goat = Вы тянетесь погладить { $target }, но { $target } упорно отказывается!
 petting-failure-goose = Вы тянетесь погладить { $target }, но { $target } слишком ужасен!
 petting-failure-possum = Вы тянетесь погладить { $target }, но на вас шипят и рычат.
@@ -33,6 +36,7 @@ petting-failure-sloth = Вы тянетесь погладить { $target }, н
 petting-failure-holo = Вы тянетесь погладить { $target }, но { $target } едва не пронзает шипами вашу руку!
 petting-failure-dragon = Вы поднимаете руку, но { $target } издаёт рёв, и вы решаете, что не хотите стать кормом для карпов.
 petting-failure-hamster = Вы тянетесь погладить { $target }, но { $target } пытается укусить вас за палец, и только ваши молниеносные рефлексы спасают вас от почти смертельной травмы.
+petting-failure-bear = Вы думаете погладить { $target }, но { $target } рычит, заставляя вас подумать ещё раз.
 
 ## Knocking on windows
 

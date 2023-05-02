@@ -49,4 +49,5 @@
         Psychologist: [ 1, 1 ]
         Detective: [ 1, 1 ]
         ResearchAssistant: [ 2, 2 ]
-        BrigMedic: [ 1, 1 ]
+        Brigmedic: [ 1, 1 ]
+        SecurityKnight: [1, 1]

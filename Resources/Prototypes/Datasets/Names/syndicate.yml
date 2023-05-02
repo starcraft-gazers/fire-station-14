@@ -30,26 +30,32 @@
 - type: dataset
   id: SyndicateNamesElite
   values:
-  - Альфа
-  - Бета
-  - Гамма
-  - Дельта
-  - Эпсилон
-  - Дзета
-  - Эта
-  - Фита
-  - Йота
-  - Лямбда
-  - Мю
-  - Ню
-  - Кси
-  - Омикрон
-  - Пи
-  - Ро
-  - Сигма
-  - Тау
-  - Ипсилон
-  - Фи
-  - Хи
-  - Пси
-  - Омега
+  - Alpha
+  - Beta
+  - Gamma
+  - Delta
+  - Epsilon
+  - Zeta
+  - Eta
+  - Theta
+  - Iota
+  - Lambda
+  - Mu
+  - Nu
+  - Xi
+  - Omicron
+  - Pi
+  - Rho
+  - Sigma
+  - Tau
+  - Upsilon
+  - Phi
+  - Chi
+  - Psi
+  - Omega
+
+- type: dataset
+  id: SyndicateNamesPrefix
+  values:
+  - Operative
+  - Agent

@@ -18,6 +18,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: GroupExamine
+  - type: Tag
+    tags:
+    - Hardsuit
 
 - type: entity
   parent: ClothingOuterEVASuitBase
@@ -103,7 +106,7 @@
         Slash: 0.6
         Piercing: 0.6
         Heat: 0.6
-  - type: NinjaSuit
+  # - type: NinjaSuit
   - type: PowerCellSlot
     cellSlotId: cell_slot
     # throwing in a recharger would bypass glove charging mechanic
