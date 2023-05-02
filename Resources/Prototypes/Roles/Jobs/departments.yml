@@ -14,6 +14,7 @@
   roles:
   - Bartender
   - Botanist
+  - Boxer
   - Chaplain
   - Chef
   - Clown
@@ -46,6 +47,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  - SCPHead
 
 - type: department
   id: Engineering
@@ -70,7 +72,7 @@
 
 - type: department
   id: Security
-  description: department-Command-description
+  description: department-Security-description
   color: "#DE3A3A"
   roles:
   - HeadOfSecurity
@@ -78,6 +80,8 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - Brigmedic
+  - SecurityKnight
 
 - type: department
   id: Science
@@ -87,3 +91,13 @@
   - ResearchDirector
   - Scientist
   - ResearchAssistant
+
+- type: department
+  id: Specific
+  description: department-Specific-description
+  color: "#9FED58"
+  roles:
+  - Boxer
+  - Reporter
+  - Zookeeper
+  - Psychologist

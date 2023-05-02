@@ -16,22 +16,6 @@
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
 
-#Pirate Outfit
-- type: startingGear
-  id: PirateGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorLightBrown
-    back: ClothingBackpackSatchelEngineering
-    head: ClothingHeadHatPirate
-    outerClothing: ClothingOuterCoatPirate
-    shoes: ClothingShoesBootsWork
-    id: PassengerPDA
-    belt: ClothingBeltUtility
-    pocket1: AppraisalTool
-  innerclothingskirt: ClothingUniformJumpskirtColorLightBrown
-  satchel: ClothingBackpackSatchelEngineering
-  duffelbag: ClothingBackpackSatchelEngineering
-
 #Skeleton Biker
 - type: startingGear
   id: SkeletonBiker
@@ -54,30 +38,30 @@
   duffelbag: ClothingBackpackDuffelFilled
 
 #Space Ninja Outfit
-- type: startingGear
-  id: SpaceNinjaGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBlack
-    # belt holds katana so satchel has the tools for sabotaging things
-    back: ClothingBackpackSatchelTools
-    mask: ClothingMaskGasSyndicate
-    head: ClothingHeadHelmetSpaceNinja
-    # TODO: space ninja mask
-    eyes: ClothingEyesGlassesMeson
-    gloves: ClothingHandsGlovesSpaceNinja
-    outerClothing: ClothingOuterSuitSpaceninja
-    shoes: ClothingShoesSpaceNinja
-    id: AgentIDCard
-    ears: ClothingHeadsetGrey
-    pocket1: SpiderCharge
-    pocket2: HandheldGPSBasic
-    belt: EnergyKatana
-    suitstorage: YellowOxygenTankFilled
-  inhand:
-    right hand: JetpackBlackFilled
-  innerclothingskirt: ClothingUniformJumpskirtColorBlack
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
+# - type: startingGear
+#   id: SpaceNinjaGear
+#   equipment:
+#     jumpsuit: ClothingUniformJumpsuitColorBlack
+#     # belt holds katana so satchel has the tools for sabotaging things
+#     back: ClothingBackpackSatchelTools
+#     mask: ClothingMaskGasSyndicate
+#     head: ClothingHeadHelmetSpaceNinja
+#     # TODO: space ninja mask
+#     eyes: ClothingEyesGlassesMeson
+#     gloves: ClothingHandsGlovesSpaceNinja
+#     outerClothing: ClothingOuterSuitSpaceninja
+#     shoes: ClothingShoesSpaceNinja
+#     id: AgentIDCard
+#     ears: ClothingHeadsetGrey
+#     pocket1: SpiderCharge
+#     pocket2: HandheldGPSBasic
+#     belt: EnergyKatana
+#     suitstorage: YellowOxygenTankFilled
+#   inhand:
+#     right hand: JetpackBlackFilled
+#   innerclothingskirt: ClothingUniformJumpskirtColorBlack
+#   satchel: ClothingBackpackSatchelFilled
+#   duffelbag: ClothingBackpackDuffelFilled
 
 #Deathsquad Outfit
 - type: startingGear
@@ -87,13 +71,14 @@
     back: ClothingBackpackDuffelSyndicateAmmo
     mask: ClothingMaskBreath
     eyes: ClothingEyesGlassesSecurity
-    ears: ClothingHeadsetCentCom
+    ears: ClothingHeadsetAltCommand
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitDeathsquad
+    suitstorage: YellowOxygenTankFilled
     shoes: ClothingShoesChameleonNoSlips
     id: CentcomPDA
-    pocket1: EmergencyOxygenTankFilled
-    belt: ClothingBeltUtilityFilled
+    pocket1: EnergySword
+    belt: ClothingBeltChiefEngineerFilled
   innerclothingskirt: ClothingUniformJumpskirtColorBlack
   satchel: ClothingBackpackDuffelSyndicateAmmo
   duffelbag: ClothingBackpackDuffelSyndicateAmmo
@@ -192,17 +177,22 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
     back: ClothingBackpackDuffelCBURN
-    mask: ClothingMaskGas
+    mask: ClothingMaskGasExplorer
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltCommand
-    gloves: ClothingHandsGlovesFingerless
+    gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitCBURN
-    shoes: ClothingShoesBootsJack
+    shoes: ClothingShoesBootsCombatFilled
     id: CBURNPDA
-    pocket1: CombatKnife
+    pocket1: RadioHandheld
     pocket2: WeaponLaserGun
     suitstorage: YellowOxygenTankFilled
     belt: ClothingBeltBandolier
   innerclothingskirt: ClothingUniformJumpsuitColorBrown
   satchel: ClothingBackpackDuffelCBURN
   duffelbag: ClothingBackpackDuffelCBURN
+
+- type: startingGear
+  id: BoxingKangarooGear
+  equipment:
+    gloves: ClothingHandsGlovesBoxingBlue

@@ -4,6 +4,7 @@ using Content.Shared.Mobs;
 using Robust.Shared.GameStates;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Actions.ActionTypes;
+using Content.Shared.Storage.Components;
 
 namespace Content.Shared.SCP.ConcreteSlab
 {
@@ -36,12 +37,10 @@ namespace Content.Shared.SCP.ConcreteSlab
 
         protected bool CanAttack(EntityUid uid,EntityUid trg ,SharedSCP173Component component)
         {
-            return
-                !component.LookedAt &&
-                trg.IsValid() &&
-                trg != uid &&
-                HasComp<MobStateComponent>(trg) &&
-                !_mobState.IsDead(trg);
+            if(HasComp<InsideEntityStorageComponent>(uid))
+                return true;
+
+            return !component.LookedAt && trg.IsValid() && trg != uid && HasComp<MobStateComponent>(trg) && !_mobState.IsDead(trg);
         }
     }
     public sealed class OnLookStateChangedEvent : EntityEventArgs

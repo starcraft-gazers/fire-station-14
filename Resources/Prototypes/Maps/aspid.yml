@@ -2,7 +2,7 @@
   id: Aspid
   mapName: 'NCS Aspid'
   mapPath: /Maps/aspid.yml
-  minPlayers: 0
+  minPlayers: 25
   maxPlayers: 70
   stations:
     Aspid:
@@ -48,3 +48,5 @@
         ServiceWorker: [ 1, 1 ]
         SecurityCadet: [ 2, 2 ]
         Detective: [ 1, 1 ]
+        Brigmedic: [ 1, 1 ]
+        SecurityKnight: [1, 1]

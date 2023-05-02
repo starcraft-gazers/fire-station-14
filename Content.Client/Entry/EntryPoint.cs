@@ -23,7 +23,6 @@ using Content.Shared.Administration;
 using Content.Shared.AME;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
-using Content.Shared.Markers;
 using Robust.Client;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
@@ -85,7 +84,6 @@ namespace Content.Client.Entry
             _componentFactory.IgnoreMissingComponents();
 
             // Do not add to these, they are legacy.
-            _componentFactory.RegisterClass<SharedSpawnPointComponent>();
             _componentFactory.RegisterClass<SharedGravityGeneratorComponent>();
             _componentFactory.RegisterClass<SharedAMEControllerComponent>();
             // Do not add to the above, they are legacy
@@ -120,6 +118,9 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("alertLevels");
             _prototypeManager.RegisterIgnore("nukeopsRole");
             _prototypeManager.RegisterIgnore("stationGoal");
+            _prototypeManager.RegisterIgnore("CentralCommandFaxPrototype");
+            _prototypeManager.RegisterIgnore("SCPStationPrototype");
+            _prototypeManager.RegisterIgnore("ERTShuttle");
             _prototypeManager.RegisterIgnore("flavor");
 
             _componentFactory.GenerateNetIds();
