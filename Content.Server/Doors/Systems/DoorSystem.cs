@@ -177,7 +177,7 @@ public sealed class DoorSystem : SharedDoorSystem
     {
         id = null;
 
-        if (door.State == DoorState.Welded)
+        if (door.State == DoorState.Welded || door.PryTime == -1.0f)
             return false;
 
         if (!force)
