@@ -2,7 +2,7 @@
   id: Fland
   mapName: 'Fland Installation'
   mapPath: /Maps/fland.yml
-  minPlayers: 60
+  minPlayers: 70
   stations:
     Fland:
       mapNameTemplate: '{0} Fland Installation {1}'
@@ -49,3 +49,4 @@
         ResearchAssistant: [ 3, 3 ]
         Brigmedic: [ 1, 1 ]
         SecurityKnight: [1, 1]
+        Paramedic: [ 2, 2 ]
