@@ -24,6 +24,7 @@
     - type: GhostRole
       name: ERT Leader
       description: Lead a team of specialists to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTLeaderGear ]
@@ -52,6 +53,7 @@
     - type: GhostRole
       name: ERT Leader
       description: Lead a team of specialists to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTLeaderGearEVA ]
@@ -81,6 +83,7 @@
     - type: GhostRole
       name: ERT Janitor
       description: Assist with custodial efforts to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
@@ -109,6 +112,7 @@
     - type: GhostRole
       name: ERT Janitor
       description: Assist with custodial efforts to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTJanitorGearEVA ]
@@ -138,6 +142,7 @@
     - type: GhostRole
       name: ERT Engineer
       description: Assist with engineering efforts to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
@@ -166,6 +171,7 @@
     - type: GhostRole
       name: ERT Engineer
       description: Assist with engineering efforts to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTEngineerGearEVA ]
@@ -195,6 +201,7 @@
     - type: GhostRole
       name: ERT Security
       description: Assist with security efforts to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
@@ -223,6 +230,7 @@
     - type: GhostRole
       name: ERT Security
       description: Assist with security efforts to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTSecurityGearEVA ]
@@ -252,6 +260,7 @@
     - type: GhostRole
       name: ERT Medical
       description: Assist with medicaling efforts to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
@@ -280,6 +289,7 @@
     - type: GhostRole
       name: ERT Medical
       description: Assist with medicaling efforts to resolve the stations issues.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
@@ -305,6 +315,7 @@
     - type: GhostRole
       name: CBURN Agent
       description: A highly trained CentCom agent, capable of dealing with various threats.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
@@ -329,6 +340,7 @@
     - type: GhostRole
       name: CentCom official
       description: Inspect the station, jot down performance reviews for heads of staff, bug the Captain.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ CentcomGear ]
@@ -394,5 +406,6 @@
     - type: GhostRole
       name: Cluwne
       description: Become a pitiful cluwne, your only goal in life is to find a sweet release from your suffering (usually by being beaten to death). A cluwne is not an antagonist but may defend itself. Crewmembers may murder cluwnes freely.
+      isBlockedByAntagManager: true
     - type: GhostTakeoverAvailable
     - type: Cluwne

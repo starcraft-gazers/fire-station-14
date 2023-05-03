@@ -1,4 +1,5 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Chat.Managers;
 using Content.Server.EUI;
 using Content.Server.Ghost.Components;
 using Content.Server.Ghost.Roles.Components;
@@ -7,6 +8,7 @@ using Content.Server.Ghost.Roles.UI;
 using Content.Server.Mind.Commands;
 using Content.Server.Mind.Components;
 using Content.Server.Players;
+using Content.Server.Roles;
 using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Follower;
@@ -33,6 +35,8 @@ namespace Content.Server.Ghost.Roles
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly FollowerSystem _followerSystem = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
+        [Dependency] private readonly IAntagManager _antagManager = default!;
+        [Dependency] private readonly IChatManager _chatManager = default!;
 
         private uint _nextRoleIdentifier;
         private bool _needsUpdateGhostRoleCount = true;
@@ -310,6 +314,16 @@ namespace Content.Server.Ghost.Roles
                 return;
             }
 
+            if (ghostRole._isBlockedByAntagManager && !_antagManager.IsPlayerTimeValidForGhostRole(args.Player))
+            {
+                _chatManager.DispatchServerMessage(
+                    player: args.Player,
+                    message: "Вы не наиграли достаточное количество часов для этой роли"
+                );
+                args.TookRole = false;
+                return;
+            }
+
             if (string.IsNullOrEmpty(component.Prototype))
                 throw new NullReferenceException("Prototype string cannot be null or empty!");
 
@@ -345,6 +359,16 @@ namespace Content.Server.Ghost.Roles
             if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
                 ghostRole.Taken)
             {
+                args.TookRole = false;
+                return;
+            }
+
+            if (ghostRole._isBlockedByAntagManager && !_antagManager.IsPlayerTimeValidForGhostRole(args.Player))
+            {
+                _chatManager.DispatchServerMessage(
+                    player: args.Player,
+                    message: "Вы не наиграли достаточное количество часов для этой роли"
+                );
                 args.TookRole = false;
                 return;
             }

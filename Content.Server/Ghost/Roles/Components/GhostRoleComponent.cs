@@ -11,6 +11,7 @@ namespace Content.Server.Ghost.Roles.Components
         [DataField("description")] private string _roleDescription = "Unknown";
 
         [DataField("rules")] private string _roleRules = "";
+        [DataField("isBlockedByAntagManager")] public bool _isBlockedByAntagManager = false;
 
         /// <summary>
         /// Whether the <see cref="MakeSentientCommand"/> should run on the mob.
