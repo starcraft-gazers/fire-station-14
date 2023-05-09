@@ -582,7 +582,6 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:ChemCureDisease
       - !type:HealthChange
         damage:
           types:

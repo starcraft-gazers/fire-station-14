@@ -21,15 +21,16 @@
       noRot: true
     - type: Fixtures
       fixtures:
-      - shape:
-          !type:PhysShapeCircle
-          radius: 0.45
-        density: 75
-        layer: # doesn't collide with artifact storage
-        - Opaque
-        - BulletImpassable
-        mask:
-        - MachineMask
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.45
+          density: 75
+          layer: # doesn't collide with artifact storage
+          - Opaque
+          - BulletImpassable
+          mask:
+          - MachineMask
     - type: InteractionOutline
     - type: Artifact
     - type: RandomArtifactSprite
