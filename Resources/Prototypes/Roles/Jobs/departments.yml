@@ -81,7 +81,7 @@
   - SecurityOfficer
   - Detective
   - Warden
-  - Brigmedic
+  # - Brigmedic
   - SecurityKnight
 
 - type: department
