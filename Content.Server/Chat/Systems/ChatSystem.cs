@@ -332,7 +332,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         name = FormattedMessage.EscapeText(name);
-        var wrappedMessage = FormattedMessage.EscapeText(message);
+        var wrappedMessage = Loc.GetString("chat-manager-entity-say-wrap-message",
+            ("entityName", name), ("message", FormattedMessage.EscapeText(message)));
 
         SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, range);
 
@@ -470,8 +471,6 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         SendInVoiceRange(ChatChannel.LOOC, message, wrappedMessage, source, hideChat ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal);
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"LOOC from {player:Player}: {message}");
-
-        _chatManager.UpdateLastSay(player, DateTimeOffset.Now.ToUnixTimeSeconds());
     }
 
     private void SendDeadChat(EntityUid source, IPlayerSession player, string message, bool hideChat)
