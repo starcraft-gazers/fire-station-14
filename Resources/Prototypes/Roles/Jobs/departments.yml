@@ -81,8 +81,8 @@
   - SecurityOfficer
   - Detective
   - Warden
-  # - Brigmedic
   - SecurityKnight
+  - Brigmedic
 
 - type: department
   id: Science
