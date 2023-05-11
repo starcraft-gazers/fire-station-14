@@ -8,11 +8,12 @@
     - state: red
     - sprite: Structures/Specific/anomaly.rsi
       state: anom1
-  - type: RandomSpawner
-    prototypes:
-    - AnomalyPyroclastic
-    - AnomalyGravity
-    - AnomalyElectricity
-    - AnomalyFlesh
-    - AnomalyBluespace
-    chance: 1
+  # - type: RandomSpawner
+  #   prototypes:
+  #   - AnomalyPyroclastic
+  #   - AnomalyGravity
+  #   - AnomalyElectricity
+  #   - AnomalyFlesh
+  #   - AnomalyBluespace
+  #   - AnomalyIce
+  #   chance: 1
