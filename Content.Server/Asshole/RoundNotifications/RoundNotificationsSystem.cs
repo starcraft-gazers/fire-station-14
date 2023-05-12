@@ -47,7 +47,7 @@ public sealed class RoundNotificationsSystem : EntitySystem
 
         var payload = new WebhookPayload()
         {
-            Content = Loc.GetString("discord-round-new"),
+            Content = Loc.GetString("discord-round-new", ("prefix", _prefix)),
         };
 
         if (!String.IsNullOrEmpty(_roleId))
