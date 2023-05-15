@@ -1,5 +1,6 @@
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind.Components;
+using Content.Server.Roles;
 using Content.Server.Zombies;
 using Content.Shared.Administration;
 using Content.Shared.Database;
@@ -16,6 +17,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly TraitorRuleSystem _traitorRule = default!;
     [Dependency] private readonly NukeopsRuleSystem _nukeopsRule = default!;
     [Dependency] private readonly PiratesRuleSystem _piratesRule = default!;
+    [Dependency] private readonly IRevolutionaryMaker _revolSystem = default!;
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -101,5 +103,22 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-pirate"),
         };
         args.Verbs.Add(pirate);
+
+        Verb revol = new()
+        {
+            Text = "Сделать революционером",
+            Category = VerbCategory.Antag,
+            Icon = null,
+            Act = () =>
+            {
+                if (targetMindComp.Mind == null || targetMindComp.Mind.Session == null)
+                    return;
+
+                _revolSystem.MakeRevolutionary(targetMindComp.Mind.Session);
+            },
+            Impact = LogImpact.High,
+            Message = "Делает цель командиром революционеров, не меняет игровой режим. Необходимо включить режим революции перед этим"
+        };
+        args.Verbs.Add(revol);
     }
 }

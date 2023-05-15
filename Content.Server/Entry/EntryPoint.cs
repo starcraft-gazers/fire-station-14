@@ -125,6 +125,7 @@ namespace Content.Server.Entry
             IoCManager.Resolve<IChatSanitizationManager>().Initialize();
             IoCManager.Resolve<IChatManager>().Initialize();
             IoCManager.Resolve<IAntagManager>().Initialize();
+            IoCManager.Resolve<IRevolutionaryMaker>().Initialize();
             IoCManager.Resolve<ISCPStationPointSystem>().Initialize();
             var configManager = IoCManager.Resolve<IConfigurationManager>();
             var resourceManager = IoCManager.Resolve<IResourceManager>();
