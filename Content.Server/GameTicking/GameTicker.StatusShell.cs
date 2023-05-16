@@ -22,6 +22,7 @@ namespace Content.Server.GameTicking
         ///     For access to CVars in status responses.
         /// </summary>
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly IStatusResponseProvider _responseProvider = default!;
 
         private void InitializeStatusShell()
         {
@@ -33,14 +34,7 @@ namespace Content.Server.GameTicking
             // This method is raised from another thread, so this better be thread safe!
             lock (_statusShellLock)
             {
-                jObject["name"] = _baseServer.ServerName;
-                jObject["players"] = _playerManager.PlayerCount;
-                jObject["soft_max_players"] = _cfg.GetCVar(CCVars.SoftMaxPlayers);
-                jObject["run_level"] = (int) _runLevel;
-                if (_runLevel >= GameRunLevel.InRound)
-                {
-                    jObject["round_start_time"] = _roundStartDateTime.ToString("o");
-                }
+                _responseProvider.GetStatusResponse(jObject, _runLevel, _roundStartDateTime);
             }
         }
     }
