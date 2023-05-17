@@ -18,23 +18,26 @@ using Robust.Shared.Audio;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Systems.Bwoink;
 
 [UsedImplicitly]
-public sealed class AHelpUIController: UIController, IOnStateChanged<GameplayState>, IOnSystemChanged<BwoinkSystem>
+public sealed class AHelpUIController : UIController, IOnStateChanged<GameplayState>, IOnSystemChanged<BwoinkSystem>
 {
     [Dependency] private readonly IClientAdminManager _adminManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     private BwoinkSystem? _bwoinkSystem;
     private MenuButton? AhelpButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.AHelpButton;
     public IAHelpUIHandler? UIHelper;
     private bool _discordRelayActive;
 
+    private double _lastMessageTime;
     public override void Initialize()
     {
         base.Initialize();
@@ -127,6 +130,7 @@ public sealed class AHelpUIController: UIController, IOnStateChanged<GameplaySta
         {
             SoundSystem.Play("/Audio/Effects/adminhelp.ogg", Filter.Local());
             _clyde.RequestWindowAttention();
+            _lastMessageTime = 0.0;
         }
 
         EnsureUIHelper();
@@ -152,13 +156,33 @@ public sealed class AHelpUIController: UIController, IOnStateChanged<GameplaySta
 
         UIHelper?.Dispose();
         var ownerUserId = _playerManager.LocalPlayer!.UserId;
-        UIHelper = isAdmin ? new AdminAHelpUIHandler(ownerUserId) : new UserAHelpUIHandler(ownerUserId);
+        UIHelper = isAdmin ? new AdminAHelpUIHandler(ownerUserId) : new UserAHelpUIHandler(ownerUserId, _gameTiming);
         UIHelper.DiscordRelayChanged(_discordRelayActive);
 
-        UIHelper.SendMessageAction = (userId, textMessage) => _bwoinkSystem?.Send(userId, textMessage);
+        UIHelper.SendMessageAction = (userId, textMessage) =>
+        {
+            if (!StopSpam())
+            {
+                _bwoinkSystem?.Send(userId, textMessage);
+
+                if (!isAdmin)
+                {
+                    _lastMessageTime = _gameTiming.CurTime.TotalSeconds;
+                }
+            }
+            else
+            {
+                UIHelper.AddCustomLine("\nПишите все одним сообщением!\nПисать можно один раз, в две минуты.\nИли отвечать на сообщение администрации.");
+            }
+        };
         UIHelper.OnClose += () => { SetAHelpPressed(false); };
-        UIHelper.OnOpen +=  () => { SetAHelpPressed(true); };
+        UIHelper.OnOpen += () => { SetAHelpPressed(true); };
         SetAHelpPressed(UIHelper.IsOpen);
+    }
+
+    public bool StopSpam()
+    {
+        return _lastMessageTime != 0.0 && _gameTiming.CurTime.TotalSeconds - _lastMessageTime <= 60.0;
     }
 
     public void Close()
@@ -238,6 +262,7 @@ public interface IAHelpUIHandler : IDisposable
     public bool IsOpen { get; }
     public void Receive(SharedBwoinkSystem.BwoinkTextMessage message);
     public void Close();
+    public void AddCustomLine(string message);
     public void Open(NetUserId netUserId, bool relayActive);
     public void ToggleWindow();
     public void DiscordRelayChanged(bool active);
@@ -318,6 +343,10 @@ public sealed class AdminAHelpUIHandler : IAHelpUIHandler
     {
     }
 
+    public void AddCustomLine(string message)
+    {
+    }
+
     public event Action? OnClose;
     public event Action? OnOpen;
     public Action<NetUserId, string>? SendMessageAction { get; set; }
@@ -390,15 +419,22 @@ public sealed class AdminAHelpUIHandler : IAHelpUIHandler
     }
 }
 
+//Быстро запилил говнокод, который позволит мьютить идиотов.
 public sealed class UserAHelpUIHandler : IAHelpUIHandler
 {
     private readonly NetUserId _ownerId;
-    public UserAHelpUIHandler(NetUserId owner)
+    private readonly IGameTiming _gameTiming;
+
+    public UserAHelpUIHandler(NetUserId owner, IGameTiming gameTiming)
     {
         _ownerId = owner;
+        _gameTiming = gameTiming;
     }
     public bool IsAdmin => false;
     public bool IsOpen => _window is { Disposed: false, IsOpen: true };
+
+    private double muteTime;
+
     private DefaultWindow? _window;
     private BwoinkPanel? _chatPanel;
     private bool _discordRelayActive;
@@ -406,6 +442,18 @@ public sealed class UserAHelpUIHandler : IAHelpUIHandler
     public void Receive(SharedBwoinkSystem.BwoinkTextMessage message)
     {
         DebugTools.Assert(message.UserId == _ownerId);
+        if (message.Text.Contains("/mute"))
+        {
+            muteTime = _gameTiming.CurTime.TotalSeconds + 600.0;
+            AddCustomLine("\nВы получили мут. \nВы не можете писать в Ahelp.\nЖдите, пока он пройдет, или администрация снимет его");
+        }
+
+        if (message.Text.Contains("/unmute"))
+        {
+            muteTime = 0;
+            AddCustomLine("Вам сняли мут");
+        }
+
         EnsureInit(_discordRelayActive);
         _chatPanel!.ReceiveLine(message);
         _window!.OpenCentered();
@@ -458,18 +506,37 @@ public sealed class UserAHelpUIHandler : IAHelpUIHandler
     {
         if (_window is { Disposed: false })
             return;
-        _chatPanel = new BwoinkPanel(text => SendMessageAction?.Invoke(_ownerId, text));
+
+        _chatPanel = new BwoinkPanel(text =>
+            {
+                if (muteTime != 0 && muteTime - _gameTiming.CurTime.TotalSeconds > 0)
+                {
+                    AddCustomLine("\nВы получили мут. \nВы не можете писать в Ahelp.\nЖдите, пока он пройдет, или администрация снимет его");
+                }
+                else
+                {
+                    SendMessageAction?.Invoke(_ownerId, text);
+                }
+            }
+        );
+
         _chatPanel.RelayedToDiscordLabel.Visible = relayActive;
         _window = new DefaultWindow()
         {
-            TitleClass="windowTitleAlert",
-            HeaderClass="windowHeaderAlert",
-            Title=Loc.GetString("bwoink-user-title"),
-            MinSize=(500, 200),
+            TitleClass = "windowTitleAlert",
+            HeaderClass = "windowHeaderAlert",
+            Title = Loc.GetString("bwoink-user-title"),
+            MinSize = (500, 200),
         };
         _window.OnClose += () => { OnClose?.Invoke(); };
         _window.OnOpen += () => { OnOpen?.Invoke(); };
         _window.Contents.AddChild(_chatPanel);
+    }
+
+    public void AddCustomLine(string message)
+    {
+        _chatPanel!.AddNoSpamLine(message);
+        _window!.OpenCentered();
     }
 
     public void Dispose()

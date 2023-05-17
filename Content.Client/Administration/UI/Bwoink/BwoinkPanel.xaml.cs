@@ -53,5 +53,15 @@ namespace Content.Client.Administration.UI.Bwoink
             TextOutput.AddMessage(formatted);
             LastMessage = message.SentAt;
         }
+
+        public void AddNoSpamLine(string message)
+        {
+            if (!Visible)
+                Unread++;
+
+            var formatted = new FormattedMessage(1);
+            formatted.AddMarkup($"[color=gray]Сервер: [/color] {message}");
+            TextOutput.AddMessage(formatted);
+        }
     }
 }
