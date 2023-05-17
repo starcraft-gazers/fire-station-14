@@ -1,5 +1,6 @@
 ent-BaseThruster = ракетный двигатель
     .desc = Он делает ньооооооом.
+    .suffix = { "" }
 ent-Thruster = ракетный двигатель
     .desc = Он делает ньооооооом.
 ent-DebugThruster = ракетный двигатель

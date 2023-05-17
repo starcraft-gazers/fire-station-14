@@ -1,7 +1,9 @@
 ent-BaseWeaponBattery = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+    .suffix = { "" }
 ent-BaseWeaponBatterySmall = { ent-BaseWeaponBattery }
     .desc = { ent-BaseWeaponBattery.desc }
+    .suffix = { "" }
 ent-WeaponLaserGun = старомодный лазерный пистолет
     .desc = Оружие, использующее свет, усиленный излучением радиации.
     .suffix = Пистолет
@@ -13,6 +15,7 @@ ent-WeaponLaserCarbine = лазерный карабин
     .suffix = Винтовка
 ent-WeaponLaserCarbinePractice = тренировочный лазерный карабин
     .desc = Модифицированная версия лазерного карабина. Стреляет ослабленными зарядами, и предназначена для стрельбы по мишеням.
+    .suffix = { "" }
 ent-WeaponPulsePistol = импульсный пистолет
     .desc = Новейший энергетический пистолет, предпочитаемый оперативниками ОБР NT в качестве запасного оружия.
     .suffix = Пистолет

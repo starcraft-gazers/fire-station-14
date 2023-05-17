@@ -29,6 +29,8 @@ salvage-expedition-difficulty-Moderate = Умеренная
 salvage-expedition-difficulty-Hazardous = Высокая
 salvage-expedition-difficulty-Extreme = Экстремальная
 # Runner
+salvage-expedition-not-all-present = Не все утилизаторы на шаттле!
+# Runner
 salvage-expedition-announcement-countdown-minutes =
     До окончания экспедиции осталась { $duration } { $duration ->
         [one] минута

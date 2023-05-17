@@ -18,7 +18,7 @@ chat-manager-server-wrap-message = СЕРВЕР: { $message }
 chat-manager-sender-announcement-wrap-message =
     Объявление { $sender }:
     { $message }
-chat-manager-entity-say-wrap-message = [color=green]{$entityName}[/color]: { $message }
+chat-manager-entity-say-wrap-message = [color=green]{ $entityName }[/color]: { $message }
 chat-manager-entity-whisper-wrap-message = { $entityName } шепчет, "{ $message }"
 chat-manager-entity-me-wrap-message = { $entityName } { $message }
 chat-manager-entity-looc-wrap-message = LOOC: { $entityName }: { $message }

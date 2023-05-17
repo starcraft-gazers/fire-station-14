@@ -1,5 +1,6 @@
 ent-BaseWeaponSniper = BaseWeaponSniper
     .desc = Дерзай — налетай, целься и стреляй.
+    .suffix = { "" }
 ent-WeaponSniperMosin = Кардашев-Мосин
     .desc = Оружие охоты, или бесконечной окопной войны. Использует патроны калибра .30 винтовочный.
     .suffix = Винтовка

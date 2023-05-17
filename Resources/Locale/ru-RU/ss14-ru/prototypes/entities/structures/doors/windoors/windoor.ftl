@@ -1,7 +1,9 @@
 ent-Windoor = раздвижное окно
     .desc = Это и окно, и раздвижная дверь. Вот это да!
+    .suffix = { "" }
 ent-WindoorSecure = армированное раздвижное окно
     .desc = Это и прочное окно, и раздвижная дверь. Вот это да!
+    .suffix = { "" }
 ent-WindoorBarLocked = { ent-Windoor }
     .suffix = Бар, Закрыто
     .desc = { ent-Windoor.desc }

@@ -1,8 +1,12 @@
 ent-BaseWeaponPistol = BasePistol
     .desc = Дерзай — налетай, целься и стреляй.
+    .suffix = { "" }
 ent-WeaponPistolViper = Гадюка
     .desc = Небольшой, легко скрываемый, но маломощный пистолет. Оснащён полностью автоматическим ресивером. Использует патроны калибра .35 авто.
     .suffix = Пистолет
+ent-WeaponPistolHandmade = handmade pistol
+    .desc = Looks unreliable. Uses .35 auto ammo.
+    .suffix = { "" }
 ent-WeaponPistolCobra = Кобра
     .desc = Пистолет суровых робастных агентов, с интегрированным глушителем. Использует патроны калибра .25 безгильзовый.
     .suffix = Пистолет

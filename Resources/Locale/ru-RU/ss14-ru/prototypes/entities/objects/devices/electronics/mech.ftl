@@ -1,7 +1,9 @@
 ent-RipleyCentralElectronics = центральный модуль управления Рипли
     .desc = Центральный управляющий модуль меха Рипли.
+    .suffix = { "" }
 ent-RipleyPeripheralsElectronics = модуль управления периферией Рипли
     .desc = Модуль управления периферией меха Рипли.
+    .suffix = { "" }
 ent-HonkerCentralElectronics = центральный модуль управления Х.О.Н.К.
     .desc = Центральный управляющий модуль меха Х.О.Н.К.
 ent-HonkerPeripheralsElectronics = модуль управления периферией Х.О.Н.К.
