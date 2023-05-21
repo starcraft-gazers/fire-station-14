@@ -65,9 +65,9 @@
 
 #Deathsquad Outfit
 - type: startingGear
-  id: DeadsquadGear
+  id: DeathSquadGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBlack
+    jumpsuit: ClothingUniformJumpsuitDeathSquad
     back: ClothingBackpackDuffelSyndicateAmmo
     mask: ClothingMaskBreath
     eyes: ClothingEyesGlassesSecurity
@@ -75,7 +75,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitDeathsquad
     suitstorage: YellowOxygenTankFilled
-    shoes: ClothingShoesChameleonNoSlips
+    shoes: ClothingShoesBootsMagAdv
     id: CentcomPDA
     pocket1: EnergySword
     belt: ClothingBeltChiefEngineerFilled
