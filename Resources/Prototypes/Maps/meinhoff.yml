@@ -1,0 +1,50 @@
+- type: gameMap
+  id: Meinhoff
+  mapName: 'Meinhoff'
+  mapPath: /Maps/meinhoff.yml
+  minPlayers: 0
+  stations:
+    Meinhoff:
+      mapNameTemplate: '{0} Meinhoff {1}'
+      emergencyShuttlePath: /Maps/Shuttles/emergency_courser.yml
+      nameGenerator:
+        !type:NanotrasenNameGenerator
+        prefixCreator: 'FS'
+      overflowJobs:
+        - Passenger
+      availableJobs:
+        CargoTechnician: [ 4, 4 ]
+        Passenger: [ -1, -1 ]
+        Reporter: [ 3, 3 ]
+        Bartender: [ 2, 3 ]
+        Botanist: [ 2, 3 ]
+        Chef: [ 2, 3 ]
+        Clown: [ 1, 1 ]
+        Janitor: [ 5, 6 ]
+        Mime: [ 1, 1 ]
+        Captain: [ 1, 1 ]
+        IAA: [ 1, 1 ]
+        HeadOfPersonnel: [ 1, 1 ]
+        ChiefEngineer: [ 1, 1 ]
+        StationEngineer: [ 4, 4 ]
+        ChiefMedicalOfficer: [ 1, 1 ]
+        MedicalDoctor: [ 4, 4 ]
+        Chemist: [ 3, 3 ]
+        ResearchDirector: [ 1, 1 ]
+        Scientist: [ 5, 5 ]
+        HeadOfSecurity: [ 1, 1 ]
+        SecurityOfficer: [ 6, 6 ]
+        Chaplain: [ 2, 3 ]
+        Warden: [ 1, 1 ]
+        Librarian: [ 2, 2 ]
+        Lawyer: [ 2, 2 ]
+        Quartermaster: [ 1, 1 ]
+        SalvageSpecialist: [ 4, 4 ]
+        Musician: [ 2, 2 ]
+        AtmosphericTechnician: [ 3, 3 ]
+        TechnicalAssistant: [ 4, 4 ]
+        MedicalIntern: [ 4, 4 ]
+        ServiceWorker: [ 4, 4 ]
+        SecurityCadet: [ 6, 6 ]
+        Detective: [ 1, 2 ]
+        ResearchAssistant: [ 5, 5 ]
