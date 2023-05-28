@@ -3,7 +3,3 @@
 	url = https://github.com/space-wizards/RobustToolbox.git
 	branch = master
 
-[submodule "FireStation"]
-	path = FireStation
-	url = git@github.com:starcraft-gazers/our-little-secrets.git
-    branch = master

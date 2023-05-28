@@ -24,6 +24,10 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Kitchen;
 
+using Content.Server.Roles;
+using Content.Server.Roles.SCP.Science;
+using Content.Server.Spawners.EntitySystems;
+
 namespace Content.Server.IoC
 {
     internal static class ServerContentIoC
@@ -58,6 +62,11 @@ namespace Content.Server.IoC
             IoCManager.Register<PlayTimeTrackingManager>();
             IoCManager.Register<UserDbDataManager>();
             IoCManager.Register<ServerInfoManager>();
+
+            //IoCManager.RegisterInstance<IAntagManager>(new AntagManager());
+            //IoCManager.RegisterInstance<ISCPStationPointSystem>(new SCPStationPointSystem());
+            IoCManager.Register<IAntagManager, AntagManager>();
+            IoCManager.Register<ISCPStationPointSystem, SCPStationPointSystem>();
         }
     }
 }

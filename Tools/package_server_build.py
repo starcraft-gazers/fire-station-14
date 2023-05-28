@@ -61,7 +61,6 @@ SERVER_IGNORED_RESOURCES = {
 # Assembly names to copy from content.
 # PDBs are included if available, .dll/.pdb appended automatically.
 SERVER_CONTENT_ASSEMBLIES = [
-    "Content.FireStationServer",
     "Content.Server.Database",
     "Content.Server",
     "Content.Shared",
@@ -170,21 +169,6 @@ def build_platform(platform: PlatformReg, skip_build: bool, hybrid_acz: bool) ->
             "/m"
         ], check=True)
 
-        if os.path.exists(p("FireStation", "Content.FireStationServer")):
-            print(Fore.BLUE + f"FireStation founded. \n\n\n\n\n\n\n\n\n\n\n Building FireStation project for {platform.rid}..." + Style.RESET_ALL)
-            subprocess.run([
-                "dotnet",
-                "build",
-                p("FireStation", "Content.FireStationServer", "Content.FireStationServer.csproj"),
-                "-c", "Release",
-                "--nologo",
-                "/v:m",
-                f"/p:TargetOS={platform.target_os}",
-                "/t:Rebuild",
-                "/p:FullRelease=True",
-                "/m"
-            ], check=True)
-
         publish_client_server(platform.rid, platform.target_os)
 
     print(Fore.GREEN + "Packaging {platform.rid} server..." + Style.RESET_ALL)
@@ -287,9 +271,7 @@ def copy_content_assemblies(target, zipf):
 
     # Include content assemblies.
     for asm in base_assemblies:
-        if os.path.exists(p(source_dir, asm + ".dll")):
-            print(asm)
-            files.append(asm + ".dll")
+        files.append(asm + ".dll")
         # If PDB available, include it aswell.
         pdb_path = asm + ".pdb"
         if os.path.exists(p(source_dir, pdb_path)):

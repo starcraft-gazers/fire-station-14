@@ -40,12 +40,10 @@ CLIENT_IGNORED_RESOURCES = {
     "ConfigPresets",
     "emotes.xml",
     "Groups",
-    "Prototypes/FireStationServer",
     "engineCommandPerms.yml"
 }
 
 CLIENT_CONTENT_ASSEMBLIES = [
-    "Content.FireStationClient",
     "Content.Client",
     "Content.Shared",
     "Content.Shared.Database"
@@ -100,20 +98,6 @@ def build(skip_build: bool) -> None:
             "/p:FullRelease=True",
             "/m"
         ], check=True)
-
-        if os.path.exists(p("FireStation", "Content.FireStationClient")):
-            print(Fore.BLUE + f"FireStation founded. \n\n\n\n\n\n\n\n\n\n\n Building FireStationClient Project" + Style.RESET_ALL)
-            subprocess.run([
-                "dotnet",
-                "build",
-                p("FireStation", "Content.FireStationClient", "Content.FireStationClient.csproj"),
-                "-c", "Release",
-                "--nologo",
-                "/v:m",
-                "/t:Rebuild",
-                "/p:FullRelease=True",
-                "/m"
-            ], check=True)
 
     print(Fore.GREEN + "Packaging client..." + Style.RESET_ALL)
 
@@ -189,9 +173,7 @@ def copy_content_assemblies(target, zipf):
 
     # Include content assemblies.
     for asm in base_assemblies:
-        if os.path.exists(p(source_dir, asm + ".dll")):
-            print(asm)
-            files.append(asm + ".dll")
+        files.append(asm + ".dll")
         # If PDB available, include it aswell.
         pdb_path = asm + ".pdb"
         if os.path.exists(p(source_dir, pdb_path)):
