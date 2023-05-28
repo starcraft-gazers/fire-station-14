@@ -13,7 +13,7 @@ public sealed class SpawnPointSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
-    [Dependency] private readonly ISCPStationPointSystem _scpStationPointSystem = default!;
+    [Dependency] private readonly ISCPStationPointManager _scpStationPointManager = default!;
 
     public override void Initialize()
     {
@@ -31,7 +31,7 @@ public sealed class SpawnPointSystem : EntitySystem
         foreach (var spawnPoint in points)
         {
             var xform = Transform(spawnPoint.Owner);
-            var isOnSCPStation = _scpStationPointSystem.IsSpawnPointAtSCPStation(spawnPoint.Owner, xform);
+            var isOnSCPStation = _scpStationPointManager.IsSpawnPointAtSCPStation(spawnPoint.Owner, xform);
 
             if (args.Station != null && _stationSystem.GetOwningStation(spawnPoint.Owner, xform) != args.Station && !isOnSCPStation)
                 continue;

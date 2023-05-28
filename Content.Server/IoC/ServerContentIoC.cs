@@ -66,7 +66,7 @@ namespace Content.Server.IoC
             //IoCManager.RegisterInstance<IAntagManager>(new AntagManager());
             IoCManager.Register<IAntagManager, AntagManager>();
             //IoCManager.Register<ISCPStationPointSystem, SCPStationPointSystem>();
-            IoCManager.RegisterInstance<ISCPStationPointSystem>(new SCPStationPointSystem());
+            IoCManager.Register<ISCPStationPointManager, SCPStationPointManager>();
         }
     }
 }

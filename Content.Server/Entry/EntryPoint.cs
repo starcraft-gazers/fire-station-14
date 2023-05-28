@@ -125,7 +125,7 @@ namespace Content.Server.Entry
             IoCManager.Resolve<IChatSanitizationManager>().Initialize();
             IoCManager.Resolve<IChatManager>().Initialize();
             IoCManager.Resolve<IAntagManager>().Initialize();
-            IoCManager.Resolve<ISCPStationPointSystem>().Initialize();
+            IoCManager.Resolve<ISCPStationPointManager>().Initialize();
             var configManager = IoCManager.Resolve<IConfigurationManager>();
             var resourceManager = IoCManager.Resolve<IResourceManager>();
             var dest = configManager.GetCVar(CCVars.DestinationFile);

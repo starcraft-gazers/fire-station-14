@@ -5,7 +5,7 @@ using Robust.Shared.Physics;
 
 namespace Content.Server.Roles.SCP.Science;
 
-public sealed class SCPStationPointSystem : ISCPStationPointSystem
+public sealed class SCPStationPointManager : ISCPStationPointManager
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
 

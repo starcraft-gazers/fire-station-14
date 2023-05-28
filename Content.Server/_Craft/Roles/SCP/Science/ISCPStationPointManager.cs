@@ -1,6 +1,6 @@
 namespace Content.Server.Spawners.EntitySystems;
 
-public interface ISCPStationPointSystem
+public interface ISCPStationPointManager
 {
     public void Initialize();
     public bool IsSpawnPointAtSCPStation(EntityUid uid, TransformComponent xform);
