@@ -35,9 +35,7 @@ public sealed class SCPStationSystem : EntitySystem
     private bool IsFallback = false;
     public override void Initialize()
     {
-        scpStationPrototype = _prototypeManager
-            .EnumeratePrototypes<SCPStationPrototype>()
-            .FirstOrDefault(null);
+        scpStationPrototype = _prototypeManager.EnumeratePrototypes<SCPStationPrototype>().FirstOrDefault();
 
         if (scpStationPrototype == null)
             return;
