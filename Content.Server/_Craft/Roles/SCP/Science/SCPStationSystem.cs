@@ -37,7 +37,7 @@ public sealed class SCPStationSystem : EntitySystem
     {
         scpStationPrototype = _prototypeManager
             .EnumeratePrototypes<SCPStationPrototype>()
-            .First();
+            .FirstOrDefault(null);
 
         if (scpStationPrototype == null)
             return;
