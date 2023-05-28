@@ -1,0 +1,108 @@
+# - type: entity
+#   save: false
+#   abstract: true
+#   id: BaseTank #for player controlled silicons
+#   components:
+#   - type: Reactive
+#     groups:
+#       Acidic: [Touch]
+#   - type: Input
+#     context: "human"
+#   - type: DamageOnHighSpeedImpact
+#     damage:
+#       types:
+#         Blunt: 5
+#     soundHit:
+#       path: /Audio/Effects/hit_kick.ogg
+#   - type: Clickable
+#   - type: InputMover
+#   - type: Damageable
+#     damageContainer: Inorganic
+#   - type: Bloodstream
+#     bloodReagent: Oil
+#     bloodlossDamage:
+#       types:
+#         Bloodloss:
+#           1
+#     bloodlossHealDamage:
+#       types:
+#         Bloodloss:
+#           -1
+#   - type: InteractionOutline
+#   - type: Fixtures
+#     fixtures:
+#       - shape: !type:PhysShapeCircle
+#           radius: 0.5
+#         density: 500
+#         mask:
+#         - MobMask
+#         layer:
+#         - MobLayer
+#   - type: MovementSpeedModifier
+#     baseWalkSpeed: 3
+#     baseSprintSpeed: 2
+#   - type: Body
+#     prototype: Drone
+#   - type: Hands
+#     showInHands: false
+#   - type: Sprite
+#     noRot: true
+#     drawdepth: Mobs
+#     netsync: false
+#   - type: Physics
+#     bodyType: KinematicController
+#   - type: DoAfter
+#   - type: Examiner
+#   - type: StandingState
+#   - type: Alerts
+#   - type: Tag
+#     tags:
+#       - ShoesRequiredStepTriggerImmune
+#       - FootstepSound
+#       - CannotSuicide
+
+# - type: entity
+#   name: "Танк Т134"
+#   description: "Боевая техника на службе НТ"
+#   id: TankT134
+#   parent: BaseTank
+#   components:
+#     - type: InnateTool
+#       tools:
+#         - id: WeaponMinigun
+#         - id: WeaponLauncherMultipleRocket
+#     - type: UserInterface
+#       interfaces:
+#       - key: enum.StrippingUiKey.Key
+#         type: StrippableBoundUserInterface
+#     - type: MobThresholds
+#       thresholds:
+#         0: Alive
+#         10000: Dead
+#     - type: GhostRole
+#       makeSentient: true
+#       name: Танк Т134
+#       description: Боевая машина на службе НТ
+#     - type: GhostTakeoverAvailable
+#     - type: Sprite
+#       netsync: false
+#       drawdepth: Mobs
+#       layers:
+#         - state: tank
+#           sprite: FireStation/Entities/Tank.rsi
+#     - type: FootstepModifier
+#       footstepSoundCollection:
+#         path: /Audio/FireStation/Entities/Tank/T134Walk.ogg
+#     - type: Repairable
+#       fuelCost: 75
+#       doAfterDelay: 20
+#     - type: MovementIgnoreGravity
+#     - type: Appearance
+#       rotate: true
+#       states:
+#         Alive:
+#           Base: tank
+#         Dead:
+#           Base: tank
+#     - type: CombatMode
+

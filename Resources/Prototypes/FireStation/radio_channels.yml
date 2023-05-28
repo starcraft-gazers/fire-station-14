@@ -1,0 +1,7 @@
+- type: radioChannel
+  id: SCP
+  name: Отдел SCP
+  keycode: 'р'
+  frequency: 1451
+  color: "#b9f9c9"
+  longRange: true

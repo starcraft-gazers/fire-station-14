@@ -1,0 +1,11 @@
+- type: entity
+  id: SpawnPointSCPDClass
+  parent: SpawnPointJobBase
+  name: SCPDClass
+  components:
+  - type: SpawnPoint
+    job_id: SCPDClass
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist

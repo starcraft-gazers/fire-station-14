@@ -1,0 +1,72 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSCPHead
+  name: Скафандр руководителя отдела SCP
+  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  components:
+    - type: Sprite
+      sprite: FireStation/Clothing/scp_rd_scaf.rsi
+    - type: Clothing
+      sprite: FireStation/Clothing/scp_rd_scaf.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.02
+      lowPressureMultiplier: 5500
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.6
+          Slash: 0.8
+          Piercing: 0.95
+          Heat: 0.3
+          Radiation: 0.1
+          Caustic: 0.25
+    - type: ClothingSpeedModifier
+      walkModifier: 0.75
+      sprintModifier: 0.75
+    - type: Item
+      size: 100
+    - type: ExplosionResistance
+      damageCoefficient: 0.1
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHelmetHardsuitSCPHead
+    - type: StaticPrice
+      price: 750
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitSCPHead
+  noSpawn: true
+  name: шлем скафандра главы отдела SCP
+  description: Lightweight hardsuit helmet that doesn't restrict your head movements.
+  components:
+    - type: Sprite
+      sprite: FireStation/Clothing/scp_rd_helmet.rsi
+    - type: Clothing
+      sprite: FireStation/Clothing/scp_rd_helmet.rsi
+    - type: PointLight
+      color: "#d6adff"
+    - type: PressureProtection
+      highPressureMultiplier: 0.60
+      lowPressureMultiplier: 5500
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantleSCPHead
+  name: Мантия главы отдела SCP
+  description: A terribly comfortable shoulder draping for the discerning scientist of fashion. # Corvax-Resprite
+  components:
+    - type: Sprite
+      sprite: FireStation/Clothing/scp_rd_back.rsi
+    - type: Clothing
+      sprite: FireStation/Clothing/scp_rd_back.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSCPHeadBeret
+  name: Берет главы отдела SCP
+  description: Берет
+  components:
+    - type: Sprite
+      sprite: FireStation/Clothing/scp_rd_beret.rsi
+    - type: Clothing
+      sprite: FireStation/Clothing/scp_rd_beret.rsi

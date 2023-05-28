@@ -1,0 +1,40 @@
+# - type: entity
+#   id: MobNarsi
+#   name: narsi
+#   description: Your end. No way.
+#   components:
+#   - type: Mind
+#   - type: InputMover
+#   - type: MovementSpeedModifier
+#     baseSprintSpeed: 12
+#     baseWalkSpeed: 8
+#   - type: Physics
+#     ignorePaused: true
+#     bodyType: Kinematic
+#   - type: Body
+#     prototype: Aghost
+#   - type: Singularity
+#   - type: SingularityDistortion
+#     intensity: 20
+#   - type: Sprite
+#     sprite: FireStation/Mobs/Cult.rsi
+#     noRot: true
+#     drawdepth: Mobs
+#     state: icon2
+#   - type: Clickable
+#   - type: InteractionOutline
+#   - type: Physics
+#     bodyType: KinematicController
+#   - type: HeatResistance
+#   - type: Appearance
+#   - type: Examiner
+#   - type: GhostRole
+#     allowMovement: true
+#     allowSpeech: true
+#     name: Нар-Си
+#     description: Вы злобный бог, чья задача просто уничтожить все живое и станцию
+#   - type: GhostTakeoverAvailable
+#   - type: PointLight
+#     color: Maroon
+#     radius: 50
+#     softness: 50

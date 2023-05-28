@@ -1,0 +1,52 @@
+- type: stationGoal
+  id: StationGoalMultiTwo
+  graph:
+    - name: GoalOne
+      steps:
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-will-send-in-few-minutes-multi
+          delay: 60
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-multitwo-first
+          delay: 120
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-multitwo-first
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-multitwo-fisrt-shuttle-requirements
+          delay: 10
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-multitwo-first-add-cargo
+          delay: 300
+
+        - !type:AddProductsToCargo
+          advancedCargoPrototypes:
+            - ShuttleMiniGravitation
+
+    - name: GoalTwo
+      delay: 2400
+      steps:
+        - !type:DungeonsGenerator
+          DungeonPrototypeID: Experiment
+          EnemiesPrototypes:
+            - MobXenoPraetorian
+            - MobXeno
+            - MobXenoRavager
+            - MobGiantSpider
+          EnemiesCount: 10
+
+
+        - !type:AnnouncementStep
+          sender: Центральное командование
+          messageLoc: station-goal-multitwo-second
+          delay: 60
+
+        - !type:PrintGoalToFaxStep
+          messageLoc: station-goal-multitwo-second-requirements
+          delay: 10

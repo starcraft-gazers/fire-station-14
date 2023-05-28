@@ -1,0 +1,21 @@
+- type: job
+  id: SCPDClass
+  name: Д Класс
+  playTimeTracker: JobSCPDClass
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600
+  startingGear: SCPDClassGear
+  icon: "SCPDClass"
+  supervisors: "Всем"
+  canBeAntag: false
+
+- type: startingGear
+  id: SCPDClassGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrisoner
+    shoes: ClothingShoesColorBlack
+  innerclothingskirt: ClothingUniformJumpskirtColorGrey
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled

@@ -1,0 +1,6 @@
+- type: antag
+  id: SyndicateWarOps
+  name: syndicatewar-roles-antag-operative-name
+  antagonist: true
+  setPreference: false
+  objective: syndicatewar-antag-operative-objective

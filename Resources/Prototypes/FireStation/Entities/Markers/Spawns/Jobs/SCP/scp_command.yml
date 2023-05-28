@@ -1,0 +1,11 @@
+- type: entity
+  id: SpawnPointSCPCommand
+  parent: SpawnPointJobBase
+  name: scpCommand
+  components:
+  - type: SpawnPoint
+    job_id: SCPHead
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist

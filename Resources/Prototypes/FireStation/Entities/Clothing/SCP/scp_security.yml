@@ -1,0 +1,29 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtSCPSecurity
+  name: комбинезон сотрудника безопасности SCP
+  description: Комбинезон отрудника безопасности SCP
+  components:
+  - type: Sprite
+    sprite: FireStation/Clothing/SCP/Security/tshirt.rsi
+  - type: Clothing
+    sprite: FireStation/Clothing/SCP/Security/tshirt.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSCPSecurityHelmet
+  name: Шлем сотрудника безопасности SCP
+  description: Обычный шлем для защиты головы.
+  components:
+  - type: Sprite
+    sprite: FireStation/Clothing/SCP/Security/helmet.rsi
+  - type: Clothing
+    sprite: FireStation/Clothing/SCP/Security/helmet.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.8

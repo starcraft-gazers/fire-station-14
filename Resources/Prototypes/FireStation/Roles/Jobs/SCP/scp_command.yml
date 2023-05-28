@@ -1,0 +1,33 @@
+- type: job
+  id: SCPHead
+  name: Глава отдела SCP
+  playTimeTracker: JobSCPHead
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: SCP
+      time: 10800
+  startingGear: SCPHeadGear
+  icon: "ResearchDirector"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+    - Research
+    - Command
+    - Maintenance
+    - External
+    - SCPCommand
+    - SCP
+
+- type: startingGear
+  id: SCPHeadGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSCPScientist
+    back: ClothingBackpackScienceFilled
+    shoes: ClothingShoesColorWhite
+    id: SCPHeadPDA
+    outerClothing: ClothingOuterHardsuitSCPHead
+    head: ClothingHeadSCPHeadBeret
+    neck: ClothingNeckMantleSCPHead
+    ears: ClothingHeadsetSCPHead
+  satchel: ClothingBackpackSatchelScienceFilled
+  duffelbag: ClothingBackpackDuffelScienceFilled

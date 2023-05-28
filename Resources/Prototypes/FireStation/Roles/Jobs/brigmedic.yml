@@ -1,0 +1,15 @@
+- type: startingGear
+  id: BridMedicFireStationGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJack
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadHelmetVoidBrigmedic
+    outerClothing: ClothingOuterBrigMedicHardsuit
+    id: SecurityPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltMedicalFilled
+  innerclothingskirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

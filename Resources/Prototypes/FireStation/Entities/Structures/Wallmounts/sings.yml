@@ -1,0 +1,94 @@
+# - type: entity
+#   id: BaseFireStationSign
+#   name: Флаг
+#   abstract: true
+#   placement:
+#     mode: SnapgridCenter
+#   components:
+#     - type: WallMount
+#       arc: 360
+#     - type: Clickable
+#     - type: InteractionOutline
+#     - type: Rotatable
+#     - type: Physics
+#       bodyType: Static
+#       canCollide: false
+#     - type: Fixtures
+#       fixtures:
+#         - shape: !type:PhysShapeAabb {}
+#     - type: Damageable
+#       damageContainer: Inorganic
+#       damageModifierSet: Metallic
+#     - type: Destructible
+#       thresholds:
+#         - trigger: !type:DamageTrigger
+#             damage: 5
+#           behaviors:
+#             - !type:DoActsBehavior
+#               acts: ["Destruction"]
+#     - type: Sprite
+#       drawdepth: WallTops
+#       sprite: FireStation/Structures/Wallmounts/signs.rsi
+#       netsync: false
+#       snapCardinals: true
+#     - type: StaticPrice
+#       price: 20
+
+# - type: entity
+#   parent: BaseFireStationSign
+#   id: SignFlagRussia
+#   components:
+#     - type: Sprite
+#       state: russia
+
+# - type: entity
+#   parent: BaseFireStationSign
+#   id: SignFlagUSSR
+#   components:
+#     - type: Sprite
+#       state: sssr
+
+# - type: entity
+#   parent: BaseFireStationSign
+#   id: SignFlagBelarus
+#   components:
+#     - type: Sprite
+#       state: belarus
+
+# - type: entity
+#   parent: BaseFireStationSign
+#   id: SignFlagKazahstan
+#   components:
+#     - type: Sprite
+#       state: kazahstan
+
+# - type: entity
+#   parent: BaseFireStationSign
+#   id: SignFlagUk
+#   components:
+#     - type: Sprite
+#       state: uk
+
+# - type: entity
+#   parent: BaseFireStationSign
+#   id: SignRodinaMat1
+#   name: Постер за родину!
+#   components:
+#     - type: Sprite
+#       state: rodina_mat1
+
+# - type: entity
+#   parent: BaseFireStationSign
+#   id: SignRodinaMat2
+#   name: Постер за родину!
+#   components:
+#     - type: Sprite
+#       state: rodina_mat2
+
+# - type: entity
+#   parent: BaseFireStationSign
+#   id: SignRodinaMat3
+#   name: Постер за родину!
+#   components:
+#     - type: Sprite
+#       state: rodina_mat3

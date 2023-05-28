@@ -1,0 +1,36 @@
+- type: job
+  id: SCPSecurity
+  name: Сотрудник безопасности SCP
+  playTimeTracker: JobSCPSecurity
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 21600
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 21600
+  startingGear: SCPSecurityGear
+  icon: "SCPSecurity"
+  supervisors: "Главе отдела СЦП"
+  canBeAntag: false
+  access:
+    - Security
+    - Maintenance
+    - External
+    - SCP
+
+- type: startingGear
+  id: SCPSecurityGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtSCPSecurity
+    back: ClothingBackpackSecurityFilled
+    shoes: ClothingShoesBootsJack
+    eyes: ClothingEyesGlassesSecurity
+    head: ClothingHeadSCPSecurityHelmet
+    outerClothing: ClothingOuterVestKevlar
+    id: SCPSecurityPDA
+    ears: ClothingHeadsetSCPSecurity
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtSec
+  satchel: ClothingBackpackSatchelSecurityFilled
+  duffelbag: ClothingBackpackDuffelSecurityFilled

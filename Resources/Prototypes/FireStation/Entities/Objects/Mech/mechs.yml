@@ -1,0 +1,192 @@
+# - type: entity
+#   name: Боевой мех Т049
+#   id: Tank049
+#   parent: PlayerSiliconBase
+#   components:
+#     - type: InputMover
+#     - type: InnateTool
+#       tools:
+#         - id: ERTLeaderIDCard
+#         - id: JawsOfLife
+#         - id: Hypospray
+#         - id: HandheldCrewMonitor
+#     - type: GhostRole
+#       makeSentient: true
+#       name: Боевой мех Т049
+#       description: Медицинский мех
+#     - type: GhostTakeoverAvailable
+#     - type: MovementSpeedModifier
+#       baseWalkSpeed: 1
+#       baseSprintSpeed: 2
+#     - type: MobState
+#       allowedStates:
+#         - Alive
+#         - Dead
+#     - type: MobThresholds
+#       thresholds:
+#         0: Alive
+#         1000: Dead
+#     - type: Sprite
+#       drawdepth: Mobs
+#       layers:
+#         - map: ["enum.DamageStateVisualLayers.Base"]
+#           state: reticence
+#           sprite: FireStation/Entities/mech.rsi
+#     - type: FootstepModifier
+#       footstepSoundCollection:
+#         path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+#     - type: MovementIgnoreGravity
+#     - type: Fixtures
+#       fixtures:
+#         - shape: !type:PhysShapeCircle
+#             radius: 0.45
+#           density: 160
+#           mask:
+#             - LargeMobMask
+#           layer:
+#             - MobLayer
+#     - type: CombatMode
+#     - type: Tag
+#       tags:
+#         - FootstepSound
+#     - type: ReagentDispenser
+#       pack: ChemDispenserStandardInventory
+#       emagPack: ChemDispenserEmaggedInventory
+#     - type: ItemSlots
+#       slots:
+#         beakerSlot:
+#           whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message
+#           whitelist:
+#             components:
+#               - FitsInDispenser
+#     - type: ContainerContainer
+#       containers:
+#         machine_board: !type:Container
+#         machine_parts: !type:Container
+#         beakerSlot: !type:ContainerSlot
+#     - type: StaticPrice
+#       price: 1000
+#     - type: Transform
+#     - type: Clickable
+#     - type: InteractionOutline
+#       bodyType: Static
+#     - type: ActivatableUI
+#       key: enum.ReagentDispenserUiKey.Key
+#     - type: UserInterface
+#       interfaces:
+#         - key: enum.ReagentDispenserUiKey.Key
+#           type: ReagentDispenserBoundUserInterface
+
+# - type: entity
+#   name: Боевой мех T173
+#   id: Tank173
+#   parent: PlayerSiliconBase
+#   components:
+#     - type: InputMover
+#     - type: InnateTool
+#       tools:
+#         - id: ERTLeaderIDCard
+#         - id: WeaponLightMachineGunL6
+#         - id: JawsOfLife
+#     - type: UserInterface
+#       interfaces:
+#         - key: enum.StrippingUiKey.Key
+#           type: StrippableBoundUserInterface
+#     - type: GhostRole
+#       makeSentient: true
+#       name: Боевой мех T173
+#     - type: GhostTakeoverAvailable
+#     - type: MovementSpeedModifier
+#       baseWalkSpeed: 1
+#       baseSprintSpeed: 2
+#     - type: MobState
+#       allowedStates:
+#         - Alive
+#         - Dead
+#     - type: MobThresholds
+#       thresholds:
+#         0: Alive
+#         3000: Dead
+#     - type: Sprite
+#       netsync: false
+#       drawdepth: Mobs
+#       noRot: true
+#       sprite: FireStation/Entities/mech.rsi
+#       layers:
+#         - map: ["enum.MechVisualLayers.Base"]
+#           state: marauder
+#     - type: FootstepModifier
+#       footstepSoundCollection:
+#         path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+#     - type: MovementIgnoreGravity
+#     - type: Fixtures
+#       fixtures:
+#         - shape: !type:PhysShapeCircle
+#             radius: 0.45
+#           density: 160
+#           mask:
+#             - LargeMobMask
+#           layer:
+#             - MobLayer
+#     - type: CombatMode
+#     - type: Tag
+#       tags:
+#         - FootstepSound
+
+# - type: entity
+#   name: Боевой мех T910
+#   id: Tank910
+#   parent: PlayerSiliconBase
+#   components:
+#     - type: Stealth
+#     - type: StealthOnMove
+#     - type: InnateTool
+#       tools:
+#         - id: ERTLeaderIDCard
+#         - id: WeaponSubMachineGunC20r
+#         - id: JawsOfLife
+#     - type: UserInterface
+#       interfaces:
+#         - key: enum.StrippingUiKey.Key
+#           type: StrippableBoundUserInterface
+#     - type: GhostRole
+#       makeSentient: true
+#       name: Боевой мех T910
+#     - type: GhostTakeoverAvailable
+#     - type: MovementSpeedModifier
+#       baseWalkSpeed: 3
+#       baseSprintSpeed: 5
+#     - type: MobState
+#       allowedStates:
+#         - Alive
+#         - Dead
+#     - type: MobThresholds
+#       thresholds:
+#         0: Alive
+#         1000: Dead
+#     - type: Sprite
+#       netsync: false
+#       drawdepth: Mobs
+#       noRot: true
+#       sprite: FireStation/Entities/mech.rsi
+#       layers:
+#         - map: ["enum.MechVisualLayers.Base"]
+#           state: odysseus
+#     - type: FootstepModifier
+#       footstepSoundCollection:
+#         path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+#     - type: MovementIgnoreGravity
+#     - type: InputMover
+#     - type: Fixtures
+#       fixtures:
+#         - shape: !type:PhysShapeCircle
+#             radius: 0.45
+#           density: 160
+#           mask:
+#             - LargeMobMask
+#           layer:
+#             - MobLayer
+#     - type: CombatMode
+#     - type: Tag
+#       tags:
+#         - FootstepSound

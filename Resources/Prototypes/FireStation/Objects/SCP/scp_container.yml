@@ -1,0 +1,42 @@
+- type: entity
+  parent: CrateGeneric
+  id: SCPStock
+  name: Контейнер для SCP объектов
+  components:
+    - type: EntityStorage
+      air:
+        volume: 800
+    - type: AccessReader
+      access: [["SCP"]]
+    - type: Sprite
+      sprite: FireStation/Objects/Misc/scp_container.rsi
+      layers:
+        - state: base
+        - state: closed
+          map: ["enum.StorageVisualLayers.Door"]
+    - type: Icon
+      sprite: FireStation/Objects/Misc/scp_container.rsi
+      state: closed
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 20000
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/Effects/woodhit.ogg
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+    - type: Physics
+      bodyType: Dynamic
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.45
+          density: 135
+          mask:
+            - LargeMobMask
+          layer:
+            - LargeMobLayer

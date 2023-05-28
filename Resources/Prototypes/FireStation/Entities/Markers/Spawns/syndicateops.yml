@@ -1,0 +1,11 @@
+- type: entity
+  id: SpawnPointSyndicateOps
+  parent: MarkerBase
+  name: syndicateOps
+  components:
+  - type: SpawnPoint
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Objects/Fun/toys.rsi
+      state: synb

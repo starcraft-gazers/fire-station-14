@@ -1,0 +1,39 @@
+- type: entity
+  parent: ClothingOuterEVASuitBase
+  id: ClothingOuterBrigMedicHardsuit
+  name: Скафандр бриг медика
+  description: Легкий скафандр бриг медика
+  components:
+  - type: Sprite
+    sprite: FireStation/Clothing/OuterClothing/Hardsuits/brigmedic.rsi
+  - type: Clothing
+    sprite: FireStation/Clothing/OuterClothing/Hardsuits/brigmedic.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.4
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  parent: ClothingHeadEVAHelmetBase
+  id: ClothingHeadHelmetVoidBrigmedic
+  name: Пустотный шлем бриг медика
+  description: Пустотный шлем для бриг медика
+  components:
+  - type: Sprite
+    sprite: FireStation/Clothing/OuterClothing/Hardsuits/brigmedic_helmet.rsi
+  - type: Clothing
+    sprite: FireStation/Clothing/OuterClothing/Hardsuits/brigmedic_helmet.rsi
+  - type: IngestionBlocker
+  - type: TemperatureProtection
+    coefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+        Heat: 0.90
+        Radiation: 0.75

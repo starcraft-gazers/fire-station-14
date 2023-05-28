@@ -1,0 +1,115 @@
+- type: entity
+  name: Чумной доктор
+  parent: SCPMobBase
+  id: MobSCPPlagueDoctor
+  description: Не болейте...
+  components:
+    - type: PlagueDoctor
+    - type: Sprite
+      drawdepth: Mobs
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          sprite: FireStation/Mobs/SCP/scp049.rsi
+          state: standing
+    - type: CollisionWake
+      enabled: false
+    - type: Physics
+      bodyType: Dynamic
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.3
+          density: 200
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: alive
+        Dead:
+          Base: dead
+    - type: MovementSpeedModifier
+      baseWalkSpeed : 4
+      baseSprintSpeed : 4
+    - type: Damageable
+    - type: Clickable
+    - type: Speech
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      name: Чумной доктор
+      description: Вы разумный и молчиливый "Чумной доктор".
+      rules: Вы дружелюбный объект! Вы можете создать себе двух прислужников, а также лечить экипаж.
+    - type: GhostTakeoverAvailable
+    - type: MobState
+      allowedStates:
+        - Alive
+        - Dead
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        800: Dead
+    - type: Appearance
+    - type: CombatMode
+      disarm: null
+    - type: MeleeWeapon
+      hidden: true
+      soundHit:
+        collection: Punch
+      angle: 30
+      animation: WeaponArcFist
+      attackRate: 1
+      damage:
+        types:
+          Blunt: 25
+    - type: NoSlip
+    - type: Insulated
+    - type: Tag
+      tags:
+        - FootstepSound
+        - CannotSuicide
+        - DoorBumpOpener
+    - type: Hands
+    - type: Body
+      prototype: SCP049Body
+
+- type: entity
+  name: Спавнер Чумного Доктора
+  id: SpawnMobSCPPlagueDoctor
+  parent: SpawnMobSCP
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: FireStation/Mobs/SCP/scp049.rsi
+          state: standing
+    - type: ConditionalSpawner
+      prototypes:
+        - MobSCPPlagueDoctor
+
+- type: body
+  id: SCP049Body
+  name: "SCP049"
+  root: torso
+  slots:
+    torso:
+      part: TorsoHuman
+      connections:
+      - right arm
+      - left arm
+    right arm:
+      part: RightArmHuman
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmHuman
+      connections:
+      - left hand
+    right hand:
+      part: RightHandHuman
+    left hand:
+      part: LeftHandHuman

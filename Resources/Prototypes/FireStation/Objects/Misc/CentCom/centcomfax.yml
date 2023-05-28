@@ -1,0 +1,3 @@
+- type: CentralCommandFaxPrototype
+  id: CentralCommandFaxPrototype
+  mapPath: /Maps/centcomfax.yml

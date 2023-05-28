@@ -1,0 +1,110 @@
+- type: entity
+  id: ClosetSCPBase
+  parent: BaseStructureDynamic
+  name: closet
+  description: A standard-issue Nanotrasen storage unit.
+  noSpawn: true
+  components:
+    - type: ResistLocker
+    - type: Transform
+      noRot: true
+    - type: Sprite
+      noRot: true
+      netsync: false
+      sprite: FireStation/Structures/Storage/scp_closet.rsi
+      layers:
+        - state: generic
+        - state: generic_door
+          map: ["enum.StorageVisualLayers.Door"]
+        - state: welded
+          visible: false
+          map: ["enum.WeldableLayers.BaseWelded"]
+    - type: MovedByPressure
+    - type: DamageOnHighSpeedImpact
+      damage:
+        types:
+          Blunt: 5
+      soundHit:
+        path: /Audio/Effects/bang.ogg
+    - type: InteractionOutline
+    - type: Physics
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          density: 145
+          mask:
+            - MachineMask
+          layer:
+            - MachineLayer
+    - type: EntityStorage
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+    - type: Weldable
+    - type: PlaceableSurface
+      placeCentered: true
+      isPlaceable: false
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 150
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/Effects/metalbreak.ogg
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                SheetSteel1:
+                  min: 1
+                  max: 1
+
+- type: entity
+  id: ClosetSCPScientist
+  parent: ClosetSCPBase
+  name: Шкаф ученого SCP
+  description: Все необходимое, для работы с SCP
+  components:
+    - type: Appearance
+      visuals:
+        - type: StorageVisualizer
+          state: science_scp
+          state_open: science_scp_open
+          state_closed: science_scp_door
+    - type: StorageFill
+      contents:
+        - id: ClothingHeadsetSCPScience
+
+- type: entity
+  id: ClosetSCPSecurity
+  parent: ClosetSCPBase
+  name: Шкаф сотрудника безопасности SCP
+  description: Все необходимое, для зашиты отдела SCP
+  components:
+    - type: Appearance
+      visuals:
+        - type: StorageVisualizer
+          state: sec_scp
+          state_open: sec_scp_open
+          state_closed: sec_scp_door
+    - type: StorageFill
+      contents:
+        - id: FlashlightSeclite
+          prob: 0.8
+        - id: ClothingUniformJumpsuitSecGrey
+          prob: 0.3
+        - id: ClothingOuterArmorBulletproof
+        - id: ClothingBeltSecurityFilled
+        - id: Flash
+          prob: 0.5
+        - id: ClothingEyesGlassesSecurity
+        - id: ClothingHandsGlovesColorBlack
+        - id: ClothingShoesBootsJack
+        - id: ClothingHeadsetSCPSecurity

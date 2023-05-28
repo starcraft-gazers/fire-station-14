@@ -1,0 +1,39 @@
+# - type: entity
+#   id: InfinityFire
+#   name: Вечный огонь
+#   description: Дань павшим
+#   components:
+#     - type: InteractionOutline
+#     - type: Fixtures
+#       fixtures:
+#         - shape: !type:PhysShapeAabb
+#             bounds: "0.17,0.25,-0.17,-0.30"
+#           density: 190
+#           mask:
+#             - MachineMask
+#           layer:
+#             - MidImpassable
+#             - LowImpassable
+#     - type: Sprite
+#       sprite: FireStation/Objects/Misc/infinityFire.rsi
+#       layers:
+#         - state: fire
+#           offset: "0.0,0.5"
+#         - state: stand
+#     - type: PointLight
+#       radius: 20
+#       energy: 0.8
+#       softness: 1
+#       offset: "0, -0.5"
+
+
+# - type: entity
+#   parent: BaseItem
+#   id: GeorgeLente
+#   name: Георгиевская ленточка
+#   description: Дань павшим
+#   components:
+#   - type: Sprite
+#     sprite: FireStation/Objects/Misc/infinityFire.rsi
+#     state: george
+

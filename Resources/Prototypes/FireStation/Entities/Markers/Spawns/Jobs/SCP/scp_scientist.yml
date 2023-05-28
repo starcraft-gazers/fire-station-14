@@ -1,0 +1,11 @@
+- type: entity
+  id: SpawnPointSCPScientist
+  parent: SpawnPointJobBase
+  name: scpScientist
+  components:
+  - type: SpawnPoint
+    job_id: SCPScientist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: scientist

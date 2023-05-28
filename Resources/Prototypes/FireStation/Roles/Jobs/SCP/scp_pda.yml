@@ -1,0 +1,71 @@
+- type: entity
+  parent: IDCardStandard
+  id: SCPSecurityIDCard
+  name: ID карта сотрудника безопасности SCP
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: SCPSecurity
+
+- type: entity
+  parent: IDCardStandard
+  id: SCPScientistIDCard
+  name: ID карта ученого SCP
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: SCPScientist
+
+- type: entity
+  parent: BasePDA
+  id: SCPSciencePDA
+  name: КПК Ученого SCP
+  description: Покрыто кровью
+  components:
+  - type: PDA
+    id: SCPScientistIDCard
+    state: pda-science
+  - type: Icon
+    state: pda-science
+
+- type: entity
+  parent: BasePDA
+  id: SCPSecurityPDA
+  name: КПК Сотрудника безопасности SCP
+  description: Ваня, а что тут писать то?
+  components:
+  - type: PDA
+    id: SCPSecurityIDCard
+    state: pda-security
+  - type: Icon
+    state: pda-security
+
+- type: entity
+  parent: IDCardStandard
+  id: SCPHeadIDCard
+  name: ID карта главы отдела SCP
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: PresetIdCard
+    job: SCPHead
+
+- type: entity
+  parent: BasePDA
+  id: SCPHeadPDA
+  name: КПК Главы отдела SCP
+  description: Покрыто кровью
+  components:
+  - type: PDA
+    id: SCPHeadIDCard
+    state: pda-science
+  - type: Icon
+    state: pda-science

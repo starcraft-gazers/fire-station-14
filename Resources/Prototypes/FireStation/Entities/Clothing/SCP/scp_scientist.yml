@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpskirtSCPScientist
+  name: комбинезон ученого SCP
+  description: Комбинезон ученого SCP. Пахнет опасностью
+  components:
+  - type: Sprite
+    sprite: FireStation/Clothing/SCP/Scientist/tshirt.rsi
+  - type: Clothing
+    sprite: FireStation/Clothing/SCP/Scientist/tshirt.rsi
