@@ -1272,16 +1272,6 @@ entities:
       type: Transform
     - canCollide: False
       type: Physics
-- proto: EmergencyMedipen
-  entities:
-  - uid: 299
-    components:
-    - flags: InContainer
-      type: MetaData
-    - parent: 298
-      type: Transform
-    - canCollide: False
-      type: Physics
 - proto: EncryptionKeyCommon
   entities:
   - uid: 246
@@ -1854,17 +1844,6 @@ entities:
       type: MetaData
     - parent: 288
       type: Transform
-    - containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 299
-          - 300
-          - 301
-          - 302
-          - 303
-      type: ContainerContainer
     - canCollide: False
       type: Physics
     - type: InsideEntityStorage
@@ -2389,32 +2368,6 @@ entities:
       type: Transform
     - canCollide: False
       type: Physics
-- proto: PillDexalin
-  entities:
-  - uid: 300
-    components:
-    - flags: InContainer
-      type: MetaData
-    - parent: 298
-      type: Transform
-    - canCollide: False
-      type: Physics
-  - uid: 301
-    components:
-    - flags: InContainer
-      type: MetaData
-    - parent: 298
-      type: Transform
-    - canCollide: False
-      type: Physics
-  - uid: 302
-    components:
-    - flags: InContainer
-      type: MetaData
-    - parent: 298
-      type: Transform
-    - canCollide: False
-      type: Physics
 - proto: PowerCellMedium
   entities:
   - uid: 200
@@ -2657,16 +2610,6 @@ entities:
       currentReceiving: 1642.5065
       currentSupply: 1639.694
       type: PowerNetworkBattery
-- proto: SyringeInaprovaline
-  entities:
-  - uid: 303
-    components:
-    - flags: InContainer
-      type: MetaData
-    - parent: 298
-      type: Transform
-    - canCollide: False
-      type: Physics
 - proto: TableCounterMetal
   entities:
   - uid: 19
