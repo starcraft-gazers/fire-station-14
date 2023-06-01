@@ -13,7 +13,7 @@ namespace Content.Server.DeviceLinking.Systems
     [UsedImplicitly]
     public sealed class DoorSignalControlSystem : EntitySystem
     {
-        [Dependency] private readonly AirlockSystem _airlockSystem = default!;
+        [Dependency] private readonly DoorBoltSystem _bolts = default!;
         [Dependency] private readonly DoorSystem _doorSystem = default!;
         [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
 
@@ -47,7 +47,7 @@ namespace Content.Server.DeviceLinking.Systems
             {
                 if (state == SignalState.High || state == SignalState.Momentary)
                 {
-                    if (door.State != DoorState.Open)
+                    if (door.State == DoorState.Closed)
                         _doorSystem.TryOpen(uid, door);
                 }
             }
@@ -55,7 +55,7 @@ namespace Content.Server.DeviceLinking.Systems
             {
                 if (state == SignalState.High || state == SignalState.Momentary)
                 {
-                    if (door.State != DoorState.Closed)
+                    if (door.State == DoorState.Open)
                         _doorSystem.TryClose(uid, door);
                 }
             }
@@ -70,13 +70,13 @@ namespace Content.Server.DeviceLinking.Systems
             {
                 if (state == SignalState.High)
                 {
-                    if(TryComp<AirlockComponent>(uid, out var airlockComponent))
-                        _airlockSystem.SetBoltsWithAudio(uid, airlockComponent, true);
+                    if(TryComp<DoorBoltComponent>(uid, out var bolts))
+                        _bolts.SetBoltsWithAudio(uid, bolts, true);
                 }
                 else
                 {
-                    if(TryComp<AirlockComponent>(uid, out var airlockComponent))
-                        _airlockSystem.SetBoltsWithAudio(uid, airlockComponent, false);
+                    if(TryComp<DoorBoltComponent>(uid, out var bolts))
+                        _bolts.SetBoltsWithAudio(uid, bolts, false);
                 }
             }
         }

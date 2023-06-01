@@ -104,6 +104,7 @@
       path: /Audio/Machines/windoor_open.ogg
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
+  - type: DoorBolt
   - type: Airlock
     keepOpenIfClicked: true
     openPanelVisible: true

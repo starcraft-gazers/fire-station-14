@@ -12,8 +12,10 @@ using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Shuttles.Events;
+using Content.Shared.Body.Components;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Doors.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Shuttles.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Map.Components;
@@ -31,9 +33,9 @@ public sealed partial class ShuttleSystem
     private MapId? _hyperSpaceMap;
 
     public const float DefaultStartupTime = 5.5f;
-    public const float DefaultTravelTime = 30f;
+    public const float DefaultTravelTime = 20f;
     public const float DefaultArrivalTime = 5f;
-    private const float FTLCooldown = 30f;
+    private const float FTLCooldown = 10f;
     private const float ShuttleFTLRange = 100f;
 
     /// <summary>
@@ -379,7 +381,7 @@ public sealed partial class ShuttleSystem
 
     private void SetDockBolts(EntityUid uid, bool enabled)
     {
-        var query = AllEntityQuery<DockingComponent, AirlockComponent, TransformComponent>();
+        var query = AllEntityQuery<DockingComponent, DoorBoltComponent, TransformComponent>();
 
         while (query.MoveNext(out var doorUid, out _, out var door, out var xform))
         {
@@ -387,7 +389,7 @@ public sealed partial class ShuttleSystem
                 continue;
 
             _doors.TryClose(doorUid);
-            _airlock.SetBoltsWithAudio(doorUid, door, enabled);
+            _bolts.SetBoltsWithAudio(doorUid, door, enabled);
         }
     }
 
